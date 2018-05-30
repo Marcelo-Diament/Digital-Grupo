@@ -9,3 +9,4 @@ Grupo da Turma 01 de Full Stack, composto por Hector, Lucas, Marcelo D., e Rafae
 ⋅⋅* Marcelo D.: 11 976052723
 ⋅⋅* Rafael: 11 997366040
 llashfjhasldjkfl
+lucas passou por aqui
