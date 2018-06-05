@@ -20,7 +20,7 @@ Grupo da classe de Web Full Stack da Digital House Brasil (Vila Olímipia, TN01)
     > P.O.: Marcelo | 
     > Scrum Master: Hector | 
     > Dev 1: Rafael | 
-    > Dev 2: Lucas | 
+    > Dev 2: Lucas.
   
   #### Sprint #02 | 18/06 a 02/07
   - Entregas: Login e Cadastro (funcionais), Produtos (com categorias e marcas) e Barra de Busca.
@@ -29,7 +29,7 @@ Grupo da classe de Web Full Stack da Digital House Brasil (Vila Olímipia, TN01)
     > P.O.: ? | 
     > Scrum Master: ? | 
     > Dev 1: ? | 
-    > Dev 2: ? | 
+    > Dev 2: ?.
   
   #### Sprint #03 | 02/07 a 16/07
   - Entrega: DER e integração de Login e Cadastro ao MYSQL.
@@ -38,7 +38,7 @@ Grupo da classe de Web Full Stack da Digital House Brasil (Vila Olímipia, TN01)
     > P.O.: ? | 
     > Scrum Master: ? | 
     > Dev 1: ? | 
-    > Dev 2: ? | 
+    > Dev 2: ?.
   
   #### Sprint #04 | 16/07 a 30/07
   - Entrega: Código de Login e Cadastro organizados com classes.
@@ -47,7 +47,7 @@ Grupo da classe de Web Full Stack da Digital House Brasil (Vila Olímipia, TN01)
     > P.O.: ? | 
     > Scrum Master: ? | 
     > Dev 1: ? | 
-    > Dev 2: ? | 
+    > Dev 2: ?.
   
   #### Sprint #05 | 06/08 a 20/08
   - Entregas:
@@ -58,7 +58,7 @@ Grupo da classe de Web Full Stack da Digital House Brasil (Vila Olímipia, TN01)
     > P.O.: ? | 
     > Scrum Master: ? | 
     > Dev 1: ? | 
-    > Dev 2: ? | 
+    > Dev 2: ?.
   
   #### Sprint #06 | 20/08 a 03/09
   - Entregas:
@@ -69,7 +69,7 @@ Grupo da classe de Web Full Stack da Digital House Brasil (Vila Olímipia, TN01)
     > P.O.: ? | 
     > Scrum Master: ? | 
     > Dev 1: ? | 
-    > Dev 2: ? | 
+    > Dev 2: ?.
   
 
 # Histórico:
