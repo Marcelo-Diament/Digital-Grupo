@@ -1,0 +1,27 @@
+header .menu {
+  list-style: none;
+}
+
+header{
+  height: 12vh;
+  background-color: grey;
+  position: fixed;
+}
+
+
+header .img_logo{
+  width: 55px;
+  float: left;
+}
+
+header .div_header{
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+
+}
+
+header i{
+  float: right;
+  font-size: 40px;
+}
