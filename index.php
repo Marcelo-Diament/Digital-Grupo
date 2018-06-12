@@ -1,4 +1,7 @@
 <?php
-include ("head.php")
-include ("header.php")
+include ("inc/head.php");
+include ("inc/header.php");
+include ("inc/footer.php");
+
+
  ?>
