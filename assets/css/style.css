@@ -1,13 +1,13 @@
-header .menu {
-  list-style: none;
-}
-
 header{
   height: 12vh;
+  width: 100%;
   background-color: grey;
   position: fixed;
 }
 
+header .menu {
+  list-style: none;
+}
 
 header .img_logo{
   width: 55px;
@@ -24,4 +24,37 @@ header .div_header{
 header i{
   float: right;
   font-size: 40px;
+}
+
+.div_banner{
+  background-image: url("../images/produto-banner-01.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 26vh;
+  margin-top: 53px;
+  padding: 30px;
+}
+
+.div_banner h2{
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+.div_banner p{
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+}
+
+.div_banner .vermais{
+  text-align: center;
+  color: white;
+  border: 5px solid white;
+}
+
+.div_produtos .produto1{
+  background-image: url("../images/produto-01.jpg");
+  background-size: cover;
+  height: 65vh;
 }
