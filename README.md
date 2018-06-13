@@ -80,3 +80,14 @@ Grupo da classe de Web Full Stack da Digital House Brasil (Vila Olímipia, TN01)
   - Criação do repositório no GitHub
   - Configuração de contribuição
 
+  ##### Sprint #01 | 30/05/18 a 18/06/18
+  - Definição dos papéis
+  - Criação e configuração de quadro no Trello (Kanban ou Scrum Panel)
+  - Realização de entrevista com público alvo (4 entrevistados)
+  - Realização da reunião inicial (com todos os envolvidos)
+  - Definição e validação do Product Backlog
+  - Definição e validação do Sprint Backlog
+  - Criação dos layouts em .psd (mobile first - versão mobile e então desktop)
+  - Programação do head.php, header.php, footer.php, index.php, faq.php, login.php e cadastro.php
+  - Realização de reuniões diárias entre S.M. e devs
+  - Realização de reunião
