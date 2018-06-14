@@ -11,19 +11,19 @@
   <div class="redes-socias">
     <h4>Siga-nos</h4>
     <a href="#">
-    <img src="assets/images/logo-facebook.png" alt="Logo do Facebook">
+    <img src="assets/images/logo-facebook.png" alt="Logo do Facebook" class="img-redes">
     </a>
     <a href="#">
-    <img src="assets/images/logo-instagram.png" alt="Logo do Instagram">
+    <img src="assets/images/logo-instagram.png" alt="Logo do Instagram" class="img-redes">
     </a>
     <a href="#">
-    <img src="assets/images/logo-linkedin.png" alt="Logo do Linkedin">
+    <img src="assets/images/logo-linkedin.png" alt="Logo do Linkedin" class="img-redes">
     </a>
     <a href="#">
-    <img src="assets/images/logo-twitter.png" alt="Logo do Twitter">
+    <img src="assets/images/logo-twitter.png" alt="Logo do Twitter" class="img-redes">
     </a>
     <a href="#">
-    <img src="assets/images/logo-youtube.png" alt="Logo do Youtube">
+    <img src="assets/images/logo-youtube.png" alt="Logo do Youtube" class="img-redes">
     </a>
   </div>
   <div class="contatos">

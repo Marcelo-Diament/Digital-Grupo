@@ -1,3 +1,6 @@
+*{
+  font-family: 'Poiret One';
+}
 header{
   height: 12vh;
   width: 100%;
@@ -37,6 +40,7 @@ header i{
   margin-bottom: 20px;
 }
 
+
 .div_banner h2{
   color: white;
   text-align: center;
@@ -54,6 +58,10 @@ header i{
   color: white;
   border: 5px solid white;
   padding: 5px;
+}
+
+.div_produtos{
+  padding: 5px 5px 5px 5px;
 }
 
 .div_produtos .produto1{
@@ -149,8 +157,39 @@ header i{
   color: white;
   border: 5px solid white;
   padding: 5px;
-  position: relative;
+  position: absolute;
   top: 275px;
   left: 250px;
   z-index: 988;
 }
+
+footer{
+  background-color: black;
+  text-align: center;
+}
+
+footer h4{
+  color: white;
+}
+
+footer p{
+  color: white;
+  font-size: 20px;
+}
+
+footer img{
+  width: 40px;
+}
+
+footer a{
+  color: white;
+}
+
+footer ul{
+  list-style: none;
+  padding: 0px;
+}
+
+/* @media (min-width: 1000px){
+ .div_produtos
+} */
