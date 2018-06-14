@@ -1,5 +1,12 @@
 *{
   font-family: 'Poiret One';
+  padding: 0px;
+  margin: 0px;
+}
+.container-fluid{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-top: 0;
 }
 header{
   height: 12vh;
@@ -7,6 +14,12 @@ header{
   background-color: grey;
   position: fixed;
   z-index: 999;
+}
+
+header::after{
+  clear: both;
+  display: table;
+  content: "";
 }
 
 header .menu {
@@ -30,20 +43,26 @@ header i{
   font-size: 40px;
 }
 
+main{
+  margin-top: 8vh;
+}
+
 .div_banner{
   background-image: url("../images/produto-banner-01.jpg");
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   width: 100%;
-  height: 170px;
-  margin-top: 53px;
+  height: 533px;
+  /*margin-top: 23%;*/
   padding: 30px;
   margin-bottom: 20px;
 }
 
 
 .div_banner h2{
-  color: white;
   text-align: center;
+  color: white;
   font-size: 24px;
 }
 
@@ -56,7 +75,7 @@ header i{
 .div_banner .vermais1{
   text-align: center;
   color: white;
-  border: 5px solid white;
+  border: 2px solid white;
   padding: 5px;
 }
 
@@ -158,8 +177,8 @@ header i{
   border: 5px solid white;
   padding: 5px;
   position: absolute;
-  top: 275px;
-  left: 250px;
+  top: 86%;
+  left: 70%;
   z-index: 988;
 }
 
@@ -190,6 +209,28 @@ footer ul{
   padding: 0px;
 }
 
-/* @media (min-width: 1000px){
- .div_produtos
+footer label input{
+  margin-right: 0 !important;
+}
+
+footer label button{
+  margin-left: 0 !important;
+}
+
+/* @media (min-width: 768px){
+.div_banner{
+  margin-top: 15%;
+}
+}
+
+@media (min-width: 1024px) {
+.div_banner{
+  margin-top: 15%;
+}
+}*/
+
+/* @media (min-width: 1200px) {
+  .div_banner{
+    margin-top: 6%;
+  }
 } */
