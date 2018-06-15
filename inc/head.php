@@ -13,23 +13,6 @@
     <link rel="icon" type="image/png" sizes="96x96" href="https://br.digitalhouse.com/wp-content/themes/dh/assets/img/icons/favicon-96x96.png">
     <meta name="theme-color" content="#4285f4">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-
-    <script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    for (i=0; i<acc.length; i++){
-      acc[i].addEventListener("click", function(){
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight){
-          panel.style.maxHeight = null;
-        } else{
-          panel.style.maxHeight = panel.scrollHeight+"px";
-        }
-      });
-    }
-</script>
-
     <title>Nosso site</title>
   </head>
 <body>

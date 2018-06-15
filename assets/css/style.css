@@ -247,6 +247,14 @@ footer .contatos{
   margin-top: 9vh;
 }
 
+.breadcrumb1{
+  display: none;
+}
+
+.botao_categorias{
+  padding: 15px;
+}
+
 .prod-destaque{
   background-image: url("../images/produto-destaque-01.jpg");
   background-size: cover;
@@ -280,23 +288,23 @@ footer .contatos{
   margin-bottom: 10px;
 }
 
-.accordion{
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: center;
-  border: none;
-  outline: none;
-  transition: 0.4s;
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: 0.4s;
 }
 
-.panel{
-  padding: 0 18px;
-  background-color: white;
-  display: none;
-  overflow: hidden;
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
 }
 
 .prod-dest-faq{
@@ -323,4 +331,42 @@ footer .contatos{
 color: white;
 border: 2px solid white;
 padding: 5px;
+}
+
+@media (min-width: 768px;){
+.caminho-pao ul{
+  display: block;
+}
+   /*BREANDCRUMB CSS*/
+  /* Style the list */
+ul.breadcrumb1 {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+
+/* Display list items side by side */
+ul.breadcrumb1 li {
+    display: inline;
+    font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb1 li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb1 li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb1 li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
 }
