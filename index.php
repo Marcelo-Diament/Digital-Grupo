@@ -9,28 +9,28 @@ include ("inc/header.php");
           <p>Subtitulo do Banner até 2 linhas!</p>
           <p><a class="vermais1">Ver Mais</a></p>
       </div>
-      <div class="div_produtos row">
-         <section class="produto1 col-sm-6">
+      <section class="div_produtos row">
+         <article class="produto1 col-sm-6">
            <h3>Nome do Produto</h3>
            <p><b>12x </b>$499,99 <b>sem juros</b></p>
            <p><a class="vermais alinhar">Ver Mais</a></p>
-         </section>
-         <section class="produto2 col-sm-6">
+         </article>
+         <article class="produto2 col-sm-6">
            <h3>Nome do Produto</h3>
            <p><b>12x </b>$499,99 <b>sem juros</b></p>
            <p><a class="vermais">Ver Mais</a></p>
-         </section>
-         <section class="produto3 col-sm-6">
+         </article>
+         <article class="produto3 col-sm-6">
            <h3>Nome do Produto</h3>
            <p><b>12x </b>$499,99 <b>sem juros</b></p>
            <p><a class="vermais">Ver Mais</a></p>
-         </section>
-         <section class="produto4 col-sm-6">
+         </article>
+         <article class="produto4 col-sm-6">
            <h3>Nome do Produto</h3>
            <p><b>12x </b>$499,99 <b>sem juros</b></p>
            <p><a class="vermais">Ver Mais</a></p>
-         </section>
-       </div>
+         </article>
+       </section>
      </div>
    </main>
 <?php

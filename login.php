@@ -1,6 +1,6 @@
 <?php
 include ("inc/head.php");
-//include ("inc/header.php");
+include ("inc/header.php");
 ?>
 <div class="conteiner-login">
 <form class="login" action="informacoes.php" method="post">

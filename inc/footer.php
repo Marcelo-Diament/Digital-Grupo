@@ -30,14 +30,9 @@
       </div>
     </div>
   </div>
-  <div class="contatos">
-    <h4>Entre em contato</h4><br>
-    <img src="assets/images/logo-whatsapp.png" alt="Logo do Whatsapp">
-    <a href="tel:+5511987654321">9 8765-4321</a><br>
-    <img src="assets/images/envelope.png" alt="Foto de Envelope">
-    <a href="mailto:hectorqrs@gmail.com?Subject=Contato">hectorqrs@gmail.com</a>
-  </div>
-  <div class="categorias">
+  <!-- <div class="row"> -->
+  <div class="row">
+  <div class="categorias col-md-4">
     <h4>Categorias</h4><br>
     <p>Promoções</p>
     <ul>
@@ -47,7 +42,8 @@
       <li><a href="#">Categoria #4</a></li>
     </ul>
   </div>
-  <div class="institucional">
+  <!-- <div class="row"> -->
+  <div class="institucional col-md-4">
     <h4>Institucional</h4><br>
     <ul>
       <li><a href="#">Sobre</a></li>
@@ -57,6 +53,17 @@
       <li><a href="#">Políticas de Privacidade</a></li>
     </ul>
   </div>
+<!-- </div> -->
+  <!-- <div class="row"> -->
+  <div class="contatos col-md-4">
+    <h4>Entre em contato</h4><br>
+    <img src="assets/images/logo-whatsapp.png" alt="Logo do Whatsapp">
+    <a href="tel:+5511987654321">9 8765-4321</a><br>
+    <img src="assets/images/envelope.png" alt="Foto de Envelope">
+    <a href="mailto:hectorqrs@gmail.com?Subject=Contato">hectorqrs@gmail.com</a>
+  </div>
+</div>
+<!-- </div> -->
   <small style="color: white;">Direitos Reservados Marca &copy; <?php echo date("Y")?> | CNPJ 99.999.999/0001-99</small>
 </footer>
 </body>
