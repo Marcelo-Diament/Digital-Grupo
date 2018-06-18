@@ -2,7 +2,9 @@
 include ("inc/head.php");
 include ("inc/header.php");
 ?>
-
+<main>
+<div class="row">
+<aside class="col-md-2">
 <div class="categorias-faq">
   <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -23,16 +25,16 @@ include ("inc/header.php");
   <li><a href="#">&gt; FAQ</a></li>
 </ul>
 </div>
-
-<article class="prod-destaque">
+<article class="prod-destaque col-sm-12 col-lg-12">
   <div class="textos">
   <h2>Nome do produto</h2>
     <p><b>12x </b>de R$499,99 <b>sem juros</b></p>
     <p><a class="comprar">Comprar</a></p>
   </div>
 </article>
+</aside>
 
-<div class="perguntas">
+<div class="perguntas row col-md-10">
   <p><b>Cupons de Desconto</b></p><br>
   <button class="accordion">Os cupons de desconto têm validade?</button>
   <div class="panel">
@@ -63,6 +65,8 @@ include ("inc/header.php");
     <p>Resposta</p>
   </div>
 </div>
+</div>
+
 <div class="row">
 <div class="prod-dest-faq"><p><b>Produtos em Destaque</b></p><br>
 </div>
@@ -109,6 +113,7 @@ include ("inc/header.php");
     });
     }
   </script>
+</main>
 
 <?php
 include ("inc/footer.php");
