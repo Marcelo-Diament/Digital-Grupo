@@ -309,9 +309,14 @@ footer .contatos{
 
 .prod-dest-faq{
   text-align: center;
+  width: 100%;
 }
 
-.produto-faq{
+.prod-dest-faq p{
+  margin-bottom: 0;
+}
+
+ .produto-faq{
   background-image: url("../images/produto-01.jpg");
   background-size: cover;
   background-position: center;
@@ -320,12 +325,8 @@ footer .contatos{
   margin: auto;
   margin-bottom: 10px;
   padding: 10px;
-}
-
-.produto-faq{
   color: white;
 }
-
 
 .vermais-prod-faq{
 color: white;
@@ -333,7 +334,81 @@ border: 2px solid white;
 padding: 5px;
 }
 
-@media (min-width: 768px;){
+.produto2-faq{
+ background-image: url("../images/produto-02.jpg");
+ background-size: cover;
+ background-position: center;
+ height: 65vh;
+ width: 95%;
+ margin: auto;
+ margin-bottom: 10px;
+ padding: 10px;
+ color: white;
+ display: none;
+}
+
+.vermais-prod2-faq{
+color: white;
+border: 2px solid white;
+padding: 5px;
+}
+
+.produto3-faq{
+ background-image: url("../images/produto-03.jpg");
+ background-size: cover;
+ background-position: center;
+ height: 65vh;
+ width: 95%;
+ margin: auto;
+ margin-bottom: 10px;
+ padding: 10px;
+ color: white;
+ display: none;
+}
+
+.vermais-prod3-faq{
+color: white;
+border: 2px solid white;
+padding: 5px;
+}
+
+.produto4-faq{
+ background-image: url("../images/produto-04.jpg");
+ background-size: cover;
+ background-position: center;
+ height: 65vh;
+ width: 95%;
+ margin: auto;
+ margin-bottom: 10px;
+ padding: 10px;
+ color: white;
+ display: none;
+}
+
+.vermais-prod4-faq{
+color: white;
+border: 2px solid white;
+padding: 5px;
+}
+
+@media (min-width: 768px){
+
+.prod-destaque{
+  display: none;
+}
+
+.produto2-faq{
+  display: block;
+}
+
+.produto3-faq{
+  display: block;
+}
+
+.produto4-faq{
+  display: block;
+}
+
 .caminho-pao ul{
   display: block;
 }
@@ -369,4 +444,5 @@ ul.breadcrumb1 li a:hover {
     color: #01447e;
     text-decoration: underline;
 }
+
 }

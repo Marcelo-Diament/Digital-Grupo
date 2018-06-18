@@ -4,7 +4,20 @@ include ("inc/header.php");
 ?>
 
 <div class="categorias-faq">
-  <p class="botao_categorias"><b>Categorias</b></p>
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Categorias
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <button class="dropdown-item" type="button">Entrega e Freto</button>
+    <button class="dropdown-item" type="button">Trocas e Devoluções </button>
+    <button class="dropdown-item" type="button">Garantia de Fábrica</button>
+    <button class="dropdown-item" type="button">Medidas e Tamanhos</button>
+    <button class="dropdown-item" type="button">Cupons de Desconto</button>
+    <button class="dropdown-item" type="button">Promoções</button>
+    <button class="dropdown-item" type="button">Cookies e Privacidade</button>
+  </div>
+</div>
   <ul class="breadcrumb1">
   <li id="home-faq"><a href="index.php">Home	&shy;</a></li>
   <li><a href="#">&gt; FAQ</a></li>
@@ -50,13 +63,31 @@ include ("inc/header.php");
     <p>Resposta</p>
   </div>
 </div>
-<div class="prod-dest-faq"><p><b>Produtos em Destaque</b></p>
+<div class="row">
+<div class="prod-dest-faq"><p><b>Produtos em Destaque</b></p><br>
 </div>
-<article class="produto-faq">
+<article class="produto-faq col-lg-3">
   <h3>Nome do Produto</h3>
   <p><b>12x </b>$499,99 <b>sem juros</b></p>
   <p><a class="vermais-prod-faq">Ver Mais</a></p>
 </article>
+<article class="produto2-faq col-lg-3">
+  <h3>Nome do Produto</h3>
+  <p><b>12x </b>$499,99 <b>sem juros</b></p>
+  <p><a class="vermais-prod2-faq">Ver Mais</a></p>
+</article>
+<article class="produto3-faq col-lg-3">
+  <h3>Nome do Produto</h3>
+  <p><b>12x </b>$499,99 <b>sem juros</b></p>
+  <p><a class="vermais-prod3-faq">Ver Mais</a></p>
+</article>
+<article class="produto4-faq col-lg-3">
+  <h3>Nome do Produto</h3>
+  <p><b>12x </b>$499,99 <b>sem juros</b></p>
+  <p><a class="vermais-prod4-faq">Ver Mais</a></p>
+</article>
+</div>
+
 
   <script>
     var acc = document.getElementsByClassName("accordion");
