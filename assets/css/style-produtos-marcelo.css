@@ -1,0 +1,503 @@
+*{
+  font-family: 'Poiret One';
+  padding: 0px;
+  margin: 0px;
+}
+.container-fluid{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-top: 0;
+}
+header{
+  height: 12vh;
+  width: 100%;
+  background-color: grey;
+  position: fixed;
+  z-index: 999;
+}
+
+header::after{
+  clear: both;
+  display: table;
+  content: "";
+}
+
+header .menu {
+  list-style: none;
+}
+
+header .img_logo{
+  width: 55px;
+  float: left;
+}
+
+header .div_header{
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+
+}
+
+header i{
+  float: right;
+  font-size: 40px;
+}
+
+main{
+  margin-top: 8vh;
+}
+
+.div_banner{
+  background-image: url("../images/produto-banner-01.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  height: 533px;
+  /*margin-top: 23%;*/
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+
+.div_banner h2{
+  text-align: center;
+  color: white;
+  font-size: 24px;
+}
+
+.div_banner p{
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+}
+
+.div_banner .vermais1{
+  text-align: center;
+  color: white;
+  border: 2px solid white;
+  padding: 5px;
+}
+
+.div_produtos{
+  padding: 5px 5px 5px 5px;
+}
+
+.div_produtos .produto1{
+  background-image: url("../images/produto-01.jpg");
+  background-size: cover;
+  height: 65vh;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.div_produtos .produto1{
+  padding: 10px;
+}
+
+.div_produtos .produto1 h3{
+  font-size: 25px;
+  color: white;
+}
+
+.div_produtos .produto1 p{
+  color: white;
+}
+
+.div_produtos .produto2{
+  background-image: url("../images/produto-02.jpg");
+  background-size: cover;
+  height: 65vh;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.div_produtos .produto2{
+  padding: 10px;
+}
+
+.div_produtos .produto2 h3{
+  font-size: 25px;
+  color: white;
+}
+
+.div_produtos .produto2 p{
+  color: white;
+}
+
+.div_produtos .produto3{
+  background-image: url("../images/produto-03.jpg");
+  background-size: cover;
+  height: 65vh;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.div_produtos .produto3{
+  padding: 10px;
+}
+
+.div_produtos .produto3 h3{
+  font-size: 25px;
+  color: white;
+}
+
+.div_produtos .produto3 p{
+  color: white;
+}
+
+.div_produtos .produto4{
+  background-image: url("../images/produto-04.jpg");
+  background-size: cover;
+  height: 65vh;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.div_produtos .produto4{
+  padding: 10px;
+}
+
+.div_produtos .produto4 h3{
+  font-size: 25px;
+  color: white;
+}
+
+.div_produtos .produto4 p{
+  color: white;
+}
+
+.div_produtos .vermais{
+  text-align: center;
+  color: white;
+  border: 2px solid white;
+  padding: 5px;
+  position: absolute;
+  top: 86%;
+  left: 70%;
+  z-index: 988;
+}
+
+
+    /* CSS footer */
+footer{
+  background-color: black;
+  text-align: center;
+  padding: 10px;
+}
+
+footer h4{
+  color: white;
+}
+
+footer p{
+  color: white;
+  font-size: 20px;
+}
+
+footer img{
+  width: 40px;
+}
+
+footer a{
+  color: white;
+}
+
+footer ul{
+  list-style: none;
+  padding: 0px;
+}
+
+footer label input{
+  margin-right: 0 !important;
+}
+
+footer label button{
+  margin-left: 0 !important;
+}
+
+footer .categorias{
+  margin-top: 10px;
+}
+
+footer .institucional{
+  margin-top: 10px;
+}
+
+footer .contatos{
+  margin-top: 10px;
+}
+
+      /* CSS login */
+.conteiner-login{
+  text-align: center;
+  margin-top: 12vh;
+  margin-bottom: 50px;
+}
+
+
+      /* CSS FAQ */
+.categorias-faq{
+  text-align: center;
+  width: 100%;
+  margin-top: 9vh;
+}
+
+.breadcrumb1{
+  display: none;
+}
+
+.botao_categorias{
+  padding: 15px;
+}
+
+.prod-destaque{
+  background-image: url("../images/produto-destaque-01.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 30vh;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.prod-destaque h2{
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+.prod-destaque p{
+  color: white;
+  text-align: center;
+}
+
+.prod-destaque .comprar{
+  text-align: center;
+  color: white;
+  border: 2px solid white;
+  padding: 5px;
+}
+
+.perguntas{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+.prod-dest-faq{
+  text-align: center;
+  width: 100%;
+}
+
+.prod-dest-faq p{
+  margin-bottom: 0;
+}
+
+ .produto-faq{
+  background-image: url("../images/produto-01.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 65vh;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  color: white;
+}
+
+.vermais-prod-faq{
+color: white;
+border: 2px solid white;
+padding: 5px;
+}
+
+.produto2-faq{
+ background-image: url("../images/produto-02.jpg");
+ background-size: cover;
+ background-position: center;
+ height: 65vh;
+ width: 95%;
+ margin: auto;
+ margin-bottom: 10px;
+ padding: 10px;
+ color: white;
+ display: none;
+}
+
+.vermais-prod2-faq{
+color: white;
+border: 2px solid white;
+padding: 5px;
+}
+
+.produto3-faq{
+ background-image: url("../images/produto-03.jpg");
+ background-size: cover;
+ background-position: center;
+ height: 65vh;
+ width: 95%;
+ margin: auto;
+ margin-bottom: 10px;
+ padding: 10px;
+ color: white;
+ display: none;
+}
+
+.vermais-prod3-faq{
+color: white;
+border: 2px solid white;
+padding: 5px;
+}
+
+.produto4-faq{
+ background-image: url("../images/produto-04.jpg");
+ background-size: cover;
+ background-position: center;
+ height: 65vh;
+ width: 95%;
+ margin: auto;
+ margin-bottom: 10px;
+ padding: 10px;
+ color: white;
+ display: none;
+}
+
+.vermais-prod4-faq{
+color: white;
+border: 2px solid white;
+padding: 5px;
+}
+
+aside{
+  margin: 0;
+}
+
+.perguntas{
+  margin: 0;
+}
+
+.perguntas b{
+  text-align: center;
+}
+
+.row{
+  margin: 0 !important;
+}
+
+.btn{
+  margin-top: 10px;
+}
+
+@media (min-width: 768px){
+
+.produto2-faq{
+  display: block;
+}
+
+.produto3-faq{
+  display: block;
+}
+
+.produto4-faq{
+  display: block;
+}
+
+.caminho-pao ul{
+  display: block;
+}
+   /*BREANDCRUMB CSS*/
+  /* Style the list */
+ul.breadcrumb1 {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+
+/* Display list items side by side */
+ul.breadcrumb1 li {
+    display: inline;
+    font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb1 li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb1 li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb1 li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+}
+
+/* PRODUTOS - VITRINE */
+
+main.container-fluid{
+  margin-top: 8vh;
+}
+
+.top-title{
+  padding: 20px;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+.top p{
+  text-align: left;
+  padding: 8px 16px;
+}
+
+.top p a{
+  color: grey;
+  -webkit-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.top p a:active, .top p a:focus, .top p a:hover{
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+/* PAGINAÇÃO */
+
+.fas{
+  color: grey;
+  padding: 5px;
+  margin: 5px;
+}
