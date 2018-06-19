@@ -26,10 +26,10 @@ Grupo da classe de Web Full Stack da Digital House Brasil (Vila Olímipia, TN01)
   - Entregas: Login e Cadastro (funcionais), Produtos (com categorias e marcas) e Barra de Busca.
   - Linguagens: PHP, HTML e CSS
   - Papéis:
-    > P.O.: ? | 
-    > Scrum Master: ? | 
-    > Dev 1: ? | 
-    > Dev 2: ?.
+    > P.O.: Lucas | 
+    > Scrum Master: Rafael | 
+    > Dev 1: Hector | 
+    > Dev 2: Marcelo.
   
   #### Sprint #03 | 02/07 a 16/07
   - Entrega: DER e integração de Login e Cadastro ao MYSQL.
