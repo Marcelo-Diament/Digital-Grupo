@@ -2,25 +2,26 @@
 include ("inc/head.php");
 include ("inc/header.php");
 ?>
+<div class="altura">
 <form class="login" action="informacoes.php" method="post">
   <div class="form-group">
-    <input type="email" name="email" placeholder="E-mail">
+    <input class="caixa-login" type="email" name="email" placeholder="E-mail">
   </div>
   <div class="form-group">
-    <input type="password" name="senha" placeholder="Senha">
-    <small class="form-text text-muted">Vamos roubar a sua senha</small>
-  </div>
+    <input class="caixa-login" type="password" name="senha" placeholder="Senha">
+      </div>
   <div class="form-check">
-    <input type="checkbox" class="form-check-input">
-    <label class="form-check-label">Permanecer logado</label>
+    <input type="checkbox" class="form-check-input checkbox">
+      <label class="form-check-label logado"> Permanecer logado</label>
   </div>
   <div>
-    <input class="btn btn-primary" type="submit" name="enviar" value="Logar">
+    <input class="btn btn-primary botao-logar" type="submit" name="enviar" value="Logar">
   </div>
+
+<p class="ou">ou</p>
+  <button class="botao-entrar" type="button" name="button">Entrar com Facebook</button><br>
+  <a class="criar-conta"href="register.php">Criar uma conta</a>
 </form>
-<p>ou</p>
-  <button type="button" name="button">Entrar com Facebook</button><br>
-  <a href="register.php">Criar uma conta</a>
 <div class="footer-links">
   <a href="#">FAQ</a>
   <span>|</span>
@@ -32,6 +33,7 @@ include ("inc/header.php");
 </div>
 <div class="copyright">
   ©2018 Digital-Grupo, INC. TODOS OS DIREITOS RESERVADOS A Hector Queiróz.
+</div>
 </div>
 </body>
 </head>

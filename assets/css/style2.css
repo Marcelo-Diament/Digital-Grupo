@@ -1,0 +1,52 @@
+.login{
+  text-align: center;
+  margin-top: 180px;
+  height: 100%;
+}
+
+.copyright, .footer-links{
+  text-align: center;
+  position: relative;
+  bottom: 40px;
+}
+
+.altura{
+  height: 70vh;
+}
+
+.caixa-login{
+  height: 40px;
+  width: 25%;
+  font-size: 20px;
+}
+
+.logado{
+  font-size: 20px;
+}
+
+.checkbox{
+  height: 20px;
+  width: 20px;
+}
+
+.botao-logar{
+  height: 40px;
+  width: 90px;
+  margin-top: 10px;
+}
+
+.ou{
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.botao-entrar{
+  height: 35px;
+  background-color: #19547c ;
+  color: white;
+  width: 20%;
+  margin-bottom: 20px;
+}
+
+.criar-conta{
+  font-size: 20px;
