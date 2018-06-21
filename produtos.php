@@ -6,110 +6,165 @@
     <link rel="stylesheet" href="/Digital-Grupo/assets/css/style-produtos-marcelo.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <meta name="title" content="Nosso Site">
+    <?php include_once("assets/php/functions.php") ?>
+    <meta name="title" content="<?php echo $titulo ?>">
     <meta name="author" content="Digital Grupo">
     <meta name="decription" content="Template de ecommerce desenvolvido com fins didáticos, parte do projeto integrador do curso de Full Stack da Digital House Brasil">
     <meta name="keywords" content="html, css, php, js, digital house, digital grupo, projeto integrador">
     <link rel="icon" type="image/png" sizes="96x96" href="https://br.digitalhouse.com/wp-content/themes/dh/assets/img/icons/favicon-96x96.png">
     <meta name="theme-color" content="#4285f4">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-    <title>Nosso site</title>
+    <title><?php echo $titulo ?></title>
   </head>
 <body>
+<!-- HEADER -->
 <?php
-include ("inc/header.php");
+include_once ("inc/header.php");
 ?>
+  <!-- # CONTÂINER DO CONTEÚDO PRINCIPAL # -->
   <main class="container-fluid">
+
+    <!-- ## TOPO DA PÁGINA (PADRÃO ENTRE TODAS) ## -->
     <section class="top row">
       <article class="top-title col-12">
-        <h1>Categoria 01</h1>
-        <h4>Produtos pertencentes à categoria 01</h4>
+        <h1><?php echo $titulo ?></h1>
+        <h4><?php echo $subtitulo ?></h4>
       </article>
-      <p><span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a href="http://digitalgrupo.provisorio.ws/" itemprop="url"><span itemprop="title">Home</span></a> › </span><span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://digitalgrupo.provisorio.ws/produtos/" itemprop="url"> <span itemprop="title">Produtos</span> </a> › </span>Categoria 01</p>
+      <p><span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a href="http://digitalgrupo.provisorio.ws/" itemprop="url"><span itemprop="title">Home</span></a> › </span><span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://digitalgrupo.provisorio.ws/produtos/" itemprop="url"> <span itemprop="title">Produtos</span> </a> › </span><?php echo $titulo ?></p>
     </section>
+    
+    <!-- ## VIRTINE DE PRODUTOS ## -->
     <section class="pdt-vitrine row">
+
+      <!-- ### AGRUPAMENTO DE 8 ARTICLES/CARDS DE PRODUTOS -->
       <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <h3 class="pdt-card-title">Nome do Produto</h3>
-        <div class="pdt-card-price">12x de R$ 499,00 sem juros</div>
-        <button class="pdt-card-btn btn"><a href="#">Ver Mais</a></button>
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <h3 class="pdt-card-title">Nome do Produto</h3>
-        <div class="pdt-card-price">12x de R$ 499,00 sem juros</div>
-        <button class="pdt-card-btn btn"><a href="#">Ver Mais</a></button>
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <h3 class="pdt-card-title">Nome do Produto</h3>
-        <div class="pdt-card-price">12x de R$ 499,00 sem juros</div>
-        <button class="pdt-card-btn btn"><a href="#">Ver Mais</a></button>
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <h3 class="pdt-card-title">Nome do Produto</h3>
-        <div class="pdt-card-price">12x de R$ 499,00 sem juros</div>
-        <button class="pdt-card-btn btn"><a href="#">Ver Mais</a></button>
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <h3 class="pdt-card-title">Nome do Produto</h3>
-        <div class="pdt-card-price">12x de R$ 499,00 sem juros</div>
-        <button class="pdt-card-btn btn"><a href="#">Ver Mais</a></button>
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <h3 class="pdt-card-title">Nome do Produto</h3>
-        <div class="pdt-card-price">12x de R$ 499,00 sem juros</div>
-        <button class="pdt-card-btn btn"><a href="#">Ver Mais</a></button>
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <h3 class="pdt-card-title">Nome do Produto</h3>
-        <div class="pdt-card-price">12x de R$ 499,00 sem juros</div>
-        <button class="pdt-card-btn btn"><a href="#">Ver Mais</a></button>
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <h3 class="pdt-card-title">Nome do Produto</h3>
-        <div class="pdt-card-price">12x de R$ 499,00 sem juros</div>
-        <button class="pdt-card-btn btn"><a href="#">Ver Mais</a></button>
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
       </article>
-      <span class="cta-banner-horizontal"><a href="#"></a></span>
+      
+      <span class="cta-banner-horizontal"><a href="#"><strong><?php echo $bannerHorizontal ?></strong></a></span>
+
       <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <h3 class="pdt-card-title">Nome do Produto</h3>
-        <div class="pdt-card-price">12x de R$ 499,00 sem juros</div>
-        <button class="pdt-card-btn btn"><a href="#">Ver Mais</a></button>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <h3 class="pdt-card-title">Nome do Produto</h3>
-        <div class="pdt-card-price">12x de R$ 499,00 sem juros</div>
-        <button class="pdt-card-btn btn"><a href="#">Ver Mais</a></button>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <h3 class="pdt-card-title">Nome do Produto</h3>
-        <div class="pdt-card-price">12x de R$ 499,00 sem juros</div>
-        <button class="pdt-card-btn btn"><a href="#">Ver Mais</a></button>
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <h3 class="pdt-card-title">Nome do Produto</h3>
-        <div class="pdt-card-price">12x de R$ 499,00 sem juros</div>
-        <button class="pdt-card-btn btn"><a href="#">Ver Mais</a></button>
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <h3 class="pdt-card-title">Nome do Produto</h3>
-        <div class="pdt-card-price">12x de R$ 499,00 sem juros</div>
-        <button class="pdt-card-btn btn"><a href="#">Ver Mais</a></button>
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <h3 class="pdt-card-title">Nome do Produto</h3>
-        <div class="pdt-card-price">12x de R$ 499,00 sem juros</div>
-        <button class="pdt-card-btn btn"><a href="#">Ver Mais</a></button>
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <h3 class="pdt-card-title">Nome do Produto</h3>
-        <div class="pdt-card-price">12x de R$ 499,00 sem juros</div>
-        <button class="pdt-card-btn btn"><a href="#">Ver Mais</a></button>
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <h3 class="pdt-card-title">Nome do Produto</h3>
-        <div class="pdt-card-price">12x de R$ 499,00 sem juros</div>
-        <button class="pdt-card-btn btn"><a href="#">Ver Mais</a></button>
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
       </article>
-      <span><a href="#" alt="Clique para ver a página 1"><i class="fas fa-angle-double-left"></i></a><a href="#" alt="Clique para ver a página anterior"><i class="fas fa-angle-left"></i></a> Exibindo 16 resultados de 64 resultados <a href="#" alt="Clique para ver a próxima página"><i class="fas fa-angle-right"></i></a><a href="#" alt="Clique para ver a última página"><i class="fas fa-angle-double-right"></i></a></span>
+      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
+      </article>
+      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div>
+          <h3 class="pdt-card-title"><?php echo $nomeProduto ?></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
+      </article>
+      <span class="col-12" id="paginacao">
+        <div class="col-4">
+          <a href="#" alt="Clique para ver a página 1"><i class="fas fa-angle-double-left"></i></a>
+          <a href="#" alt="Clique para ver a página anterior"><i class="fas fa-angle-left"></i></a>
+        </div>
+        <div class="col-4">
+          16 de 64
+          </div>
+        <div class="col-4">
+          <a href="#" alt="Clique para ver a próxima página"><i class="fas fa-angle-right"></i></a>
+          <a href="#" alt="Clique para ver a última página"><i class="fas fa-angle-double-right"></i></a>
+        </div>
+      </span>
     </section>
   </main>
 <?php

@@ -414,90 +414,301 @@ aside{
 
 @media (min-width: 768px){
 
-.produto2-faq{
-  display: block;
+  .produto2-faq{
+    display: block;
+  }
+
+  .produto3-faq{
+    display: block;
+  }
+
+  .produto4-faq{
+    display: block;
+  }
+
+  .caminho-pao ul{
+    display: block;
+  }
+     /*BREANDCRUMB CSS*/
+    /* Style the list */
+  ul.breadcrumb1 {
+      padding: 10px 16px;
+      list-style: none;
+      background-color: #eee;
+  }
+
+  /* Display list items side by side */
+  ul.breadcrumb1 li {
+      display: inline;
+      font-size: 18px;
+  }
+
+  /* Add a slash symbol (/) before/behind each list item */
+  ul.breadcrumb1 li+li:before {
+      padding: 8px;
+      color: black;
+      content: "/\00a0";
+  }
+
+  /* Add a color to all links inside the list */
+  ul.breadcrumb1 li a {
+      color: #0275d8;
+      text-decoration: none;
+  }
+
+  /* Add a color on mouse-over */
+  ul.breadcrumb1 li a:hover {
+      color: #01447e;
+      text-decoration: underline;
+  }
+
 }
 
-.produto3-faq{
-  display: block;
-}
 
-.produto4-faq{
-  display: block;
-}
+/* INÍCIO DAS ALTERAÇÕES FEITAS POR MARCELO A PARTIR DE 20/06/2018 */
 
-.caminho-pao ul{
-  display: block;
-}
-   /*BREANDCRUMB CSS*/
-  /* Style the list */
-ul.breadcrumb1 {
-    padding: 10px 16px;
-    list-style: none;
-    background-color: #eee;
-}
-
-/* Display list items side by side */
-ul.breadcrumb1 li {
-    display: inline;
-    font-size: 18px;
-}
-
-/* Add a slash symbol (/) before/behind each list item */
-ul.breadcrumb1 li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
-}
-
-/* Add a color to all links inside the list */
-ul.breadcrumb1 li a {
-    color: #0275d8;
-    text-decoration: none;
-}
-
-/* Add a color on mouse-over */
-ul.breadcrumb1 li a:hover {
-    color: #01447e;
-    text-decoration: underline;
-}
-
-}
-
-/* PRODUTOS - VITRINE */
-
+/* # PRODUTOS - VITRINE */
 main.container-fluid{
   margin-top: 8vh;
 }
 
-.top-title{
-  padding: 20px;
-  background-color: #f1f1f1;
-  text-align: center;
+  /* ## TOPO DA PÁGINA */
+  .top-title{
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+  .top p{
+    text-align: left;
+    padding: 8px 16px;
+  }
+  .top p a{
+    color: grey;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+  .top p a:active, .top p a:focus, .top p a:hover{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+  }
+
+  /* PAGINAÇÃO */
+  #paginacao{
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0;
+  }
+  #paginacao div{
+    display: contents;
+    line-height: 2em;
+  }
+  #paginacao div:first-child{
+    text-align: right;
+    float: right;
+  }
+  #paginacao div:last-child{
+    text-align: left;
+    float: left;
+  }
+  .fas{
+    color: grey;
+    padding: 5px;
+    margin: 5px;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+  .fas:hover{
+    color: aquamarine;
+  }
+
+  /* VITRINE DE PRODUTOS */
+  .pdt-vitrine{
+    padding: 20px;
+  }
+  .pdt-card{
+    padding: 13px;
+    height: 333px;
+  }
+  .pdt-card > div{
+    padding: 10px;
+    background-image: url(../images/pdt.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #22c5c5;
+    color: #fff;
+    height: 100%;
+    position: relative;
+  }
+  .pdt-card-title{
+    text-transform: uppercase;
+  }
+  .pdt-card-btn{
+    text-align: center;
+    color: #fff;
+    background-color: rgba(255,255,255,0);
+    border: 1px solid white;
+    padding: 5px;
+    position: absolute;
+      bottom: 10px;
+      right: 10px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .pdt-card-btn:hover > a{
+    color: #000;
+  }
+  .pdt-card-btn:hover{
+    background-color: rgba(255,255,255,1);
+  }
+  .pdt-card-btn a{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(255,255,255,0);
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .pdt-card-btn a:hover{
+    text-decoration: none;
+  }
+
+  .pdt-vitrine h4{
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px;
+  }
+
+  /* BANNER MEIO DE PÁGINA - CALL TO ACTION */
+  .cta-banner-horizontal{
+    background-color: #22c5c5;
+    background-image: url(../images/produto-banner-01.jpg);
+    background-clip: border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20vh;
+    margin: 15px;
+    line-height: 20vh;
+    width: 100vw;
+    text-align: center;
+  }
+  .cta-banner-horizontal a{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .cta-banner-horizontal a:hover{
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.1em;
+  }
+
+
+/* DETALHE DO PRODUTO */
+
+section.pdt-det{
+  padding: 15px;
 }
 
-.top p{
-  text-align: left;
-  padding: 8px 16px;
+.pdt-det-img{
+  height: 540px;
+  background-color: #22c5c5;
+  display: block;
+  margin: auto;
 }
 
-.top p a{
-  color: grey;
-  -webkit-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+.pdt-det .row div{
+  position: relative;
 }
 
-.top p a:active, .top p a:focus, .top p a:hover{
-  text-decoration: none;
-  color: #000;
+.pdt-det .row div a{
+  position: absolute;
+    top: 42%;
+}
+
+.pdt-det .row div a:first-child{
+  left: 5%
+}
+
+.pdt-det .row div a:last-child{
+  right: 5%
+}
+
+.slider-seta{
+  height: 120px;
+  line-height: 120px;
+  width: 50px;
+  color: rgba(0,0,0,0.65);
+  font-size: 5em;
+}
+
+.slider-seta:hover{
+  color: rgba(0,0,0,0.85);
+}
+
+
+.pdt-info{
+  display: block;
+}
+
+.pdt-info ul, .pdt-info ul li ul{
+  list-style: none;
+}
+
+.pdt-info ul{
   font-weight: bold;
 }
 
-/* PAGINAÇÃO */
+.pdt-info ul li ul{
+  font-weight: normal;
+  display: inline-flex;
+  padding-top: 9px;
+}
 
-.fas{
-  color: grey;
-  padding: 5px;
+.pdt-info ul li ul li{
+  padding-right: 9px;
+}
+
+
+
+
+/* # ADMIN (ACESSO RESTRITO) */
+
+nav.admin-nav{
+  top: 0;
+  height: 8vh;
+  width: 100%;
+  margin: 0;
+  background-color: lightgrey;
+  position: fixed;
+  z-index: 999;
+}
+
+img.adminlogo{
+  height: 50px;
   margin: 5px;
+  padding: 5px;
+}
+
+.admin-nav i{
+  float: right;
+  font-size: 2em;
+}
+
+header::after{
+  clear: both;
+  display: table;
+  content: "";
 }
