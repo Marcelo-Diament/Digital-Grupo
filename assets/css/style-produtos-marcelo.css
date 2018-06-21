@@ -543,6 +543,13 @@ main.container-fluid{
     color: #fff;
     height: 100%;
     position: relative;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .pdt-card > div:hover{
+    transform: scale(1.1);
+    z-index: 99;
   }
   .pdt-card-title{
     text-transform: uppercase;
@@ -623,7 +630,8 @@ section.pdt-det{
 }
 
 .pdt-det-img{
-  height: 540px;
+  height: 100%;
+  width: 100%;
   background-color: #22c5c5;
   display: block;
   margin: auto;
@@ -659,8 +667,8 @@ section.pdt-det{
 }
 
 
-.pdt-info{
-  display: block;
+.pdt-info, .pdt-review{
+  display: inline-block;
 }
 
 .pdt-info ul, .pdt-info ul li ul{
@@ -681,7 +689,13 @@ section.pdt-det{
   padding-right: 9px;
 }
 
+.review_author{
+  text-align: right;
+}
 
+.video{
+  margin: 30px auto -25px auto;
+}
 
 
 /* # ADMIN (ACESSO RESTRITO) */

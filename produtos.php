@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,width=device-width,user-scalable=no">
-    <link rel="stylesheet" href="/Digital-Grupo/assets/css/style-produtos-marcelo.css">
+    <link rel="stylesheet" href="assets/css/style-produtos-marcelo.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <?php include_once("assets/php/functions.php") ?>
@@ -30,7 +30,7 @@ include_once ("inc/header.php");
         <h1><?php echo $titulo ?></h1>
         <h4><?php echo $subtitulo ?></h4>
       </article>
-      <p><span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a href="http://digitalgrupo.provisorio.ws/" itemprop="url"><span itemprop="title">Home</span></a> › </span><span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://digitalgrupo.provisorio.ws/produtos/" itemprop="url"> <span itemprop="title">Produtos</span> </a> › </span><?php echo $titulo ?></p>
+      <p><span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a href="http://digitalgrupo.provisorio.ws/" itemprop="url"><span itemprop="title">Home</span></a> › </span><span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://digitalgrupo.provisorio.ws/produtos.php" itemprop="url"> <span itemprop="title">Produtos</span> </a> › </span><?php echo $titulo ?></p>
     </section>
     
     <!-- ## VIRTINE DE PRODUTOS ## -->
