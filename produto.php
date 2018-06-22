@@ -51,8 +51,9 @@ include_once ("inc/header.php");
           <div class="row">
             <div class="comprar col-6">
               <form action="#" method="post">
-                <legend><b>R$ <?php echo $valorTotal; ?></b></legend>
-                <p>em <?php echo $valorProdutoCompleto; ?></p>
+                <small>de R$ <?php echo $valorTotal ?> por</small>
+                <legend><b>R$ <?php echo $valorReal; ?></b> à vista</legend>
+                <p>ou <?php echo $valorProdutoCompleto; ?></p>
                 <label for="tam">Tamanho</label>
                 <select>
                   <?php 

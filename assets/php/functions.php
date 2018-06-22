@@ -23,6 +23,8 @@
 
 	    // ## INFORMAÇÕES SOBRE VALORES DO PRODUTO
 	    $valorTotal = 499;
+	    $valorDesc = 99.01;
+	    $valorReal = ($valorTotal - $valorDesc);
 	    $valorParcelas = 12;
 	    $valorParcela = number_format((float)$valorTotal/$valorParcelas, 2, ',', '');;
 	    $valorProdutoCompleto = $valorParcelas."x de R$ ".$valorParcela." sem juros";

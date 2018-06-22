@@ -666,6 +666,9 @@ section.pdt-det{
   background-color: #fbfbfb;
   padding: 3%;
 }
+.comprar small{
+  text-decoration: line-through lightgrey;
+}
 .comprar form p{
   margin-top: -10px;
   line-height: initial;
