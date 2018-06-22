@@ -3,7 +3,6 @@
   padding: 0px;
   margin: 0px;
 }
-
 .container-fluid{
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -54,10 +53,7 @@ display: none;
 .menu-2{
   display: none;
 }
-/*
-main{
-  margin-top: 68px;
-} */
+
 
 .div_banner{
   background-image: url("../images/produto-banner-01.jpg");
