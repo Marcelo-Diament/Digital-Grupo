@@ -3,13 +3,14 @@
   padding: 0px;
   margin: 0px;
 }
+
 .container-fluid{
   padding-left: 0 !important;
   padding-right: 0 !important;
   margin-top: 0;
 }
 header{
-  height: 12vh;
+  height: 68px;
   width: 100%;
   background-color: grey;
   position: fixed;
@@ -18,12 +19,12 @@ header{
 
 header::after{
   clear: both;
-  display: table;
+  display: block;
   content: "";
 }
 
-header .menu {
-  list-style: none;
+header .div_header .barra_de_pesquisa{
+  display: none;
 }
 
 header .img_logo{
@@ -35,7 +36,10 @@ header .div_header{
   display: inline-block;
   width: 100%;
   padding: 10px;
+}
 
+header .div_header a{
+  display: none;
 }
 
 header i{
@@ -43,9 +47,17 @@ header i{
   font-size: 40px;
 }
 
-main{
-  margin-top: 8vh;
+header .div_header .img_cart{
+display: none;
 }
+
+.menu-2{
+  display: none;
+}
+/*
+main{
+  margin-top: 68px;
+} */
 
 .div_banner{
   background-image: url("../images/produto-banner-01.jpg");
@@ -54,22 +66,26 @@ main{
   background-attachment: fixed;
   width: 100%;
   height: 533px;
-  /*margin-top: 23%;*/
   padding: 30px;
-  margin-bottom: 20px;
+  padding-top: 80px;
 }
 
 
 .div_banner h2{
   text-align: center;
   color: white;
-  font-size: 24px;
+  font-size: 50px;
 }
 
 .div_banner p{
   text-align: center;
   color: white;
   margin-top: 10px;
+  font-size: 25px;
+}
+
+.div_banner #link_banner{
+  margin-top: 250px;
 }
 
 .div_banner .vermais1{
@@ -79,8 +95,50 @@ main{
   padding: 5px;
 }
 
+.destaque{
+  background-image: url(../images/produto-destaque-01.jpg);
+  background-size: cover;
+  height: 300px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.destaque p, .destaque h3{
+  color: white;
+  text-align: center;
+}
+
+.destaque h3{
+  margin-top: 30px;
+  font-size: 40px;
+}
+
+.destaque p{
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.destaque a{
+  color: white;
+  border: 2px white solid;
+  padding: 5px;
+  width: auto;
+  height: auto;
+  font-size: 25px;
+}
+
+.destaque a:hover{
+  color: white;
+  text-decoration: none;
+}
+
+.destaque #link_destaque{
+  text-align: center;
+  margin-top: 100px;
+}
+
 .div_produtos{
-  padding: 5px 5px 5px 5px;
+  padding: 5px;
 }
 
 .div_produtos .produto1{
@@ -90,9 +148,6 @@ main{
   width: 95%;
   margin: auto;
   margin-bottom: 10px;
-}
-
-.div_produtos .produto1{
   padding: 10px;
 }
 
@@ -112,9 +167,6 @@ main{
   width: 95%;
   margin: auto;
   margin-bottom: 10px;
-}
-
-.div_produtos .produto2{
   padding: 10px;
 }
 
@@ -134,9 +186,6 @@ main{
   width: 95%;
   margin: auto;
   margin-bottom: 10px;
-}
-
-.div_produtos .produto3{
   padding: 10px;
 }
 
@@ -156,9 +205,6 @@ main{
   width: 95%;
   margin: auto;
   margin-bottom: 10px;
-}
-
-.div_produtos .produto4{
   padding: 10px;
 }
 
@@ -412,7 +458,7 @@ aside{
   margin-top: 10px;
 }
 
-@media (min-width: 768px){
+@media (min-width: 776px){
 
 .produto2-faq{
   display: block;
@@ -462,4 +508,105 @@ ul.breadcrumb1 li a:hover {
     text-decoration: underline;
 }
 
+header .div_header i{
+  display: none;
+}
+
+header .div_header .img_cart{
+  display: block;
+  float: right;
+  width: 40px;
+  height: 40px;
+}
+
+header .div_header a{
+  display: inline;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+
+header .div_header .header-links{
+  float: right;
+  position: relative;
+  right: 40px;
+  top: 4px;
+}
+
+header .div_header .header-links .header_login{
+  margin-left: 30px;
+}
+
+header .div_header .barra_de_pesquisa{
+  display: block;
+  float: right;
+  margin-right: 350px;
+  margin-top: 8px!important;
+}
+
+header .div_header .barra_de_pesquisa input ,header .div_header .barra_de_pesquisa button{
+  border-radius: 0;
+  border: 3px solid white;
+}
+
+header .div_header .barra_de_pesquisa input{
+  background-color: grey;
+  color: white;
+  margin:0;
+}
+
+header .div_header .barra_de_pesquisa button{
+  background-image: url("../images/lupa.jpg");
+  padding: 18px;
+  background-size: 38px;
+  background-repeat: no-repeat;
+  margin-right: 8px!important;
+}
+
+header .div_header .barra_de_pesquisa input::placeholder{
+  color: white;
+}
+
+.div_banner{
+  padding-top: 0;
+}
+
+.div_banner h2{
+  padding-top: 50px;
+  font-size: 80px;
+}
+
+.div_banner p{
+  margin-top: 10px;
+  font-size: 32px;
+}
+
+.div_banner #link_banner{
+  font-size: 28px;
+
+}
+
+.menu-2{
+  background-color: white;
+  display: block;
+  padding-top: 73px;
+}
+
+.menu-2 ul{
+  list-style: none;
+  display: inline-flex;
+}
+
+.menu-2 ul li{
+margin: 0 15px;
+}
+
+.menu-2 ul a{
+  color: black;
+  font-size: 20px;
+}
+
+.menu-2 ul a:hover{
+  text-decoration: none;
+}
 }
