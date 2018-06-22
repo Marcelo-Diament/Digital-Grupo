@@ -488,6 +488,9 @@ main.container-fluid{
     -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
   }
+  .top p:last-child{
+    color: #000;
+  }
   .top p a:active, .top p a:focus, .top p a:hover{
     text-decoration: none;
     color: #000;
@@ -513,7 +516,7 @@ main.container-fluid{
     text-align: left;
     float: left;
   }
-  .fas{
+  .fa-angle-right, .fa-angle-left{
     color: grey;
     padding: 5px;
     margin: 5px;
@@ -521,7 +524,7 @@ main.container-fluid{
     -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
   }
-  .fas:hover{
+  .fa-angle-right, .fa-angle-left:hover{
     color: aquamarine;
   }
 
@@ -630,7 +633,7 @@ section.pdt-det{
 }
 
 .pdt-det-img{
-  height: 100%;
+  height: auto;
   width: 100%;
   background-color: #22c5c5;
   display: block;
@@ -638,12 +641,15 @@ section.pdt-det{
 }
 
 .pdt-det .row div{
+  text-align: justify;
   position: relative;
+  margin: 25px 0;
 }
 
 .pdt-det .row div a{
   position: absolute;
-    top: 42%;
+  top: 0%;
+  margin-top: 35%;
 }
 
 .pdt-det .row div a:first-child{
@@ -653,6 +659,68 @@ section.pdt-det{
 .pdt-det .row div a:last-child{
   right: 5%
 }
+
+.comprar{
+  display: inline-block;
+  text-align: left;
+  background-color: #fbfbfb;
+  padding: 3%;
+}
+.comprar form p{
+  margin-top: -10px;
+  line-height: initial;
+}
+.comprar form label{
+  width: 85px;
+  margin-right: 7px;
+}
+.comprar form input, .comprar form select{
+  width: 70px;
+}
+fieldset{
+  border: none;
+}
+.comprar form input[type=submit]{
+  float: left;
+  margin: 10px 2px 5px 2px;
+  padding: 3px;
+  min-width: 80px;
+}
+.pdt-det-btn{
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0,0,0,1);
+    border: 0px solid black;
+    padding: 5px;
+    position: relative;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .buy{
+    position: initial !important;
+  }
+  .pdt-det-btn:hover{
+    color: #000;
+    border: 1px solid black;
+  }
+  .pdt-det-btn:hover{
+    background-color: rgba(255,255,255,1);
+  }
+  .pdt-det-btn .buy{
+    direction: ltr;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(0,0,0,1);
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .pdt-det-btn.buy:hover{
+    text-decoration: none;
+  }
+
 
 .slider-seta{
   height: 120px;
@@ -693,10 +761,49 @@ section.pdt-det{
   text-align: right;
 }
 
-.video{
-  margin: 30px auto -25px auto;
+.mobileOnly iframe{
+  display: block;
+  margin: 25px auto;
+}
+.desktopOnly iframe{
+  display: none;
+  margin: 0;
+  padding: 0;
 }
 
+@media only screen and (min-width: 618px) {
+  .desktopOnly iframe{
+    display: block;
+    margin: 25px auto;
+  }
+
+  .mobileOnly iframe{
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+div.social-share{
+  display: inline-block;
+  padding: 5px;
+}
+.social-share ul li a{
+  position: relative !important;
+  line-height: 3em;
+}
+.social-share ul li a i{
+  line-height: 15px;
+  font-size: 2.2em;
+  color: grey;
+  -webkit-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.social-share ul li a i:hover{
+  color: black;
+  transform: scale(1.05);
+}
 
 /* # ADMIN (ACESSO RESTRITO) */
 

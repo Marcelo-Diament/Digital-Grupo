@@ -47,6 +47,51 @@ include_once ("inc/header.php");
         <div class="pdt-info col-12 col-md-7">
           <h3>Descrição do Produto</h3>
           <p>Esse produto é um produto feito especialmente para você. A ideia é que você o use sempre - de dia, à noite, à tarde, de manhã... Não importa quando, use o produto! Aproveite nossas promoções para compras acima de mil reais - promoção por tempo limitado!</p>
+          <div class="row">
+            <div class="comprar col-6">
+              <form action="#" method="post">
+                <legend><b>R$ <?php echo $valorTotal; ?></b></legend>
+                <p>em <?php echo $valorProdutoCompleto; ?></p>
+                <label for="tam">Tamanho</label>
+                <select>
+                  <?php 
+                    foreach ($tamanhos as $key => $value) {
+                      echo "<option value='".$key."'>".$value."</option>";
+                    }
+                  ?>
+                </select>
+                <br/>
+                <label for="qnt">Cor</label>
+                <select>
+                  <?php 
+                    foreach ($cores as $key => $value) {
+                      echo "<option value='".$key."'>".$value."</option>";
+                    }
+                  ?>
+                </select>
+                <br/>
+                <label for="qnt">Quantidade</label>
+                <input type="number" min="1" value="1" name="qnt" id="qnt">
+                <br/>
+                <fieldset>
+                  <input type="submit" value="Favoritar" class="pdt-det-btn buy col-12 col-md-4"></input>
+                  <input type="submit" value="Adicionar" class="pdt-det-btn buy col-12 col-md-4"></input>
+                  <input type="submit" value="Finalizar" class="pdt-det-btn buy col-12 col-md-4"></input>
+                </fieldset>
+              </form>
+            </div>
+            <div class="col-6">
+              <h4>Compartilhe esse produto!</h4>
+              <div class="social-share col-12">
+                <ul class="row">
+                  <li class="col-12 col-sm-3"><a href="http://www.facebook.com/sharer.php?u=http://digitalgrupo.provisorio.ws/produto.php" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                  <li class="col-12 col-sm-3"><a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><i class="fab fa-pinterest-square"></i></a></li>
+                  <li class="col-12 col-sm-3"><a href="https://plus.google.com/share?url=http://digitalgrupo.provisorio.ws/produto.php" target="_blank"><i class="fab fa-google-plus"></i></a></li>
+                  <li class="col-12 col-sm-3"><a href="mailto:marcelo@djament.com.br?Subject=Veja esse produto da Digital Grupo!&Body=Veja essse produto! Lembrei de você!"><i class="fas fa-envelope"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
           <ul>
             <li>
               <ul>
@@ -57,7 +102,7 @@ include_once ("inc/header.php");
             <li>
               <ul>
                 <li>Tamanho: </li>
-                <li><strong><?php echo $medida ?></strong></li>
+                <li><strong><?php echo $tamanho ?></strong></li>
               </ul>
             </li>
             <li>
@@ -73,7 +118,10 @@ include_once ("inc/header.php");
         </div>
       </article>
       <article class="row col-12 col-md-6 col-lg-4">
-        <div class="video">
+        <div class="mobileOnly video">
+          <iframe width="300" height="169" src="https://www.youtube.com/embed/rRVcPVZgksA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="desktopOnly video">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/rRVcPVZgksA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </article>

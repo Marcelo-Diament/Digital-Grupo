@@ -15,10 +15,10 @@
 	    $nomeProduto = "Nome do Produto";
 	    $descricaoProduto = "O produto é excelente, confira a seguir todos os detalhes!";
 	    $pdtMateriais = "Aço inox, fibra de carbono e fita crepe";
-	    $medidas = ['P','M','G'];
-	    $medida = $medidas[$i];
-	    $cores = ['Azul', 'Branco', 'Cinza', 'Dourado', 'Esmeralda'];
-	    $cor = $cores[$i];
+	    $tamanhos = ['extrapequeno' => 'PP', 'pequeno'=>'P','medio'=>'M','grande'=>'G', 'extragrande' => 'GG'];
+	    $tamanho = 'A grade de tamanhos de nossos produtos segue as normativas da ABNT e incluem os tamanhos P, M e G. Para confecção dos produtos sobmedida, entre em contato conosco.';
+	    $cores = ['azul' => 'Azul', 'branco' => 'Branco', 'cinza' => 'Cinza', 'dourado' => 'Dourado', 'esmeralda' => 'Esmeralda'];
+	    $cor = 'Trabalhamos com qualquer cor disponível no mercado. Se a cor não pertencer ao nosso catálogo padrão será acrescida uma taxa ao valor total do pedido.';
 
 
 	    // ## INFORMAÇÕES SOBRE VALORES DO PRODUTO
@@ -26,6 +26,9 @@
 	    $valorParcelas = 12;
 	    $valorParcela = number_format((float)$valorTotal/$valorParcelas, 2, ',', '');;
 	    $valorProdutoCompleto = $valorParcelas."x de R$ ".$valorParcela." sem juros";
+
+	    // ## VIDEO YOUTUBE
+	    $larguraMobile = 
 
     // # BANNERS
 
