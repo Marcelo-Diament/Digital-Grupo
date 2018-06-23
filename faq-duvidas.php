@@ -52,8 +52,8 @@ include_once ("inc/header.php");
         <nav class="row">
           <h4>Categorias FAQ<i class="fas fa-caret-down"></i></h4>
           <ul class="col-12 faqCat">
-            <li><a href="#faqcat01">Categoria FAQ 01 <i class="fas fa-caret-left"></i></a></li>
-            <li><a href="#faqcat02">Categoria FAQ 02 <i class="fas fa-caret-right"></i></a></li>
+            <li><a href="#faqcat01">Garantia <i class="fas fa-caret-left"></i></a></li>
+            <li><a href="#faqcat02">Frete e Entrega <i class="fas fa-caret-right"></i></a></li>
             <li><a href="#faqcat03">Categoria FAQ 03 <i class="fas fa-caret-right"></i></a></li>
             <li><a href="#faqcat04">Categoria FAQ 04 <i class="fas fa-caret-right"></i></a></li>
           </ul>
@@ -65,30 +65,46 @@ include_once ("inc/header.php");
       <section class="col-12 offset-md-3 col-md-9 faqListas">
         <div class="row">
           <article class="faqLista" id="faqcat01">
-            <h4>Categoria FAQ 01</h4>
+            <h4>Garantia</h4>
+            <button class="faqDuvida" id="faqpergunta0101">Por quanto tempo vale a garantia?</button>
             <div class="faqDuvidaEResposta">
-              <h6 class="faqDuvida" id="faqpergunta01">Por que é necessário fazer tal coisa antes de usar o produto?</h6>
-              <p class="faqResposta" id="faqresposta01">A garantia é válida em todo o território nacional e seu termo é de 1 ano (12 meses) após a data da aquisição do produto (ou seja, da data em que foi comprado). A garantia cobre problemas de caráter técnico e falhas de programação, porém não inclui danos causdos por mal uso ou acidentes. Para saber mais sobre os planos de seguros que oferecemos para nossos produtos consulte a categoria FAQ para Seguros.</p>
+              <p class="faqResposta" id="faqresposta0101">A garantia é válida em todo o território nacional e seu termo é de 1 ano (12 meses) após a data da aquisição do produto (ou seja, da data em que foi comprado). A garantia cobre problemas de caráter técnico e falhas de programação, porém não inclui danos causdos por mal uso ou acidentes. Para saber mais sobre os planos de seguros que oferecemos para nossos produtos consulte a categoria FAQ para Seguros.</p>
+            </div>
+            <button class="faqDuvida" id="faqpergunta0102">A garantia cobre roubo ou furto?</button>
+            <div class="faqDuvidaEResposta">
+              <p class="faqResposta" id="faqresposta0102">Não, a garantia cobre apenas defeitos de fabricação. Para uma avaliação o produto deverá ser enviado via Correios para os dados de cadastro da empresa - isso após aviso prévio e confirmação do SAC (Serviço de Atendimento ao Cliente). Em caso de dúvida ligue para 0800 987 6543.</p>
+            </div>
+            <button class="faqDuvida" id="faqpergunta0103">Se meu produto chegar com defeito, a garantia passa a valer apenas depois da troca?</button>
+            <div class="faqDuvidaEResposta">
+              <p class="faqResposta" id="faqresposta0103">A garantia é válida a partir da data da compra do produto. Caso haja algum defeito de fabricação comprovado, iremos realizar a troca do produto e a enviaremos uma nova garantia ou uma garantia extendida.</p>
+            </div>
+            <button class="faqDuvida" id="faqpergunta0104">É possível comprar a garantira extendida pelo site?</button>
+            <div class="faqDuvidaEResposta">
+              <p class="faqResposta" id="faqresposta0104">Sim, basta clicar na opção 'Garantia Extendida' antes de finalizar a compra. Caso o produto tenha sido comprado a menos de 1 mês (30 dias corridos) será possível realizar a extensão da garantia. Para intervalos maiores de 30 dias já não será possível extender a garantia, pois não temos condições de certificar o bom estado e manutenção do produto.</p>
             </div>
           </article>
           <article class="faqLista" id="faqcat02">
-            <h4>Categoria FAQ 02</h4>
+            <h4>Frete e Entrega</h4>
+            <button class="faqDuvida" id="faqpergunta0201">Em quanto tempo chegará meu pedido?</button>
             <div class="faqDuvidaEResposta">
-              <h6 class="faqDuvida" id="faqpergunta02">Por que é necessário fazer tal coisa antes de usar o produto?</h6>
-              <p class="faqResposta" id="faqresposta02">A garantia é válida em todo o território nacional e seu termo é de 1 ano (12 meses) após a data da aquisição do produto (ou seja, da data em que foi comprado). A garantia cobre problemas de caráter técnico e falhas de programação, porém não inclui danos causdos por mal uso ou acidentes. Para saber mais sobre os planos de seguros que oferecemos para nossos produtos consulte a categoria FAQ para Seguros.</p>
+              <p class="faqResposta" id="faqresposta0201">A estimativa de entrega é considerada com base nos cálculos do Correios, seu CEP e o CEP de remetente (matriz ou filial mais próxima da nossa marca). Também incluímos 2 dias de margem para logística, empacotamento, trâmites burocráticos e envio. Mas lembre-se: esse prazo é apenas uma previsão, podem ocorrer imprevistos. Caso ocorra algum imprevisto, você poderá acompanhar o status do envio de seu pedido através do próprio site do Correios. Em caso de dúvidas, pode ligar para nosso serviço de atendimento ao consumidor tabmém (SAC - 0800 987 6543).</p>
+            </div>
+            <button class="faqDuvida" id="faqpergunta0202">Em quanto tempo chegará meu pedido?</button>
+            <div class="faqDuvidaEResposta">
+              <p class="faqResposta" id="faqresposta0202">A estimativa de entrega é considerada com base nos cálculos do Correios, seu CEP e o CEP de remetente (matriz ou filial mais próxima da nossa marca). Também incluímos 2 dias de margem para logística, empacotamento, trâmites burocráticos e envio. Mas lembre-se: esse prazo é apenas uma previsão, podem ocorrer imprevistos. Caso ocorra algum imprevisto, você poderá acompanhar o status do envio de seu pedido através do próprio site do Correios. Em caso de dúvidas, pode ligar para nosso serviço de atendimento ao consumidor tabmém (SAC - 0800 987 6543).</p>
             </div>
           </article>
           <article class="faqLista" id="faqcat03">
             <h4>Categoria FAQ 03</h4>
+            <button class="faqDuvida" id="faqpergunta03">Por que é necessário fazer tal coisa antes de usar o produto?</button>
             <div class="faqDuvidaEResposta">
-              <h6 class="faqDuvida" id="faqpergunta03">Por que é necessário fazer tal coisa antes de usar o produto?</h6>
               <p class="faqResposta" id="faqresposta03">A garantia é válida em todo o território nacional e seu termo é de 1 ano (12 meses) após a data da aquisição do produto (ou seja, da data em que foi comprado). A garantia cobre problemas de caráter técnico e falhas de programação, porém não inclui danos causdos por mal uso ou acidentes. Para saber mais sobre os planos de seguros que oferecemos para nossos produtos consulte a categoria FAQ para Seguros.</p>
             </div>
           </article>
           <article class="faqLista" id="faqcat03">
             <h4>Categoria FAQ 04</h4>
+            <button class="faqDuvida" id="faqpergunta04">Por que é necessário fazer tal coisa antes de usar o produto?</button>
             <div class="faqDuvidaEResposta">
-              <h6 class="faqDuvida" id="faqpergunta04">Por que é necessário fazer tal coisa antes de usar o produto?</h6>
               <p class="faqResposta" id="faqresposta04">A garantia é válida em todo o território nacional e seu termo é de 1 ano (12 meses) após a data da aquisição do produto (ou seja, da data em que foi comprado). A garantia cobre problemas de caráter técnico e falhas de programação, porém não inclui danos causdos por mal uso ou acidentes. Para saber mais sobre os planos de seguros que oferecemos para nossos produtos consulte a categoria FAQ para Seguros.</p>
             </div>
           </article>
@@ -132,7 +148,43 @@ include_once ("inc/header.php");
         </div>
       </article>
     </section>
-  
+    <!-- SCRIPT ACCORDION JS COPIADO DA PÁGINA FAQ ANTERIOR, FOI FEITO NO COLEARNING -->
+    <script>
+    var acc = document.getElementsByClassName("faqDuvida");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
+
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.height === "120px") {
+            panel.style.height = "0%";
+        } else {
+            panel.style.height = "120px";
+        }
+        if (panel.style.opacity === 1) {
+            panel.style.opacity = 0;
+        } else {
+            panel.style.opacity = 1;
+        }
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+        var panelB = this.nextElementSibling.firstElementChild;
+        if (panelB.style.display === "block") {
+            panelB.style.display = "none";
+        } else {
+            panelB.style.display = "block";
+        }
+    });
+    }
+  </script>
 </main>
 <?php
 include ("inc/footer.php");
