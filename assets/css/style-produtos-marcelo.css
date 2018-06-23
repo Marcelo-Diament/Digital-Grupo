@@ -472,6 +472,10 @@ main.container-fluid{
   margin-top: 8vh;
 }
 
+h1, h2, h3, h4, h5, h6, p, small, b, strong{
+  font-family: 'Poiret One' !important;
+}
+
   /* ## TOPO DA PÁGINA */
   .top-title{
     padding: 20px;
@@ -703,7 +707,8 @@ section.pdt-det{
   border: 1px solid grey;
 }
 fieldset{
-  border: none;
+  border: none !important;
+  border-color: rgba(0,0,0,0);
 }
 .comprar form input[type=submit]{
   float: left;
@@ -846,6 +851,8 @@ div.social-share{
 
 #pdt-det-img:hover {opacity: 0.7;}
 
+
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -863,12 +870,28 @@ div.social-share{
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
+
+
 /* Modal Content (Image) */
 .modal-content {
-    margin: auto;
+    /*margin: auto;
     display: block;
     width: 80%;
-    max-width: 700px;
+    max-width: 700px;*/
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: auto !important;
+    height: 90% !important;
+    margin: 10px auto !important;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -886,7 +909,7 @@ div.social-share{
 /* Add Animation - Zoom in the Modal */
 .modal-content, #caption { 
     animation-name: zoom;
-    animation-duration: 0.6s;
+    animation-duration: 0.9s;
 }
 
 @keyframes zoom {
@@ -899,7 +922,15 @@ div.social-share{
     position: absolute;
     top: 15px;
     right: 35px;
-    color: #f1f1f1;
+    color: #000;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    position: absolute;
+    top: 15px;
+    right: 30px;
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
@@ -915,7 +946,8 @@ div.social-share{
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
     .modal-content {
-        width: 100%;
+        max-width: 100vw;
+        max-height: 80vh;
     }
 }
 

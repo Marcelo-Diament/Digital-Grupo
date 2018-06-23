@@ -16,6 +16,7 @@
     <meta name="theme-color" content="#4285f4">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <script src="assets/js/script.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Produto Exemplo</title>
   </head>
 <body>
@@ -23,6 +24,13 @@
 <?php
 include_once ("inc/header.php");
 ?>
+
+<!-- SLIDER W3 JS -->
+
+  <style>
+    .pdt-det-img {display:none}
+    .pdt-det-img-zoom {cursor:pointer}
+  </style>
 
 <!-- MODAL DO ZOOM DA IMAGEM -->
 <!-- Só consegui que ficasse corretamente posicionado iniciando o HTML com ele... -->
@@ -59,14 +67,82 @@ include_once ("inc/header.php");
     <section class="pdt-det">
       <article class="row">
         <div class="col-12 col-md-5">
-          <div>
-            <a href="#" alt="Clique para ver a próxima imagem"><i class="slider-seta fas fa-angle-left"></i></a>
+          <div class="w3-content">
+            <!--<a href="#" alt="Clique para ver a próxima imagem"><i class="slider-seta fas fa-angle-left"></i></a>-->
             
 
-            <img id="pdt-det-img" src="assets/images/pdt.png" alt="" class="pdt-det-img" style="width:100%;max-width:500px;">
+            <img id="pdt-det-img1" src="assets/images/produto-01.jpg" alt="Cor 01" class="pdt-det-img" style="width:100%;max-width:500px;">
+            <img id="pdt-det-img2" src="assets/images/produto-02.jpg" alt="Cor 02" class="pdt-det-img" style="width:100%;max-width:500px;">
+            <img id="pdt-det-img" src="assets/images/produto-03.jpg" alt="Cor 03" class="pdt-det-img" style="width:100%;max-width:500px;">
+
+            <div class="w3-row-padding w3-section">
+              <div class="w3-col s4">
+                <img class="pdt-det-img-zoom w3-opacity w3-hover-opacity-off" src="assets/images/produto-01.jpg" style="width:100%" onclick="currentDiv(1)">
+              </div>
+              <div class="w3-col s4">
+                <img class="pdt-det-img-zoom w3-opacity w3-hover-opacity-off" src="assets/images/produto-02.jpg" style="width:100%" onclick="currentDiv(2)">
+              </div>
+              <div class="w3-col s4">
+                <img class="pdt-det-img-zoom w3-opacity w3-hover-opacity-off" src="assets/images/produto-03.jpg" style="width:100%" onclick="currentDiv(3)">
+              </div>
+            </div>
             
-            <a href="#" alt="Clique para ver a próxima imagem"><i class="slider-seta fas fa-angle-right"></i></a>
+            <!--<a href="#" alt="Clique para ver a próxima imagem"><i class="slider-seta fas fa-angle-right"></i></a>-->
           </div>
+
+          <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
+            }
+
+            function currentDiv(n) {
+              showDivs(slideIndex = n);
+            }
+
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("pdt-det-img");
+              var dots = document.getElementsByClassName("pdt-det-img-zoom");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                 x[i].style.display = "none";
+              }
+              for (i = 0; i < dots.length; i++) {
+                 dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+              }
+              x[slideIndex-1].style.display = "block";
+              dots[slideIndex-1].className += " w3-opacity-off";
+            }
+          
+            // Get the modal
+            var modal = document.getElementById('myModal');
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var i;
+            var x = document.getElementsByClassName("pdt-det-img");
+            for (i = 0; i < x.length; ++i) {
+            var img = x[i];
+            var modalImg = document.getElementById('pdt-det-img-zoom');
+            var captionText = document.getElementById("caption");
+              img.onclick = function(){
+                  modal.style.display = "block";
+                  modalImg.src = this.src;
+                  captionText.innerHTML = this.alt;
+              }
+            }
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() { 
+              modal.style.display = "none";
+            }
+          </script>
           
 
           <div class="col-12">
@@ -204,28 +280,7 @@ include_once ("inc/header.php");
         </div>
       </article>
     </section>
-    <script>
-    // Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('pdt-det-img');
-var modalImg = document.getElementById("pdt-det-img-zoom");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}
-</script>
+    
   </main>
 <?php
 include ("inc/footer.php");

@@ -64,7 +64,7 @@
   </div>
 </div>
 <!-- </div> -->
-  <small style="color: white;">Direitos Reservados Marca &copy; <?php echo date("Y")?> | CNPJ 99.999.999/0001-99</small>
+  <small style="color: white;">Marca &copy; <?php echo date("Y")?> | CNPJ 99.999.999/0001-99</small>
 </footer>
 </body>
 </html>

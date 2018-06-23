@@ -16,6 +16,7 @@
     <meta name="theme-color" content="#4285f4">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <script src="assets/js/script.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title><?php echo $titulo ?></title>
   </head>
 <body>
