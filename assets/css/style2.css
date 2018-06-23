@@ -1,17 +1,17 @@
 .login{
   text-align: center;
-  margin-top: 180px;
+  padding-top: 180px;
   height: 100%;
 }
 
 .copyright, .footer-links{
   text-align: center;
   position: relative;
-  bottom: 40px;
+  bottom: 60px;
 }
 
 .altura{
-  height: 70vh;
+  height: 100vh;
 }
 
 .caixa-login{
