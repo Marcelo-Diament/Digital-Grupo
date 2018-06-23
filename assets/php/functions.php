@@ -6,12 +6,13 @@
 
 	    $titulo = "Categoria 01";
 	    $subtitulo = "Produtos pertencentes à ".$titulo;
+	    $tituloFaq = "FAQ";
+	    $subtituloFaq = "Se não encontrar o que busca, entre em contato com a gente!";
 
     // # PRODUTOS
 
 
 	    // ## INFORMAÇÕES GERAIS SOBRE O PRODUTO
-	    $i = 0;
 	    $nomeProduto = "Nome do Produto";
 	    $descricaoProduto = "O produto é excelente, confira a seguir todos os detalhes!";
 	    $pdtMateriais = "Aço inox, fibra de carbono e fita crepe";
@@ -30,7 +31,11 @@
 	    $valorProdutoCompleto = $valorParcelas."x de R$ ".$valorParcela." sem juros";
 
 	    // ## VIDEO YOUTUBE
-	    $larguraMobile = 
+	    /*$larguraMobile = */
+
+// # FAQ
+
+	
 
     // # BANNERS
 
