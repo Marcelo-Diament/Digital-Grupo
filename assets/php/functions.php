@@ -22,8 +22,8 @@
 
 
 	    // ## INFORMAÇÕES SOBRE VALORES DO PRODUTO
-	    $valorTotal = 499;
-	    $valorDesc = 99.01;
+	    $valorTotal = 899;
+	    $valorDesc = 110.01;
 	    $valorReal = ($valorTotal - $valorDesc);
 	    $valorParcelas = 12;
 	    $valorParcela = number_format((float)$valorTotal/$valorParcelas, 2, ',', '');;
