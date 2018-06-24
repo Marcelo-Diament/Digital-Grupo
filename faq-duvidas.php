@@ -54,9 +54,10 @@ include_once ("inc/header.php");
           <ul class="col-12 faqCat">
             <li><a href="#faqcat01">Garantia <i class="fas fa-caret-left"></i></a></li>
             <li><a href="#faqcat02">Frete e Entrega <i class="fas fa-caret-right"></i></a></li>
-            <li><a href="#faqcat03">Categoria FAQ 03 <i class="fas fa-caret-right"></i></a></li>
-            <li><a href="#faqcat04">Categoria FAQ 04 <i class="fas fa-caret-right"></i></a></li>
+            <li><a href="#faqcat03">Trocas e Devoluções <i class="fas fa-caret-right"></i></a></li>
+            <li><a href="#faqcat04">Encomendas Especiais <i class="fas fa-caret-right"></i></a></li>
           </ul>
+          <h6>Ainda com dúvidas?<br/><a href="/contato.php" target="_blank">Entre em contato</a> e envie sua dúvida</h6>
         <span class="cta-banner-horizontal mobileOnly"><a href="#"><strong><?php echo $bannerHorizontal ?></strong></a></span>
         </nav>
       </aside>
@@ -64,6 +65,7 @@ include_once ("inc/header.php");
       <!-- ## COLUNA DO CONTEÚDO PRINICPAL - ACOORDION COM DÚVIDAS E RESPOSTAS (FAQ) -->
       <section class="col-12 offset-md-3 col-md-9 faqListas">
         <div class="row">
+          <small>Clique nas perguntas a seguir para visualizar a resposta</small>
           <article class="faqLista" id="faqcat01">
             <h4>Garantia</h4>
             <button class="faqDuvida" id="faqpergunta0101">Por quanto tempo vale a garantia?</button>
@@ -95,17 +97,17 @@ include_once ("inc/header.php");
             </div>
           </article>
           <article class="faqLista" id="faqcat03">
-            <h4>Categoria FAQ 03</h4>
-            <button class="faqDuvida" id="faqpergunta03">Por que é necessário fazer tal coisa antes de usar o produto?</button>
+            <h4>Trocas e Devoluções</h4>
+            <button class="faqDuvida" id="faqpergunta0301">Por que é necessário fazer tal coisa antes de usar o produto?</button>
             <div class="faqDuvidaEResposta">
-              <p class="faqResposta" id="faqresposta03">A garantia é válida em todo o território nacional e seu termo é de 1 ano (12 meses) após a data da aquisição do produto (ou seja, da data em que foi comprado). A garantia cobre problemas de caráter técnico e falhas de programação, porém não inclui danos causdos por mal uso ou acidentes. Para saber mais sobre os planos de seguros que oferecemos para nossos produtos consulte a categoria FAQ para Seguros.</p>
+              <p class="faqResposta" id="faqresposta0301">A garantia é válida em todo o território nacional e seu termo é de 1 ano (12 meses) após a data da aquisição do produto (ou seja, da data em que foi comprado). A garantia cobre problemas de caráter técnico e falhas de programação, porém não inclui danos causdos por mal uso ou acidentes. Para saber mais sobre os planos de seguros que oferecemos para nossos produtos consulte a categoria FAQ para Seguros.</p>
             </div>
           </article>
-          <article class="faqLista" id="faqcat03">
-            <h4>Categoria FAQ 04</h4>
-            <button class="faqDuvida" id="faqpergunta04">Por que é necessário fazer tal coisa antes de usar o produto?</button>
+          <article class="faqLista" id="faqcat04">
+            <h4>Encomendas Especiais</h4>
+            <button class="faqDuvida" id="faqpergunta0401">Como faço para solicitar um produto customizado? Vendem em grande quantidade/atacado?</button>
             <div class="faqDuvidaEResposta">
-              <p class="faqResposta" id="faqresposta04">A garantia é válida em todo o território nacional e seu termo é de 1 ano (12 meses) após a data da aquisição do produto (ou seja, da data em que foi comprado). A garantia cobre problemas de caráter técnico e falhas de programação, porém não inclui danos causdos por mal uso ou acidentes. Para saber mais sobre os planos de seguros que oferecemos para nossos produtos consulte a categoria FAQ para Seguros.</p>
+              <p class="faqResposta" id="faqresposta0401">Entre em contato com nossa equipe Comercial para solicitar seu projeto especial! Fazemos produtos customizados e sob medida. Também temos condições especiais para pedidos acima de 50 mil unidades. Ligue para 0800 987 6541 (de 2ª a Sábado das 09:00 às 13:00 e das 14:00 às 18:00) ou envie um email para contato@digitalgrupo.provisorio.ws - responderemos em até 48 horas!</p>
             </div>
           </article>
         </div>

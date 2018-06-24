@@ -967,7 +967,10 @@ nav.row{
 
 
     /* ### MENU DE CATEGORIAS */
-
+    /*aside{
+      position: -webkit-sticky;
+      position: sticky;
+    }*/
     aside .row{
     display: inline-block;
     text-align: center;
@@ -988,22 +991,42 @@ nav.row{
     
     .faq .faqMenu{
       line-height: 2em;
-      position: fixed;
+      position: sticky;
       text-align: center;
       display: inline-block;
       left: -5%;
       top: 8%;
       width: 100%;
-      z-index: 2;
+      /*z-index: 2;*/
     }
     .row .faqCat{
       text-align: center;
       list-style: none;
     }
-    .faqMenu .row ul li a{
-      -webkit-transition: all 0.6s ease-in-out;
-      -o-transition: all 0.6s ease-in-out;
-      transition: all 0.6s ease-in-out;
+    .faqMenu .row ul li a, .faqMenu .row ul li a:hover{
+      text-decoration: none;
+      color: grey;
+      -webkit-transition: all 0.9s ease-in-out;
+      -o-transition: all 0.9s ease-in-out;
+      transition: all 0.9s ease-in-out;
+    }
+
+    .faqMenu .row ul li a:hover, .faqMenu .row ul li a:hover i{
+      font-weight: bold;
+      font-size: 1.03em;
+    }
+
+    .faqListas article button.faqDuvida:hover{
+      font-weight: bold;
+    }
+
+    .faqMenu nav h6 a{
+      font-weight: bolder;
+    }
+
+    .faqMenu nav h6 a:hover{
+      font-weight: bolder;
+      color: #000;
     }
 
     span.espacadorMobile.col-12{
@@ -1014,7 +1037,7 @@ nav.row{
     @media only screen and (min-width: 618px) {
       .faq .faqMenu{
       line-height: 2em;
-      position: fixed;
+      position: sticky;
       text-align: left;
       display: block;
       top: 270px;
