@@ -454,6 +454,21 @@ aside{
   margin-top: 10px;
 }
 
+/* Página de Cadastro */
+
+.register{
+ padding-top: 100px;
+}
+
+.teste{
+  display: block;
+  font-weight: bold;
+  height: 35px;
+  margin: auto;
+}
+
+
+
 @media (min-width: 776px){
 
 .produto2-faq{
