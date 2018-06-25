@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <?php
+      if (isset($_POST['submit']) && $_POST['submit'] === 'Finalizar'){
+                    header("location: http://digitalgrupo.provisorio.ws/carrinho.php");exit;
+                  }
+    ?>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,width=device-width,user-scalable=no">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -249,10 +254,11 @@ include_once ("inc/header.php");
                     if (empty($_POST['userID'])){
                     echo "<br/><p class='alertando alerta'>Para atualizar seus favoritos é necessário fazer login.</p>";
                     }
+                  }
 
 
                   // JÁ SE O VALUE DO SUBMIT FOR ADICIONAR    
-                  } elseif ($_POST['submit'] === 'Adicionar'){
+                  if ($_POST['submit'] === 'Adicionar'){
 
                     // SE NÃO HOUVER COR NEM TAMANHO DEFINIDOS:
                     if (empty($_POST['cores']) && empty($_POST['tamanhos'])){
@@ -283,11 +289,6 @@ include_once ("inc/header.php");
                         echo "<p class='adicionado alertando'>Adicionamos ".$qntEscolhida." item(ns) ".$nomeProduto." (tamanho ".$tamanhoEscolhido." e cor ".$corEscolhida.") ao carrinho!</p>";
                       }
                     }
-
-
-                  // E SE O VALUE DO SUBMIT FOR FINALIZAR (DIRECIONA PARA CARRINHO)  
-                  } else /*if(isset($_POST['submit']) && ($_POST['submit'] === 'Finalizar'))*/{
-                    header("location: http://digitalgrupo.provisorio.ws/carrinho.php");exit;
                   }
                 }
               ?>
