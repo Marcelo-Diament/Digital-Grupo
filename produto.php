@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="assets/css/style-produtos-marcelo.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <?php include_once("assets/php/functions.php") ?>
     <meta name="title" content="Produto Exemplo">
     <meta name="author" content="Digital Grupo">
     <meta name="decription" content="Template de ecommerce desenvolvido com fins didáticos, parte do projeto integrador do curso de Full Stack da Digital House Brasil">
@@ -16,6 +15,7 @@
     <meta name="theme-color" content="#4285f4">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <script src="assets/js/script.js"></script>
+    <?php include_once("assets/php/functions.php") ?>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Produto Exemplo</title>
   </head>
@@ -169,24 +169,39 @@ include_once ("inc/header.php");
           <p>Esse produto é um produto feito especialmente para você. A ideia é que você o use sempre - de dia, à noite, à tarde, de manhã... Não importa quando, use o produto! Aproveite nossas promoções para compras acima de mil reais - promoção por tempo limitado!</p>
           <div class="row">
             <div class="comprar col-12 col-sm-6">
-              <form action="#" method="post">
+              <form action="produto.php" method="post">
                 <small>de R$ <?php echo $valorTotal ?> por</small>
                 <legend><b>R$ <?php echo $valorReal; ?></b> à vista</legend>
                 <p>ou <?php echo $valorProdutoCompleto; ?></p>
-                <label for="tam">Tamanho</label>
-                <select>
+                <label for="tamanhos">Tamanho</label>
+                <select name="tamanhos">
+                  <option value=""></option>
+                  <!--<option value=""></option>-->
                   <?php 
+                    
+                    // CARREGAR OPÇÃO ANTERIOR CASO HAJA
+                    if (isset($_POST['tamanhos'])){
+                      echo "<option selected='selected' value='".$_POST['tamanhos']."'>".$_POST['tamanhos']."</option>";
+                    }
+                    
                     foreach ($tamanhos as $key => $value) {
-                      echo "<option value='".$key."'>".$value."</option>";
+                      echo "<option name='tamanho' value='".$key."'>".$value."</option>";
                     }
                   ?>
                 </select>
                 <br/>
-                <label for="qnt">Cor</label>
-                <select>
+                <label for="cores">Cor</label>
+                <select name="cores">
+                  <option value=""></option>
                   <?php 
+
+                    // CARREGAR OPÇÃO ANTERIOR CASO HAJA
+                    if (isset($_POST['cores'])){
+                      echo "<option selected='selected' value='".$_POST['cores']."'>".$_POST['cores']."</option>";
+                    }
+
                     foreach ($cores as $key => $value) {
-                      echo "<option value='".$key."'>".$value."</option>";
+                      echo "<option name='cor' value='".$key."'>".$value."</option>";
                     }
                   ?>
                 </select>
@@ -195,11 +210,87 @@ include_once ("inc/header.php");
                 <input type="number" min="1" value="1" name="qnt" id="qnt">
                 <br/>
                 <fieldset>
-                  <input type="submit" value="Favoritar" class="pdt-det-btn buy col-12 col-md-4"></input>
-                  <input type="submit" value="Adicionar" class="pdt-det-btn buy col-12 col-md-4"></input>
-                  <input type="submit" value="Finalizar" class="pdt-det-btn buy col-12 col-md-4"></input>
+                  <input type="submit" value="Favoritar" name="submit" class="pdt-det-btn buy col-12 col-md-4"></input>
+                  <input type="submit" value="Adicionar" name="submit" class="pdt-det-btn buy col-12 col-md-4"></input>
+                  <input type="submit" value="Finalizar" name="submit" class="pdt-det-btn buy col-12 col-md-4"></input>
                 </fieldset>
               </form>
+              <?php
+                // SE ALGUM DOS BOTÕES NA PÁGINA DE PRODUTO FOI CLICADO
+                if (isset($_POST['submit'])) {
+
+
+
+                  // E SE O VALUE DO SUBMIT FOR FAVORITAR
+                  if ($_POST['submit'] === 'Favoritar'){
+
+                      // E SE NÃO HOUVER COR NEM TAMANHO DEFINIDOS:
+                      if (empty($_POST['cores']) && empty($_POST['tamanhos'])){
+                        echo "<p class='faltaInfo alertando'>Adicionamos o item ".$nomeProduto." na sua lista de favoritos! =)</p>";
+
+                      // OU, SE SÓ TIVER COR SELECIONADA
+                      } elseif (isset($_POST['cores']) && empty($_POST['tamanhos'])){
+                        $corEscolhida = $_POST['cores'];
+                        echo "<p class='faltaInfo alertando'>Adicionamos o item ".$nomeProduto." (cor ".$corEscolhida.") na sua lista de favoritos! =)</p>";
+
+                      // OU, SE SÓ TIVER TAMANHO SELECIONADO
+                      } elseif (empty($_POST['cores']) && isset($_POST['tamanhos'])){
+                        $tamanhoEscolhido = $_POST['tamanhos'];
+                        //$corEscolhida = "";
+                        echo "<p class='faltaInfo alertando'>Adicionamos o item ".$nomeProduto." (tamanho ".$tamanhoEscolhido.") na sua lista de favoritos! =)</p>";
+
+                      // OU, SE TIVER COR E TAMANHO SELECIONADOS:
+                      }else /*if (isset($_POST['cores']) && isset($_POST['tamanhos']))*/{
+                        $corEscolhida = $_POST['cores'];
+                        $tamanhoEscolhido = $_POST['tamanhos'];
+                        echo "<p class='adicionado alertando'>Adicionamos o item ".$nomeProduto." (tamanho ".$tamanhoEscolhido." e cor ".$corEscolhida.") na sua lista de favoritos! =)</p>";}
+
+                    // E TAMBÉM - SE NÃO HOUVER USER ID
+                    if (empty($_POST['userID'])){
+                    echo "<br/><p class='alertando alerta'>Para atualizar seus favoritos é necessário fazer login.</p>";
+                    }
+
+
+                  // JÁ SE O VALUE DO SUBMIT FOR ADICIONAR    
+                  } elseif ($_POST['submit'] === 'Adicionar'){
+
+                    // SE NÃO HOUVER COR NEM TAMANHO DEFINIDOS:
+                    if (empty($_POST['cores']) && empty($_POST['tamanhos'])){
+                      echo "<p class='faltaInfo alertando'>Selecione uma cor e um tamanho para o seu ".$nomeProduto.", por favor  :P</p>";
+
+                    // OU, SE SÓ TIVER COR SELECIONADA
+                    } elseif (isset($_POST['cores']) && empty($_POST['tamanhos'])){
+                      $corEscolhida = $_POST['cores'];
+                      echo "<p class='faltaInfo alertando'>Qual tamanho do seu ".$nomeProduto." (cor ".$corEscolhida.") você deseja?</p>";
+                      return $corEscolhida;
+
+                    // SÓ TIVER TAMANHO SELECIONADO
+                    } elseif (empty($_POST['cores']) && isset($_POST['tamanhos'])){
+                      $tamanhoEscolhido = $_POST['tamanhos'];
+                      $corEscolhida = "";
+                      echo "<p class='faltaInfo alertando'>De que cor você quer o seu ".$nomeProduto." (tamanho:".$tamanhoEscolhido.")?</p>";
+
+                    // OU, SE TIVER COR E TAMANHO SELECIONADOS:
+                    }else /*if (isset($_POST['cores']) && isset($_POST['tamanhos']))*/{
+                      $corEscolhida = $_POST['cores'];
+                      $tamanhoEscolhido = $_POST['tamanhos'];
+                      $qntEscolhida = $_POST['qnt'];
+                      // MAS - SE NÃO HOUVER QUANTIDADE INSERIDA
+                      if (empty($_POST['qnt'])){
+                        echo "<br/><p class='alertando faltaInfo'> Quantos ".$nomeProduto." você deseja adicionar ao carrinho?</p>";
+                      // JÁ, SE HOUVER QUANTIDADE DEFINIDA (PADRÃO É 1)
+                      } else {
+                        echo "<p class='adicionado alertando'>Adicionamos ".$qntEscolhida." item(ns) ".$nomeProduto." (tamanho ".$tamanhoEscolhido." e cor ".$corEscolhida.") ao carrinho!</p>";
+                      }
+                    }
+
+
+                  // E SE O VALUE DO SUBMIT FOR FINALIZAR (DIRECIONA PARA CARRINHO)  
+                  } else /*if(isset($_POST['submit']) && ($_POST['submit'] === 'Finalizar'))*/{
+                    header("location: http://digitalgrupo.provisorio.ws/carrinho.php");exit;
+                  }
+                }
+              ?>
             </div>
             <div class="col-12 col-sm-6">
               <h4>Compartilhe esse produto!</h4>
@@ -248,35 +339,35 @@ include_once ("inc/header.php");
     <!-- ## VIRTINE DE PRODUTOS ## -->
     <section class="pdt-vitrine row">
       <!-- ### BANNER PROMOCIONAL HORIZONTAL (IGUAL AO DA VITRINE DE PRODUTOS) -->
-      <span class="cta-banner-horizontal"><a href="#"><strong><?php echo $bannerHorizontal ?></strong></a></span>
+      <span class="cta-banner-horizontal"><a href="http://digitalgrupo.provisorio.ws/produto.php"><strong><?php echo $bannerHorizontal ?></strong></a></span>
       <!-- ### AGRUPAMENTO DE 4 ARTICLES/CARDS DE PRODUTOS -->
       <h4 class="col-12">Produtos Relacionados</h4>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="#">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="#">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="#">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="#">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
         </div>
       </article>
     </section>

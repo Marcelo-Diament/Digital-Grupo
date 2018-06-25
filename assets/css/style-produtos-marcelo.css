@@ -687,11 +687,11 @@ section.pdt-det{
   line-height: initial;
 }
 .comprar form label{
-  width: 85px;
+  width: 34%;
   margin-right: 7px;
 }
 .comprar form input, .comprar form select{
-  width: 70px;
+  width: 60%;
 }
 .comprar input[type=number], .comprar select, .comprar select option {
   -webkit-transition: all 0.30s ease-in-out;
@@ -716,9 +716,10 @@ fieldset{
 }
 .comprar form input[type=submit]{
   float: left;
-  margin: 10px 2px 5px 2px;
-  padding: 3px;
-  min-width: 80px;
+  margin: 0;
+  padding: 5px 2px;
+  min-width: auto;
+  border: 1px #fbfbfb solid;
 }
 .pdt-det-btn{
     text-align: center;
@@ -855,6 +856,43 @@ div.social-share{
 
 #pdt-det-img:hover {opacity: 0.7;}
 
+      /* ### ALERTA CONFIRMANDO AÇÃO DE FAVORITAR E ADICIONAR AO CARRINHO */
+      .alertando{
+        padding: 20px;
+        margin: 0;
+        z-index: 99;
+        width: 100%;
+        max-width:100%;
+        min-width: 100%;
+        line-height: 2em;
+        font-weight: bold;
+      }
+
+      .faltaInfo, .alerta{
+        background-color: #ffebad !important;
+        border: 2px solid #ffd383 !important;
+        color: #000;
+      }
+
+      .adicionado{
+        background-color: #96e2a8 !important;
+        border: 2px solid #68b57a !important;
+        color: #fff;
+      }
+
+      .erro{
+        background-color: #eaa28e !important;
+        border: 2px solid #d46771 !important;
+        color: #fff;
+      }
+
+      .alertando a{
+        font-weight: bold;
+        text-decoration: none;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
 
 
 /* The Modal (background) */

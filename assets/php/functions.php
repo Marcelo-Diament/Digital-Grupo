@@ -13,12 +13,12 @@
 
 
 	    // ## INFORMAÇÕES GERAIS SOBRE O PRODUTO
-	    $nomeProduto = "Nome do Produto";
+	    $nomeProduto = "Produto XYZ";
 	    $descricaoProduto = "O produto é excelente, confira a seguir todos os detalhes!";
 	    $pdtMateriais = "Aço inox, fibra de carbono e fita crepe";
-	    $tamanhos = ['extrapequeno' => 'PP', 'pequeno'=>'P','medio'=>'M','grande'=>'G', 'extragrande' => 'GG'];
+	    $tamanhos = ['PP - Extrapequeno' => 'PP - Extrapequeno', 'P - Pequeno'=>'P - Pequeno','M - Médio'=>'M - Médio','G - Grande'=>'G - Grande', 'GG - Extragrande' =>'GG - Extragrande'];
 	    $tamanho = 'A grade de tamanhos de nossos produtos segue as normativas da ABNT e incluem os tamanhos P, M e G. Para confecção dos produtos sobmedida, entre em contato conosco.';
-	    $cores = ['azul' => 'Azul', 'branco' => 'Branco', 'cinza' => 'Cinza', 'dourado' => 'Dourado', 'esmeralda' => 'Esmeralda'];
+	    $cores = ['Azul' => 'Azul', 'Branco' => 'Branco', 'Cinza' => 'Cinza', 'Dourado' => 'Dourado', 'Esmeralda' => 'Esmeralda'];
 	    $cor = 'Trabalhamos com qualquer cor disponível no mercado. Se a cor não pertencer ao nosso catálogo padrão será acrescida uma taxa ao valor total do pedido.';
 
 

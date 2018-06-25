@@ -126,7 +126,7 @@ include_once ("inc/header.php");
       </article>
 
 
-      <span class="cta-banner-horizontal"><a href="#"><strong><?php echo $bannerHorizontal ?></strong></a></span>
+      <span class="cta-banner-horizontal"><a href="http://digitalgrupo.provisorio.ws/produto.php"><strong><?php echo $bannerHorizontal ?></strong></a></span>
 
 
       <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">

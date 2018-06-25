@@ -58,7 +58,7 @@ include_once ("inc/header.php");
             <li><a class="" href="#faqcat04">Encomendas Especiais <i class="fas fa-caret-right"></i></a></li>
           </ul>
           <h6>Ainda com dúvidas?<br/><a href="/contato.php" target="_blank">Entre em contato</a> e envie sua dúvida</h6>
-          <span class="cta-banner-horizontal mobileOnly"><a href="#"><strong><?php echo $bannerHorizontal ?></strong></a></span>
+          <span class="cta-banner-horizontal mobileOnly"><a href="http://digitalgrupo.provisorio.ws/produto.php"><strong><?php echo $bannerHorizontal ?></strong></a></span>
         </nav>
       </aside>
       <span class="espacadorMobile col-12"> </span>
@@ -129,28 +129,28 @@ include_once ("inc/header.php");
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="#">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="#">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="#">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="#">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
         </div>
       </article>
     </section>
