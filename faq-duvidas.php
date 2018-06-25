@@ -18,6 +18,7 @@
     <script src="assets/js/script.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title><?php echo $tituloFaq ?></title>
   </head>
@@ -49,16 +50,25 @@ include_once ("inc/header.php");
     <!-- ## COLUNA DO MENU DE CATEGORIAS E DO BANNER PROMOCIONAL ## -->
     <section class="faq row">
       <aside class="col-12 col-md-3 faqMenu">
-        <nav class="row">
-          <h4 id="menuFaqCat">Categorias FAQ<i class="fas fa-caret-down"></i></h4>
-          <ul class="col-12 faqCat">
-            <li><a class="" href="#faqcat01">Garantia <i class="fas fa-caret-left"></i></a></li>
-            <li><a class="" href="#faqcat02">Frete e Entrega <i class="fas fa-caret-right"></i></a></li>
-            <li><a class="" href="#faqcat03">Trocas e Devoluções <i class="fas fa-caret-right"></i></a></li>
-            <li><a class="" href="#faqcat04">Encomendas Especiais <i class="fas fa-caret-right"></i></a></li>
-          </ul>
-          <h6>Ainda com dúvidas?<br/><a href="/contato.php" target="_blank">Entre em contato</a> e envie sua dúvida</h6>
-          <span class="cta-banner-horizontal mobileOnly"><a href="http://digitalgrupo.provisorio.ws/produto.php"><strong><?php echo $bannerHorizontal ?></strong></a></span>
+        <nav class="row dropdown">
+          <input type="checkbox" id="toogleDropdown">
+          <label for="toogleDropdown" class="animate" id="menuFaqCat">Categorias FAQ<i class="fas fa-caret-down"></i></label>
+          <!--<div class="submenuFaq animate">-->
+            <ul class="col-12 faqCat animate">
+              <li><a class="animate dropli" href="#faqcat01">Garantia <i class="fas fa-caret-left"></i></a></li>
+              <li><a class="animate dropli" href="#faqcat02">Frete e Entrega <i class="fas fa-caret-right"></i></a></li>
+              <li><a class="animate dropli" href="#faqcat03">Trocas e Devoluções <i class="fas fa-caret-right"></i></a></li>
+              <li><a class="animate dropli" href="#faqcat04">Encomendas Especiais <i class="fas fa-caret-right"></i></a></li>
+            </ul>
+            <h6 class="animate">Ainda com dúvidas?<br/><a href="/contato.php" target="_blank">Entre em contato</a> e envie sua dúvida</h6>
+            <span class="animate cta-banner-horizontal mobileOnly"><a href="http://digitalgrupo.provisorio.ws/produto.php"><strong><?php echo $bannerHorizontal ?></strong></a></span>
+            <!-- SCRIPT PARA FECHAR O ACCORDION DO MENU DE CATEGORIAS QUANDO SE CLICA EM ALGUMA -->
+            <script>
+              $('a.dropli').click(function() {
+                $('input[type="checkbox"]').click();
+                  });;
+            </script>
+          <!--</div>-->
         </nav>
       </aside>
       <span class="espacadorMobile col-12"> </span>
