@@ -50,15 +50,15 @@ include_once ("inc/header.php");
     <section class="faq row">
       <aside class="col-12 col-md-3 faqMenu">
         <nav class="row">
-          <h4>Categorias FAQ<i class="fas fa-caret-down"></i></h4>
+          <h4 id="menuFaqCat">Categorias FAQ<i class="fas fa-caret-down"></i></h4>
           <ul class="col-12 faqCat">
-            <li><a href="#faqcat01">Garantia <i class="fas fa-caret-left"></i></a></li>
-            <li><a href="#faqcat02">Frete e Entrega <i class="fas fa-caret-right"></i></a></li>
-            <li><a href="#faqcat03">Trocas e Devoluções <i class="fas fa-caret-right"></i></a></li>
-            <li><a href="#faqcat04">Encomendas Especiais <i class="fas fa-caret-right"></i></a></li>
+            <li><a class="" href="#faqcat01">Garantia <i class="fas fa-caret-left"></i></a></li>
+            <li><a class="" href="#faqcat02">Frete e Entrega <i class="fas fa-caret-right"></i></a></li>
+            <li><a class="" href="#faqcat03">Trocas e Devoluções <i class="fas fa-caret-right"></i></a></li>
+            <li><a class="" href="#faqcat04">Encomendas Especiais <i class="fas fa-caret-right"></i></a></li>
           </ul>
           <h6>Ainda com dúvidas?<br/><a href="/contato.php" target="_blank">Entre em contato</a> e envie sua dúvida</h6>
-        <span class="cta-banner-horizontal mobileOnly"><a href="#"><strong><?php echo $bannerHorizontal ?></strong></a></span>
+          <span class="cta-banner-horizontal mobileOnly"><a href="#"><strong><?php echo $bannerHorizontal ?></strong></a></span>
         </nav>
       </aside>
       <span class="espacadorMobile col-12"> </span>
@@ -66,7 +66,8 @@ include_once ("inc/header.php");
       <section class="col-12 offset-md-3 col-md-9 faqListas">
         <div class="row">
           <small>Clique nas perguntas a seguir para visualizar a resposta</small>
-          <article class="faqLista" id="faqcat01">
+          <article class="faqLista" >
+            <div class="destino" id="faqcat01"></div>
             <h4>Garantia</h4>
             <button class="faqDuvida" id="faqpergunta0101">Por quanto tempo vale a garantia?</button>
             <div class="faqDuvidaEResposta">
@@ -85,7 +86,8 @@ include_once ("inc/header.php");
               <p class="faqResposta" id="faqresposta0104">Sim, basta clicar na opção 'Garantia Extendida' antes de finalizar a compra. Caso o produto tenha sido comprado a menos de 1 mês (30 dias corridos) será possível realizar a extensão da garantia. Para intervalos maiores de 30 dias já não será possível extender a garantia, pois não temos condições de certificar o bom estado e manutenção do produto.</p>
             </div>
           </article>
-          <article class="faqLista" id="faqcat02">
+          <article class="faqLista" >
+            <div class="destino" id="faqcat02"></div>
             <h4>Frete e Entrega</h4>
             <button class="faqDuvida" id="faqpergunta0201">Em quanto tempo chegará meu pedido?</button>
             <div class="faqDuvidaEResposta">
@@ -96,14 +98,16 @@ include_once ("inc/header.php");
               <p class="faqResposta" id="faqresposta0202">A estimativa de entrega é considerada com base nos cálculos do Correios, seu CEP e o CEP de remetente (matriz ou filial mais próxima da nossa marca). Também incluímos 2 dias de margem para logística, empacotamento, trâmites burocráticos e envio. Mas lembre-se: esse prazo é apenas uma previsão, podem ocorrer imprevistos. Caso ocorra algum imprevisto, você poderá acompanhar o status do envio de seu pedido através do próprio site do Correios. Em caso de dúvidas, pode ligar para nosso serviço de atendimento ao consumidor tabmém (SAC - 0800 987 6543).</p>
             </div>
           </article>
-          <article class="faqLista" id="faqcat03">
+          <article class="faqLista" >
+            <div class="destino" id="faqcat03"></div>
             <h4>Trocas e Devoluções</h4>
             <button class="faqDuvida" id="faqpergunta0301">Por que é necessário fazer tal coisa antes de usar o produto?</button>
             <div class="faqDuvidaEResposta">
               <p class="faqResposta" id="faqresposta0301">A garantia é válida em todo o território nacional e seu termo é de 1 ano (12 meses) após a data da aquisição do produto (ou seja, da data em que foi comprado). A garantia cobre problemas de caráter técnico e falhas de programação, porém não inclui danos causdos por mal uso ou acidentes. Para saber mais sobre os planos de seguros que oferecemos para nossos produtos consulte a categoria FAQ para Seguros.</p>
             </div>
           </article>
-          <article class="faqLista" id="faqcat04">
+          <article class="faqLista" >
+            <div class="destino" id="faqcat04"></div>
             <h4>Encomendas Especiais</h4>
             <button class="faqDuvida" id="faqpergunta0401">Como faço para solicitar um produto customizado? Vendem em grande quantidade/atacado?</button>
             <div class="faqDuvidaEResposta">
@@ -150,7 +154,7 @@ include_once ("inc/header.php");
         </div>
       </article>
     </section>
-    <!-- SCRIPT ACCORDION JS COPIADO DA PÁGINA FAQ ANTERIOR, FOI FEITO NO COLEARNING -->
+    <!-- SCRIPT ACCORDION JS COPIADO DA PÁGINA FAQ ANTERIOR MAS ADAPTADO, FOI FEITO NO COLEARNING -->
     <script>
     var acc = document.getElementsByClassName("faqDuvida");
     var i;
@@ -186,7 +190,7 @@ include_once ("inc/header.php");
         }
     });
     }
-  </script>
+    </script>
 </main>
 <?php
 include ("inc/footer.php");
