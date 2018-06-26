@@ -8,6 +8,8 @@
 	    $subtitulo = "Produtos pertencentes à ".$titulo;
 	    $tituloFaq = "FAQ";
 	    $subtituloFaq = "Se não encontrar o que busca, entre em contato com a gente!";
+	    $tituloHome = "Digital Grupo | eCommerce Template";
+	    $subtituloHome = "Descrição da Homepage";
 
     // # PRODUTOS
 

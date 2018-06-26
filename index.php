@@ -1,53 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,width=device-width,user-scalable=no">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style-produtos-marcelo.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <?php include_once("assets/php/functions.php") ?>
+    <meta name="title" content="<?php echo $tituloHome ?>">
+    <meta name="author" content="Digital Grupo">
+    <meta name="decription" content="Template de ecommerce desenvolvido com fins didáticos, parte do projeto integrador do curso de Full Stack da Digital House Brasil">
+    <meta name="keywords" content="html, css, php, js, digital house, digital grupo, projeto integrador">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://br.digitalhouse.com/wp-content/themes/dh/assets/img/icons/favicon-96x96.png">
+    <meta name="theme-color" content="#4285f4">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <script src="assets/js/script.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title><?php echo $tituloHome ?></title>
+  </head>
+<body>
+<!-- HEADER -->
 <?php
-include ("inc/head.php");
-include ("inc/header.php");
+include_once ("inc/header.php");
 ?>
-  <div class="menu-2 col-lg-12">
-    <ul>
-      <li><a href="#">Lançamentos</a></li>
-      <li><a href="#">Promoções</a></li>
-      <li><a href="#">Categoria #1</a></li>
-      <li><a href="#">Categoria #2</a></li>
-      <li><a href="#">Categoria #3</a></li>
-      <li><a href="#">Categoria #4</a></li>
-    </ul>
-  </div>
-  <main>
-    <div class="container-fluid">
-      <div class="div_banner col-lg-12">
-        <h2>Título do Banner</h2>
-          <p>Subtitulo do Banner até 2 linhas!</p>
-          <p id="link_banner"><a class="vermais1">Ver Mais</a></p>
-      </div>
-      <div class="destaque col-lg-12">
-        <h3>Nome do Produto</h3>
-        <p>12x de R$ 499.99 sem juros</p>
-        <p id="link_destaque"><a href="#">Ver mais</a><p>
-      </div>
-      <section class="div_produtos row">
-         <article class="produto1 col-sm-5">
-           <h3>Nome do Produto</h3>
-           <p><b>12x </b>$499,99 <b>sem juros</b></p>
-           <p><a class="vermais alinhar">Ver Mais</a></p>
-         </article>
-         <article class="produto2 col-sm-5">
-           <h3>Nome do Produto</h3>
-           <p><b>12x </b>$499,99 <b>sem juros</b></p>
-           <p><a class="vermais">Ver Mais</a></p>
-         </article>
-         <article class="produto3 col-sm-5">
-           <h3>Nome do Produto</h3>
-           <p><b>12x </b>$499,99 <b>sem juros</b></p>
-           <p><a class="vermais">Ver Mais</a></p>
-         </article>
-         <article class="produto4 col-sm-5">
-           <h3>Nome do Produto</h3>
-           <p><b>12x </b>$499,99 <b>sem juros</b></p>
-           <p><a class="vermais">Ver Mais</a></p>
-         </article>
-       </section>
-     </div>
-   </main>
+  <!-- # CONTÂINER DO CONTEÚDO PRINCIPAL # -->
+  <main class="container-fluid">
+
+    <section class="row">
+      <article class="col-12" id="bannerHome">
+        <h2>Banner Homepage</h2>
+        <h4>Conheça o produto ABCDEF!</h4>
+        <button class="home-btn"><a href="produto.php">Ver Mais</a></button>
+      </article>
+    </section>
+
+    <!-- ## VIRTINE DE PRODUTOS ## -->
+    <section class="pdt-vitrine row">
+
+      <!-- ### AGRUPAMENTO DE 8 ARTICLES/CARDS DE PRODUTOS -->
+      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
+      </article>
+      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
+      </article>
+      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
+      </article>
+      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
+      </article>
+      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
+      </article>
+      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
+      </article>
+      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
+      </article>
+      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
+      </article>
+      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
+      </article>
+      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
+      </article>
+      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
+      </article>
+      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div>
+          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
+          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
+          <button class="pdt-card-btn"><a href="produto.php">Ver Mais</a></button>
+        </div>
+      </article>
+    </section>
+  </main>
 <?php
 include ("inc/footer.php");
  ?>
