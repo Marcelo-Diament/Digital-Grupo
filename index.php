@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="pt-br" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,width=device-width,user-scalable=no">
@@ -26,7 +26,7 @@ include_once ("inc/header.php");
 ?>
   <!-- # CONTÂINER DO CONTEÚDO PRINCIPAL # -->
   <main class="container-fluid">
-
+    <!-- ## BANNER -->
     <section class="row">
       <article class="col-12" id="bannerHome">
         <h2>Banner Homepage</h2>
@@ -34,7 +34,29 @@ include_once ("inc/header.php");
         <button class="home-btn"><a href="produto.php">Ver Mais</a></button>
       </article>
     </section>
-
+    <!-- ## DESTAQUES -->
+    <section class="row">
+      <article class="col-12 destHome">
+        <div class="col-4">
+          <a href="produtos.php">
+            <i class="fas fa-shipping-fast"></i>
+            <h5 class="">Atendemos todo Brasil</h5>
+          </a>
+        </div>
+        <div class="col-4">
+          <a href="produtos.php">
+            <i class="far fa-credit-card"></i>
+            <h5 class="">12x sem juros</h5>
+          </a>
+        </div>
+        <div class="col-4">
+          <a href="contato.php">
+            <i class="fas fa-paint-brush"></i>
+            <h5 class="">Sob Medida</h5>
+          </a>
+        </div>
+      </article>
+    </section>
     <!-- ## VIRTINE DE PRODUTOS ## -->
     <section class="pdt-vitrine row">
 
