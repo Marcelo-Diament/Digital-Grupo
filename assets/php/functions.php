@@ -2,6 +2,12 @@
 
 	// # GERAL
 
+		// ## LINKS E CONTATOS
+		$instaUser = "@digitalgrupo";
+		$instaUrl = "https://instagram.com/digitalgrupo";
+		$telefoneFixo = "(11) 2345 6789";
+		$telefoneCelular = "(11) 98765 4321";
+		$emailContato = "contato@djament.com.br";
 		// ## INFORMAÇÕES SOBRE A PÁGINA (PARA O TOPO DA PÁGINA, TÍTULO, SUBTÍTULO E BREAD CRUMB)
 
 	    $titulo = "Categoria 01";
@@ -10,6 +16,8 @@
 	    $subtituloFaq = "Se não encontrar o que busca, entre em contato com a gente!";
 	    $tituloHome = "Digital Grupo | eCommerce Template";
 	    $subtituloHome = "Descrição da Homepage";
+	    $tituloContato = "Contato";
+	    $subtituloContato = "Envie sua mensagem, teremos prazer em te ajudar!";
 
     // # PRODUTOS
 

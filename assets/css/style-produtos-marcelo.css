@@ -1368,6 +1368,187 @@ nav.row{
         }
       }
 
+/* # CONTATO */
+
+.contato{
+  margin-top: 40px !important;
+}
+  /* ## FORMULÁRIO DE CONTATO */
+  
+  .formContato{
+    width: 100%;
+    margin: 30px 0;
+  }
+
+  .formContato label{
+    width: 100%;
+  }
+  .formContato input, .formContato textarea{
+    width: 100%;
+    margin-bottom: 20px;
+    outline: none;
+  }
+
+  .formContato input:focus, .formContato textarea:focus, .formContato input:active, .formContato textarea:active{
+    background-color: #fbfbfb;
+    color: #000;
+    font-weight: bold;
+    outline: none;
+  }
+  .formContato input[type=radio]{
+    width: 50px;
+    display: inline-block;
+  }
+  .formContato input[type=radio]:checked + label{
+    font-weight: bold;
+    color: #000;
+  }
+  .formContato .radio{
+    display: flex;
+    float: right;
+    line-height: 1em;
+    -webkit-flex-direction: ltr;
+    -moz-flex-direction: ltr;
+    -ms-flex-direction: ltr;
+    -o-flex-direction: ltr;
+    flex-direction: ltr;
+  }
+  .formContato input[type=submit]{
+    float: right;
+  }
+
+  @media only screen and (min-width: 618px){
+    .formContato input, .formContato textarea{
+      width: 80%;
+    }
+  }
+
+  /* ## DADOS DE CONTATO */
+  .dadosContato{
+    margin: 0;
+    color: grey;
+  }
+  .dadosContato ul li{
+    text-align: center;
+  }
+  .dadosContato h4, .formContato h4{
+    font-weight: bold;
+  }
+  .dadosContato h4, .dadosContato p, .formContato h4, .formContato p{
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  .dadosContato ul li:last-child{
+    padding-left: 15px;
+  }
+  @media only screen and (min-width: 618px){
+      .dadosContato{
+        margin: 0;
+      }
+      .dadosContato ul{
+        margin-top: 25px;
+      }
+      .dadosContato ul li{
+      text-align: left;
+    }
+    .dadosContato ul h4, .dadosContato ul p, .formContato h4, .formContato p{
+      text-align: left;
+    }
+  }
+  .dadosContato ul{
+    list-style: none;
+    line-height: 1.8em;
+  }
+  .dadosContato a:hover, .dadosContato a i:hover{
+    text-decoration: none;
+    color: lightgrey;
+  }
+  /* ## CARD INSTAGRAM */
+
+  .insta-card{
+    margin-top: 10px;
+    padding: 13px;
+    height: 333px;
+  }
+  .insta-card > div{
+    padding: 10px;
+    background-image: url(../images/insta-card.gif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #22c5c5;
+    color: #fff;
+    height: 100%;
+    position: relative;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .insta-card > div:hover{
+    transform: scale(1.1);
+    z-index: 99;
+  }
+  .insta-card-title{
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+  }
+  .insta-card-subtitle{
+    cursor: pointer;
+    -webkit-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+  }
+  .insta-card-title:hover{
+    font-weight: bolder;
+    font-size: 2.15em;
+  }
+  .insta-card-subtitle:hover{
+    font-weight: bolder;
+    font-size: 1.15em;
+  }
+  .insta-card-btn{
+    text-align: center;
+    color: #fff;
+    background-color: rgba(255,255,255,0);
+    border: 1px solid white;
+    padding: 5px;
+    position: absolute;
+      bottom: 10px;
+      right: 10px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .insta-card-btn:hover > a{
+    color: #000;
+  }
+  .insta-card-btn:hover{
+    background-color: rgba(255,255,255,1);
+  }
+  .insta-card-btn a{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(255,255,255,0);
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .insta-card-btn a:hover{
+    text-decoration: none;
+  }
+
+  /* ## MAPA GOOGLE EMBED/INCORPORADO */
+  
+
+  .mapa{
+    margin: 40px 0 0 0;
+    width: 100%;
+  }
 
 /* # ADMIN (ACESSO RESTRITO) */
 
@@ -1397,3 +1578,4 @@ header::after{
   display: table;
   content: "";
 }
+
