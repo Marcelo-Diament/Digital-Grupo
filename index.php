@@ -59,7 +59,7 @@ include_once ("inc/header.php");
     </section>
     <!-- ## VIRTINE DE PRODUTOS ## -->
     <section class="pdt-vitrine row">
-
+      <h4 class="col-12">Produtos em Destaque</h4>
       <!-- ### AGRUPAMENTO DE 8 ARTICLES/CARDS DE PRODUTOS -->
       <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
         <div>

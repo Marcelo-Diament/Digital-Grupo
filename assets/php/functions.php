@@ -3,13 +3,14 @@
 	// # GERAL
 
 		// ## LINKS E CONTATOS
+		$nomeNegocio = "Digital Grupo";
+		$siteNegocio = "www.digitalgrupo.provisorio.ws";
 		$instaUser = "@digitalgrupo";
 		$instaUrl = "https://instagram.com/digitalgrupo";
 		$telefoneFixo = "(11) 2345 6789";
 		$telefoneCelular = "(11) 98765 4321";
 		$emailContato = "contato@djament.com.br";
-		// ## INFORMAÇÕES SOBRE A PÁGINA (PARA O TOPO DA PÁGINA, TÍTULO, SUBTÍTULO E BREAD CRUMB)
-
+		// ## INFORMAÇÕES SOBRE AS PÁGINAS (PARA O TOPO DAS PÁGINAS, TÍTULOS, SUBTÍTULOS E BREAD CRUMBS)
 	    $titulo = "Categoria 01";
 	    $subtitulo = "Produtos pertencentes à ".$titulo;
 	    $tituloFaq = "FAQ";
@@ -18,6 +19,10 @@
 	    $subtituloHome = "Descrição da Homepage";
 	    $tituloContato = "Contato";
 	    $subtituloContato = "Envie sua mensagem, teremos prazer em te ajudar!";
+	    $tituloSobre = "Sobre a ".$nomeNegocio;
+	    $subtituloSobre = "Conheça melhor o nosso negócio, faça parte dessa história";
+	    $tituloPoliticas = "Políticas e Termos";
+	    $subtituloPoliticas = "Confira aqui as regras e políticas de nossa marca. Em caso de dúvidas, entre em contato!";
 
     // # PRODUTOS
 

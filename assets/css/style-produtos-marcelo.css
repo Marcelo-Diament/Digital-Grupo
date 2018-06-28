@@ -915,6 +915,9 @@ div.social-share{
   display: inline-block;
   padding: 5px;
 }
+.social-share ul{
+  list-style: none;
+}
 .social-share ul li a{
   position: relative !important;
   line-height: 3em;
@@ -1541,6 +1544,23 @@ nav.row{
   .insta-card-btn a:hover{
     text-decoration: none;
   }
+
+/* # SOBRE */
+
+p.cta-visita a{
+  text-decoration: none;
+  color: grey;
+  font-weight: bold;
+  position: inherit !important;
+  font-size: inherit !important;
+  margin: inherit !important;
+  padding: inherit !important;
+}
+p.cta-visita a:hover{
+  color: #000;
+  font-weight: bolder;
+  text-decoration: none;
+}
 
   /* ## MAPA GOOGLE EMBED/INCORPORADO */
   
