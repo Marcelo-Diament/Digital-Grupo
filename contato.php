@@ -134,15 +134,15 @@ include_once ("inc/header.php");
           <br/> 
             <h6>Como prefere que a gente entre em contato? (opcional)</h6><br/>
             <div class="row">
-              <div class="col-2 radio">
+              <div class="col-3 col-md-2 radio">
                 <input type="radio" name="formcontato" id="formcontato-tel" value="Telefone" class="col-2">
                 <label for="formcontato-tel">Telefone</label>
               </div>
-              <div class="col-2 radio">
+              <div class="col-3 col-md-2 radio">
                 <input type="radio" name="formcontato" id="formcontato-email" value="email" class="col-2">
                 <label for="formcontato-email">email</label>
               </div>
-              <div class="col-2 radio">
+              <div class="col-3 col-md-2 radio">
                 <input type="radio" name="formcontato" id="formcontato-whatsapp" value="Whatsapp" class="col-2">
                 <label for="formcontato-whatsapp">Whatsapp</label>
               </div>
