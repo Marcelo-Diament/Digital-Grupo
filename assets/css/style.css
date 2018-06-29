@@ -8,10 +8,13 @@
   padding-right: 0 !important;
   margin-top: 0;
 }
+
+/* HEADER */
+
 header{
   height: 68px;
   width: 100%;
-  background-color: grey;
+  background-color: black;
   position: fixed;
   z-index: 999;
 }
@@ -22,13 +25,12 @@ header::after{
   content: "";
 }
 
-header .div_header .barra_de_pesquisa{
+.fa-shopping-cart{
   display: none;
 }
 
-header .img_logo{
-  width: 55px;
-  float: left;
+header .div_header .barra_de_pesquisa{
+  display: none;
 }
 
 header .div_header{
@@ -37,8 +39,12 @@ header .div_header{
   padding: 10px;
 }
 
-header .div_header a{
-  display: none;
+header .div_header .logo{
+  display: inline-block;
+  color: white;
+  font-size: 35px;
+  text-align: center;
+  text-decoration: none;
 }
 
 header i{
@@ -46,14 +52,12 @@ header i{
   font-size: 40px;
 }
 
-header .div_header .img_cart{
-display: none;
-}
-
-.menu-2{
+header .div_header .fa-shopping-cart, .menu-2, .header-links{
   display: none;
 }
 
+
+/* BANNER */
 
 .div_banner{
   background-image: url("../images/produto-banner-01.jpg");
@@ -90,6 +94,8 @@ display: none;
   border: 2px solid white;
   padding: 5px;
 }
+
+/* PRODUTO DE DESTAQUE */
 
 .destaque{
   background-image: url(../images/produto-destaque-01.jpg);
@@ -457,17 +463,38 @@ aside{
 /* Página de Cadastro */
 
 .register{
- padding-top: 100px;
+ padding-top: 90px;
 }
 
-.teste{
+.register-buttons{
   display: block;
+  text-align: center;
+}
+
+.register-buttons input{
   font-weight: bold;
   height: 35px;
+  border: 1px solid black;
+  padding: 0 2px;
+}
+
+.register span{
+  display: block;
   margin: auto;
 }
 
+.register span a{
+  font-weight: bold;
+  border: 1px solid black;
+  background-color: buttonface;
+  color: black;
+  padding: 3px;
+}
 
+.register a:hover{
+  color: black;
+  text-decoration: none;
+}
 
 @media (min-width: 776px){
 
@@ -523,11 +550,11 @@ header .div_header i{
   display: none;
 }
 
-header .div_header .img_cart{
+header .div_header .fa-shopping-cart{
   display: block;
   float: right;
-  width: 40px;
-  height: 40px;
+  font-size: 40px;
+  color: white;
 }
 
 header .div_header a{
@@ -535,9 +562,11 @@ header .div_header a{
   color: white;
   font-size: 25px;
   text-align: center;
+  text-decoration: none;
 }
 
 header .div_header .header-links{
+  display: inline-block;
   float: right;
   position: relative;
   right: 40px;
@@ -549,29 +578,36 @@ header .div_header .header-links .header_login{
 }
 
 header .div_header .barra_de_pesquisa{
-  display: block;
+  display: inline-block;
   float: right;
-  margin-right: 350px;
-  margin-top: 8px!important;
-}
-
-header .div_header .barra_de_pesquisa input ,header .div_header .barra_de_pesquisa button{
-  border-radius: 0;
-  border: 3px solid white;
+  position: relative;
+  top: 10px;
+  right: 275px;
 }
 
 header .div_header .barra_de_pesquisa input{
-  background-color: grey;
+  border-radius: 0;
+  border: 1px solid white;
+  padding: 5px;
+
+}
+
+header .div_header .barra_de_pesquisa .botao-pesquisa{
+  background-color: white;
   color: white;
   margin:0;
 }
 
-header .div_header .barra_de_pesquisa button{
-  background-image: url("../images/lupa.jpg");
-  padding: 18px;
-  background-size: 38px;
-  background-repeat: no-repeat;
-  margin-right: 8px!important;
+header .div_header .barra_de_pesquisa .espaco-pesquisa{
+  background-color: black;
+  color: white;
+  width: 160px;
+  height: 30px;
+}
+
+header .div_header .barra_de_pesquisa .fa-search{
+  color: black;
+  font-size: 18px;
 }
 
 header .div_header .barra_de_pesquisa input::placeholder{
@@ -620,4 +656,9 @@ margin: 0 15px;
 .menu-2 ul a:hover{
   text-decoration: none;
 }
+}
+
+footer a:hover{
+  color: white;
+  text-decoration: none;
 }

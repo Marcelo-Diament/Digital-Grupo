@@ -8,13 +8,13 @@
   padding-right: 0 !important;
   margin-top: 0;
 }
-header{
+/* header{
   height: 12vh;
   width: 100%;
   background-color: grey;
   position: fixed;
   z-index: 999;
-}
+} */
 
 header::after{
   clear: both;
@@ -43,9 +43,9 @@ header i{
   font-size: 40px;
 }
 
-main{
-  margin-top: 8vh;
-}
+/* main{
+  padding-top: 8vh;
+} */
 
 .div_banner{
   background-image: url("../images/produto-banner-01.jpg");
@@ -561,7 +561,7 @@ html, body{
 
 /* # PRODUTOS - VITRINE */
 main.container-fluid{
-  margin-top: 8vh;
+  padding-top: 68px;
 }
 
 h1, h2, h3, h4, h5, h6, p, small, b, strong{
@@ -791,7 +791,7 @@ section.pdt-det{
   margin: 5px 1px 3px 0px;
   border: 1px solid lightgrey;
 }
- 
+
 .comprar input[type=number]:focus, .comprar select option:focus {
   box-shadow: 0 0 5px grey;
   padding: 3px 0px 3px 3px;
@@ -1040,13 +1040,13 @@ div.social-share{
 }
 
 /* Add Animation - Zoom in the Modal */
-.modal-content, #caption { 
+.modal-content, #caption {
     animation-name: zoom;
     animation-duration: 0.9s;
 }
 
 @keyframes zoom {
-    from {transform:scale(0)} 
+    from {transform:scale(0)}
     to {transform:scale(1)}
 }
 
@@ -1142,7 +1142,7 @@ nav.row{
     -moz-transition: all .3s;
     -ms-transition: all .3s;
     -ms-transition: all .3s;
-    transition: all .3s;  
+    transition: all .3s;
     backface-visibility:hidden;
     -webkit-backface-visibility:hidden; /* Chrome and Safari */
     -moz-backface-visibility:hidden; /* Firefox */
@@ -1178,7 +1178,7 @@ nav.row{
       padding-left: 12px;
     }
 
-    
+
     .faq .faqMenu{
       line-height: 2em;
       position: sticky;
@@ -1230,7 +1230,7 @@ nav.row{
       height: 120px;
       min-height: 120px;
     }
-    
+
 
     .submenuFaq{
       display: none;
@@ -1263,14 +1263,14 @@ nav.row{
       display: none;
     }
   }
-    
+
   /* CONTEÚDO - LISTAS DE PERGUNTAS DE RESPOSTAS */
   .faqListas{
     text-align: justify;
     padding-left: 20px 35px;
   }
   .faqPerguntas{
-    
+
   }
 
     /* ### LISTA DE PERGUNTAS E RESPOSTAS (CATEGORIA) */
@@ -1338,7 +1338,7 @@ nav.row{
         color: #000;
         display: none;
       }
-      
+
       /* ### BANNER ASIDE */
       .cta-banner-horizontal.mobileOnly{
         display: block;
@@ -1377,7 +1377,7 @@ nav.row{
   margin-top: 40px !important;
 }
   /* ## FORMULÁRIO DE CONTATO */
-  
+
   .formContato{
     width: 100%;
     margin: 30px 0;
@@ -1563,7 +1563,7 @@ p.cta-visita a:hover{
 }
 
   /* ## MAPA GOOGLE EMBED/INCORPORADO */
-  
+
 
   .mapa{
     margin: 40px 0 0 0;
@@ -1598,4 +1598,3 @@ header::after{
   display: table;
   content: "";
 }
-
