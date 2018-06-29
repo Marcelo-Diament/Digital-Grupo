@@ -1,6 +1,12 @@
 <!DOCTYPE html prefix="og: http://ogp.me/ns#">
 <html lang="pt-br" dir="ltr">
   <head>
+    <!-- SCRIPTS E INCLUDES -->
+    <?php include_once("assets/php/functions.php") ?>
+    <script src="assets/js/script.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <!-- DADOS ESTRUTURADOS - SCHEMA.ORG -->
     <script type="application/ld+json">
       {
@@ -41,18 +47,12 @@
     <link rel="icon" type="image/png" sizes="96x96" href="https://br.digitalhouse.com/wp-content/themes/dh/assets/img/icons/favicon-96x96.png">
     <meta name="theme-color" content="#4285f4">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-    <!-- SCRIPTS E INCLUDES -->
-    <?php include_once("assets/php/functions.php") ?>
-    <script src="assets/js/script.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <!-- META DATA (SEO) / OG -->
-    <meta name="title" content="<?php echo $tituloContato ?>">
+    <meta name="title" content="<?php echo $metaTitleContato ?>">
     <meta name="author" content="<?php echo $autores ?>">
-    <meta name="decription" content="Template de ecommerce desenvolvido com fins didáticos, parte do projeto integrador do curso de Full Stack da Digital House Brasil">
-    <meta name="keywords" content="html, css, php, js, digital house, digital grupo, projeto integrador">
-    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="<?php echo $metaDescContato ?>">
+    <meta name="keywords" content="<?php echo $metaKeyWordsContato ?>">
+    <meta name="robots" content="index,follow">
     <meta property="og:site_name" content="<?php echo $metaOgSiteName ?>" />
     <meta property="og:title" content="<?php echo $metaOgTitleContato ?>" />
     <meta property="og:description" content="<?php echo $metaOgDescContato ?>" />
@@ -79,7 +79,7 @@ include_once ("inc/header.php");
         <h4><?php echo $subtituloContato ?></h4>
       </article>
       <p>
-        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a hreflang='pt-br' alt='Clique para acessar a homepage' href="<?php echo $siteNegocio ?>" itemprop="url"><span itemprop="title">Home</span></a> › </span>
+        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a title="Home" name="home" hreflang='pt-br' alt='Clique para acessar a homepage' href="<?php echo $siteNegocio ?>" itemprop="url"><span itemprop="title">Home</span></a> › </span>
         <?php echo $tituloContato ?>
       </p>
     </section>
@@ -200,17 +200,17 @@ include_once ("inc/header.php");
           <h4 class="col-12">Dados de Contato</h4>
           <p class="col-12">Se preferir, entre em contato diretamente conosco, será um prazer te ajudar!</p>
           <br/>
-          <li><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="tel:<?php echo $telefoneFixo ?>"><i class="fas fa-phone-volume"></i> <?php echo $telefoneFixo ?></a></li>
-          <li><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="tel:+55 <?php echo $telefoneCelular ?>" target="_blank"><i class="fab fa-whatsapp"></i> <?php echo $telefoneCelular ?></a></li>
-          <li><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="<?php echo "mailto:".$emailContato."?Subject=Contato via template eCommerce Digital Grupo&Body=Tenho interesse em adquirir um eCommerce com o Digital Grupo"; ?>" target="_blank"><i class="fas fa-envelope"></i> <?php echo $emailContato ?></a></li>
-          <li><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="https://goo.gl/maps/BNMCvVriyyt" target="_blank"><i class="fas fa-map-marker-alt"></i> Rua Cardoso de Melo, nº 90</a></li>
-          <li><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="https://goo.gl/maps/BNMCvVriyyt" target="_blank">Vila Olímpia | São Paulo/SP</a></li>
+          <li><a title="Ligar" name="tel" hreflang='pt-br' alt='Ligar' target="_blank" rel="noopener" href="tel:<?php echo $telefoneFixo ?>"><i class="fas fa-phone-volume"></i> <?php echo $telefoneFixo ?></a></li>
+          <li><a title="Ligar ou enviar Whatsapp" name="whats" hreflang='pt-br' alt='Ligar ou enviar Whatsapp' href="tel:+55 <?php echo $telefoneCelular ?>"  target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <?php echo $telefoneCelular ?></a></li>
+          <li><a title="Enviar email" name="mailto" hreflang='pt-br' alt='Enviar email' href="<?php echo "mailto:".$emailContato."?Subject=Contato via template eCommerce Digital Grupo&Body=Tenho interesse em adquirir um eCommerce com o Digital Grupo"; ?>"  target="_blank" rel="noopener"><i class="fas fa-envelope"></i> <?php echo $emailContato ?></a></li>
+          <li><a title="Acessar mapa no Google" name="map" hreflang='pt-br' alt='Acessar mapa no Google' href="https://goo.gl/maps/BNMCvVriyyt"  target="_blank" rel="noopener"><i class="fas fa-map-marker-alt"></i> Rua Cardoso de Melo, nº 90</a></li>
+          <li><a title="Acessar mapa no Google" name="map" hreflang='pt-br' alt='Acessar mapa no Google' href="https://goo.gl/maps/BNMCvVriyyt"  target="_blank" rel="noopener">Vila Olímpia | São Paulo/SP</a></li>
           <div class="social-share col-12">
                 <ul class="row">
-                  <li class="col-3"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="http://www.facebook.com/digitalgrupo" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-                  <li class="col-3"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="https://pinterest.com/digitalgrupo"><i class="fab fa-pinterest-square"></i></a></li>
-                  <li class="col-3"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="https://plus.google.com/digitalgrupo" target="_blank"><i class="fab fa-google-plus"></i></a></li>
-                  <li class="col-3"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="https://instagram.com/digitalgrupo"><i class="fab fa-instagram"></i></a></li>
+                  <li class="col-3"><a title="Acesse nosso perfil no Facebook" name="socialFacebook" hreflang='pt-br' alt='Acesse nosso perfil no Facebook' href="<?php echo $fanpageUrl ?>" target="_blank" rel="noopener"><i class="fab fa-facebook-square"></i></a></li>
+                  <li class="col-3"><a title="Acesse nosso perfil no Pinterest" name="socialPinterest" hreflang='pt-br' alt='Acesse nosso perfil no Pinterest' href="<?php echo $pinterestUrl ?>"><i class="fab fa-pinterest-square"></i></a></li>
+                  <li class="col-3"><a title="Acesse nosso perfil no Google Plus" name="socialGoogle Plus" hreflang='pt-br' alt='Acesse nosso perfil no Google Plus' href="<?php echo $googlePlusUrl ?>" target="_blank" rel="noopener"><i class="fab fa-google-plus"></i></a></li>
+                  <li class="col-3"><a title="Acesse nosso perfil no Instagram" name="socialInstagram" hreflang='pt-br' alt='Acesse nosso perfil no Instagram' href="<?php echo $instaUrl ?>" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
                 </ul>
               </div>
         </ul>
@@ -218,12 +218,12 @@ include_once ("inc/header.php");
           <div>
             <div class="insta-card-subtitle">acesse nosso insta</div>
             <h3 class="insta-card-title"><strong><?php echo $instaUser ?></strong></h3>
-            <button class="insta-card-btn"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="<?php echo $instaUrl ?>" target="_blank">Visitar</a></button>
+            <button class="insta-card-btn"><a title="Acesse nosso perfil no Instagram" name="socialInstagram" hreflang='pt-br' alt='Acesse nosso perfil no Instagram' href="<?php echo $instaUrl ?>" target="_blank" rel="noopener">Visitar</a></button>
           </div>
         </article>
       </article>
       <article class="col-12 mapa">
-        <iframe class="col-12" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.043674454273!2d-46.677478784820366!3d-23.602766569008146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce50ab7feb4519%3A0x739f0ddb0439cf94!2sDigital+House+S%C3%A3o+Paulo!5e0!3m2!1spt-BR!2sbr!4v1530138523816" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <iframe title="Mapa do Google Maps" name="googleMaps" alt="Mapa do Google Maps" class="col-12" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.043674454273!2d-46.677478784820366!3d-23.602766569008146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce50ab7feb4519%3A0x739f0ddb0439cf94!2sDigital+House+S%C3%A3o+Paulo!5e0!3m2!1spt-BR!2sbr!4v1530138523816" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
       </article>
     </section>
 
@@ -231,7 +231,7 @@ include_once ("inc/header.php");
     <section class="pdt-vitrine row">
 
       <!-- ### BANNER PROMOCIONAL HORIZONTAL (IGUAL AO DA VITRINE DE PRODUTOS) -->
-      <span class="cta-banner-horizontal desktopOnly"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="#"><strong><?php echo $bannerHorizontal ?></strong></a></span>
+      <span class="cta-banner-horizontal desktopOnly"><a title="Clique e saiba mais!" alt="Clique para ver os detalhes desse produto" name="bannerPdt" href="http://digitalgrupo.provisorio.ws/produto.php" hreflang="pt-br"><strong><?php echo $bannerHorizontal ?></strong></a></span>
 
       <!-- ### AGRUPAMENTO DE 4 ARTICLES/CARDS DE PRODUTOS -->
       <h4 class="col-12">Produtos em Destaque</h4>
@@ -239,28 +239,28 @@ include_once ("inc/header.php");
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
       </article>
     </section>

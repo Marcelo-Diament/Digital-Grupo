@@ -1,6 +1,12 @@
 <!DOCTYPE html prefix="og: http://ogp.me/ns#">
 <html lang="pt-br" dir="ltr">
   <head>
+    <!-- SCRIPTS E INCLUDES -->
+    <?php include_once("assets/php/functions.php") ?>
+    <script src="assets/js/script.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <!-- DADOS ESTRUTURADOS - SCHEMA.ORG -->
     <script type="application/ld+json">
       {
@@ -41,18 +47,12 @@
     <link rel="icon" type="image/png" sizes="96x96" href="https://br.digitalhouse.com/wp-content/themes/dh/assets/img/icons/favicon-96x96.png">
     <meta name="theme-color" content="#4285f4">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-    <!-- SCRIPTS E INCLUDES -->
-    <?php include_once("assets/php/functions.php") ?>
-    <script src="assets/js/script.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <!-- META DATA (SEO) / OG -->
-    <meta name="title" content="<?php echo $tituloFaq ?>">
+    <meta name="title" content="<?php echo $metaTitleFaq ?>">
     <meta name="author" content="<?php echo $autores ?>">
-    <meta name="decription" content="Template de ecommerce desenvolvido com fins didáticos, parte do projeto integrador do curso de Full Stack da Digital House Brasil">
-    <meta name="keywords" content="html, css, php, js, digital house, digital grupo, projeto integrador">
-    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="<?php echo $metaDescFaq ?>">
+    <meta name="keywords" content="<?php echo $metaKeyWordsFaq ?>">
+    <meta name="robots" content="index,follow">
     <meta property="og:site_name" content="<?php echo $metaOgSiteName ?>" />
     <meta property="og:title" content="<?php echo $metaOgTitleFaq ?>" />
     <meta property="og:description" content="<?php echo $metaOgDescFaq ?>" />
@@ -79,7 +79,7 @@ include_once ("inc/header.php");
         <h4><?php echo $subtituloFaq ?></h4>
       </article>
       <p>
-        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a hreflang='pt-br' alt='Clique para acessar a homepage' href="<?php echo $siteNegocio ?>" itemprop="url"><span itemprop="title">Home</span></a> › </span>
+        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a title="Home" name="home" hreflang='pt-br' alt='Clique para acessar a homepage' href="<?php echo $siteNegocio ?>" itemprop="url"><span itemprop="title">Home</span></a> › </span>
         <?php echo $tituloFaq ?>
       </p>
     </section>
@@ -92,13 +92,13 @@ include_once ("inc/header.php");
           <label for="toogleDropdown" class="animate" id="menuFaqCat">Categorias FAQ<i class="fas fa-caret-down"></i></label>
           <!--<div class="submenuFaq animate">-->
             <ul class="col-12 faqCat animate">
-              <li><a class="animate dropli" href="#faqcat01">Garantia <i class="fas fa-caret-left"></i></a></li>
-              <li><a class="animate dropli" href="#faqcat02">Frete e Entrega <i class="fas fa-caret-right"></i></a></li>
-              <li><a class="animate dropli" href="#faqcat03">Trocas e Devoluções <i class="fas fa-caret-right"></i></a></li>
-              <li><a class="animate dropli" href="#faqcat04">Encomendas Especiais <i class="fas fa-caret-right"></i></a></li>
+              <li><a class="animate dropli" title="FAQ - Garantia" name="FAQ - Garantia" alt="Clique para acessar as perguntas desse tema" href="#faqcat01">Garantia <i class="fas fa-caret-left"></i></a></li>
+              <li><a class="animate dropli" title="FAQ - Frete e Entrega" name="FAQ - Frete e Entrega" alt="Clique para acessar as perguntas desse tema" href="#faqcat02">Frete e Entrega <i class="fas fa-caret-right"></i></a></li>
+              <li><a class="animate dropli" title="FAQ - Trocas e Devoluções" name="FAQ - Trocas e Devoluções" alt="Clique para acessar as perguntas desse tema" href="#faqcat03">Trocas e Devoluções <i class="fas fa-caret-right"></i></a></li>
+              <li><a class="animate dropli" title="Encomendas Especiais" name="Encomendas Especiais" alt="Clique para acessar as perguntas desse tema" href="#faqcat04">Encomendas Especiais <i class="fas fa-caret-right"></i></a></li>
             </ul>
-            <h6 class="animate">Ainda com dúvidas?<br/><a href="/contato.php" target="_blank">Entre em contato</a> e envie sua dúvida</h6>
-            <span class="animate cta-banner-horizontal mobileOnly"><a href="http://digitalgrupo.provisorio.ws/produto.php"><strong><?php echo $bannerHorizontal ?></strong></a></span>
+            <h6 class="animate">Ainda com dúvidas?<br/><a href="/contato.php" title="Dúvidas" alt="Clique para tirar suas dúvidas conosco!" name="FAQ-duvidas" target="_blank">Entre em contato</a> e envie sua dúvida</h6>
+            <span class="animate cta-banner-horizontal mobileOnly"><a title="Banner Vitrine de Produto" alt="Clique para ver os detalhes desse produto" name="bannerPdt" href="http://digitalgrupo.provisorio.ws/produto.php" hreflang="pt-br"><strong><?php echo $bannerHorizontal ?></strong></a></span>
             <!-- SCRIPT PARA FECHAR O ACCORDION DO MENU DE CATEGORIAS QUANDO SE CLICA EM ALGUMA -->
             <script>
               $('a.dropli').click(function() {
@@ -168,7 +168,7 @@ include_once ("inc/header.php");
     <section class="pdt-vitrine row">
 
       <!-- ### BANNER PROMOCIONAL HORIZONTAL (IGUAL AO DA VITRINE DE PRODUTOS) -->
-      <span class="cta-banner-horizontal desktopOnly"><a href="#"><strong><?php echo $bannerHorizontal ?></strong></a></span>
+      <span class="cta-banner-horizontal desktopOnly"><a title="Banner Vitrine de Produto" alt="Clique para ver os detalhes desse produto" name="bannerPdt" href="http://digitalgrupo.provisorio.ws/produto.php" hreflang="pt-br"><strong><?php echo $bannerHorizontal ?></strong></a></span>
 
       <!-- ### AGRUPAMENTO DE 4 ARTICLES/CARDS DE PRODUTOS -->
       <h4 class="col-12">Produtos em Destaque</h4>
@@ -176,28 +176,28 @@ include_once ("inc/header.php");
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
       </article>
     </section>

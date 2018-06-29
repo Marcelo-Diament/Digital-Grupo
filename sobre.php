@@ -1,6 +1,12 @@
 <!DOCTYPE html prefix="og: http://ogp.me/ns#">
 <html lang="pt-br" dir="ltr">
   <head>
+    <!-- SCRIPTS E INCLUDES -->
+    <?php include_once("assets/php/functions.php") ?>
+    <script src="assets/js/script.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <!-- DADOS ESTRUTURADOS - SCHEMA.ORG -->
     <script type="application/ld+json">
       {
@@ -41,18 +47,12 @@
     <link rel="icon" type="image/png" sizes="96x96" href="https://br.digitalhouse.com/wp-content/themes/dh/assets/img/icons/favicon-96x96.png">
     <meta name="theme-color" content="#4285f4">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-    <!-- SCRIPTS E INCLUDES -->
-    <?php include_once("assets/php/functions.php") ?>
-    <script src="assets/js/script.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <!-- META DATA (SEO) / OG -->
-    <meta name="title" content="<?php echo $tituloSobre ?>">
+    <meta name="title" content="<?php echo $metaTitleSobre ?>">
     <meta name="author" content="<?php echo $autores ?>">
-    <meta name="decription" content="Template de ecommerce desenvolvido com fins didáticos, parte do projeto integrador do curso de Full Stack da Digital House Brasil">
-    <meta name="keywords" content="html, css, php, js, digital house, digital grupo, projeto integrador">
-    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="<?php echo $metaDescSobre ?>">
+    <meta name="keywords" content="<?php echo $metaKeyWordsSobre ?>">
+    <meta name="robots" content="index,follow">
     <meta property="og:site_name" content="<?php echo $metaOgSiteName ?>" />
     <meta property="og:title" content="<?php echo $metaOgTitleSobre ?>" />
     <meta property="og:description" content="<?php echo $metaOgDescSobre ?>" />
@@ -79,7 +79,7 @@ include_once ("inc/header.php");
         <h4><?php echo $subtituloSobre ?></h4>
       </article>
       <p>
-        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a hreflang='pt-br' alt='Clique para acessar a homepage' href="<?php echo $siteNegocio ?>" itemprop="url"><span itemprop="title">Home</span></a> › </span>
+        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a title="Home" name="home" hreflang='pt-br' alt='Clique para acessar a homepage' href="<?php echo $siteNegocio ?>" itemprop="url"><span itemprop="title">Home</span></a> › </span>
         <?php echo $tituloSobre ?>
       </p>
     </section>
@@ -87,15 +87,15 @@ include_once ("inc/header.php");
     <section class="pdt-det">
       <article class="row justify-content-center video">
         <div class="mobileOnly col-12">
-          <iframe width="300" height="169" src="https://www.youtube.com/embed/rRVcPVZgksA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <iframe title="Video sobre a empresa" name="aboutVideoMobile" alt="Clique para assistir nosso vídeo" width="300" height="169" src="https://www.youtube.com/embed/rRVcPVZgksA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
         <div class="desktopOnly col-12 col-md-6">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/rRVcPVZgksA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <iframe title="Video sobre a empresa" name="aboutVideoDesktop" alt="Clique para assistir nosso vídeo" width="560" height="315" src="https://www.youtube.com/embed/rRVcPVZgksA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
         <div class="pdt-info col-12 col-md-5">
           <h3>Quem Somos</h3>
           <p>O Digital Grupo surgiu com apenas uma missão em mente: desenvolver sites que primam pela Experiência do Usuário - seja do lado do visitante, usuário, consumidor final (promovendo uma navegação intuitiva, dinâmica e agradável) ou seja do lado do administrador, cliente, empresário ou comerciante (possibilitando a fácil gestão do conteúdo através de um CMS personalizado e de ferramentas desenvolvidas especialmente para a manutenção do posicionamento da marca na Internet).</p>
-          <p class="cta-visita">Quer conhecer nosso negócio de perto? Entre em contato clicando <a class="cta-visita" href="contato.php" target="_blank">aqui</a> e agende sua visita!</p>
+          <p class="cta-visita">Quer conhecer nosso negócio de perto? Entre em contato clicando <a class="cta-visita" title="Contato" alt="Clique para entrar em contato e agendar sua visita" name="contatoVisita" href="contato.php" target="_blank">aqui</a> e agende sua visita!</p>
         </div>
       </article>
       <article class="row">
@@ -108,10 +108,10 @@ include_once ("inc/header.php");
           <h4>Compartilhe nosso site!</h4>
           <div class="social-share col-12">
             <ul class="row">
-              <li class="col-3"><a href="http://www.facebook.com/sharer.php?u=http://digitalgrupo.provisorio.ws/index.php" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-              <li class="col-3"><a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><i class="fab fa-pinterest-square"></i></a></li>
-              <li class="col-3"><a href="https://plus.google.com/share?url=http://digitalgrupo.provisorio.ws/index.php" target="_blank"><i class="fab fa-google-plus"></i></a></li>
-              <li class="col-3"><a href="mailto:marcelo@djament.com.br?Subject=Veja esse eCommerce da Digital Grupo!&Body=Veja essse eCommerce! Lembrei de você!"><i class="fas fa-envelope"></i></a></li>
+              <li class="col-3"><a name="socialShareFacebook" alt="Clique para compartilhar nosso site no Face" title="Clique para compartilhar nosso site no Face" href="http://www.facebook.com/sharer.php?u=http://digitalgrupo.provisorio.ws/produto.php" target="_blank" rel="noopener"><i class="fab fa-facebook-square"></i></a></li>
+              <li class="col-3"><a name="socialSharePinterest" alt="Clique para pinar nosso site no Pinterest" title="Clique para pinar nosso site no Pinterest" href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><i class="fab fa-pinterest-square"></i></a></li>
+              <li class="col-3"><a name="socialShareGooglePlus" alt="Clique para compartilhar nosso site no Google+" title="Clique para compartilhar nosso site no Google+" href="https://plus.google.com/share?url=http://digitalgrupo.provisorio.ws/produto.php" target="_blank" rel="noopener"><i class="fab fa-google-plus"></i></a></li>
+              <li class="col-3"><a name="socialShareEmail" alt="Clique para compartilhar nosso site por email" title="Clique para compartilhar nosso site por email" href="mailto:marcelo@djament.com.br?Subject=Veja esse site da Digital Grupo!&Body=Veja essse site! Lembrei de você!" target="_blank" rel="noopener"><i class="fas fa-envelope"></i></a></li>
             </ul>
           </div>
         </div>
@@ -121,35 +121,35 @@ include_once ("inc/header.php");
     <!-- ## VIRTINE DE PRODUTOS ## -->
     <section class="pdt-vitrine row">
       <!-- ### BANNER PROMOCIONAL HORIZONTAL (IGUAL AO DA VITRINE DE PRODUTOS) -->
-      <span class="cta-banner-horizontal"><a href="http://digitalgrupo.provisorio.ws/produto.php"><strong><?php echo $bannerHorizontal ?></strong></a></span>
+      <span class="cta-banner-horizontal"><a title="Banner Vitrine de Produto" alt="Clique para ver os detalhes desse produto" name="bannerPdt" href="http://digitalgrupo.provisorio.ws/produto.php" hreflang="pt-br"><strong><?php echo $bannerHorizontal ?></strong></a></span>
       <!-- ### AGRUPAMENTO DE 4 ARTICLES/CARDS DE PRODUTOS -->
       <h4 class="col-12">Lançamentos</h4>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
       </article>
     </section>

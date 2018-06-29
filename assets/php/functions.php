@@ -26,7 +26,7 @@
 		    $metaOgTypeHome = "website";
 		    $metaOgImageHome = "http://digitalgrupo.provisorio.ws/assets/images/insta-card.gif";
 		    $metaOgImageAltHome = "Digital Grupo";
-		    $metaOgImageUrlHome = $metaOgImage;
+		    $metaOgImageUrlHome = $metaOgImageHome;
 		    $metaOgImageTypeHome = "image/gif";
 
 
@@ -44,7 +44,7 @@
 		    $metaOgTypeCategoria = "website";
 		    $metaOgImageCategoria = "http://digitalgrupo.provisorio.ws/assets/images/insta-card.gif";
 		    $metaOgImageAltCategoria = "Digital Grupo";
-		    $metaOgImageUrlCategoria = $metaOgImage;
+		    $metaOgImageUrlCategoria = $metaOgImageHome;
 		    $metaOgImageTypeCategoria = "image/gif";
 		    
 
@@ -56,14 +56,14 @@
 			    $metaTitleProduto = $nomeProduto;
 		    	$metaDescProduto = "Produto XYZ | Template de ecommerce desenvolvido com fins didáticos, parte do projeto integrador do curso de Full Stack da Digital House Brasil";
 		    	$metaKeyWordsProduto ="template de eCommerce, template de loja virtual, template loja, template loja online, eCommerce, loja virtual, loja online, desenvolvimento de eCommerce, desenvolvimento de loja virtual, desenvolvimento de loja online, desenvolvimento de loja, programação de eCommerce, programação de loja virtual, programação de loja online, programação de loja";
-			    $metaOgTitleProduto = $tituloProduto;
+			    $metaOgTitleProduto = $nomeProduto;
 			    $metaOgDescProduto = $metaDescProduto;
 			    $metaOgUrlProduto = "http://digitalgrupo.provisorio.ws/produto.php";
 			    $metaOgLocalProduto = "pt-BR";
 			    $metaOgTypeProduto = "website";
 			    $metaOgImageProduto = "http://digitalgrupo.provisorio.ws/assets/images/insta-card.gif";
 			    $metaOgImageAltProduto = "Digital Grupo";
-			    $metaOgImageUrlProduto = $metaOgImage;
+			    $metaOgImageUrlProduto = $metaOgImageProduto;
 			    $metaOgImageTypeProduto = "image/gif";
 			    
 			    // #### DESCRIÇÃO (DETALHES, ESPECIFICAÇÕES DO PRODUTO)
@@ -98,7 +98,7 @@
 		    $metaOgTypeSobre = "website";
 		    $metaOgImageSobre = "http://digitalgrupo.provisorio.ws/assets/images/insta-card.gif";
 		    $metaOgImageAltSobre = "Digital Grupo";
-		    $metaOgImageUrlSobre = $metaOgImage;
+		    $metaOgImageUrlSobre = $metaOgImageSobre;
 		    $metaOgImageTypeSobre = "image/gif";
 
 
@@ -115,7 +115,7 @@
 		    $metaOgTypeFaq = "website";
 		    $metaOgImageFaq = "http://digitalgrupo.provisorio.ws/assets/images/insta-card.gif";
 		    $metaOgImageAltFaq = "Digital Grupo";
-		    $metaOgImageUrlFaq = $metaOgImage;
+		    $metaOgImageUrlFaq = $metaOgImageFaq;
 		    $metaOgImageTypeFaq = "image/gif";
 		    
 
@@ -132,7 +132,7 @@
 		    $metaOgTypeContato = "website";
 		    $metaOgImageContato = "http://digitalgrupo.provisorio.ws/assets/images/insta-card.gif";
 		    $metaOgImageAltContato = "Digital Grupo";
-		    $metaOgImageUrlContato = $metaOgImage;
+		    $metaOgImageUrlContato = $metaOgImageContato;
 		    $metaOgImageTypeContato = "image/gif";
 		    
 				
@@ -146,6 +146,9 @@
 		    	// #### REDES SOCIAIS
 				$instaUser = "@digitalgrupo";
 				$instaUrl = "https://instagram.com/digitalgrupo";
+				$googlePlusUrl = "https://plus.google.com/digitalgrupo";
+				$fanpageUrl = "http://www.facebook.com/digitalgrupo";
+				$pinterestUrl = "https://pinterest.com/digitalgrupo";
 
 
 		    // ### POLÍTICAS E TERMOS (PRIVACIDADE, TROCA, USO, DEVOLUÇÃO, AUTORAL...)
@@ -161,7 +164,7 @@
 		    $metaOgTypeTermos = "website";
 		    $metaOgImageTermos = "http://digitalgrupo.provisorio.ws/assets/images/insta-card.gif";
 		    $metaOgImageAltTermos = "Digital Grupo";
-		    $metaOgImageUrlTermos = $metaOgImage;
+		    $metaOgImageUrlTermos = $metaOgImageTermos;
 		    $metaOgImageTypeTermos = "image/gif";
 
 

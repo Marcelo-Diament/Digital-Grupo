@@ -1,6 +1,12 @@
 <!DOCTYPE html prefix="og: http://ogp.me/ns#">
 <html lang="pt-br" dir="ltr">
   <head>
+    <!-- SCRIPTS E INCLUDES -->
+    <?php include_once("assets/php/functions.php") ?>
+    <script src="assets/js/script.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <!-- RESPOSTA AO FORMULÁRIO DE FAVORITAR/ADICIONAR/FINALIZAR -->
     <?php
       if (isset($_POST['submit']) && $_POST['submit'] === 'Finalizar'){
@@ -47,18 +53,12 @@
     <link rel="icon" type="image/png" sizes="96x96" href="https://br.digitalhouse.com/wp-content/themes/dh/assets/img/icons/favicon-96x96.png">
     <meta name="theme-color" content="#4285f4">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-    <!-- SCRIPTS E INCLUDES -->
-    <?php include_once("assets/php/functions.php") ?>
-    <script src="assets/js/script.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <!-- META DATA (SEO) / OG -->
-    <meta name="title" content="<?php echo $nomeProduto ?>">
+    <meta name="title" content="<?php echo $metaTitleProduto ?>">
     <meta name="author" content="<?php echo $autores ?>">
-    <meta name="decription" content="Template de ecommerce desenvolvido com fins didáticos, parte do projeto integrador do curso de Full Stack da Digital House Brasil">
-    <meta name="keywords" content="html, css, php, js, digital house, digital grupo, projeto integrador">
-    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="<?php echo $metaDescProduto ?>">
+    <meta name="keywords" content="<?php echo $metaKeyWordsProduto ?>">
+    <meta name="robots" content="index,follow">
     <meta property="og:site_name" content="<?php echo $metaOgSiteName ?>" />
     <meta property="og:title" content="<?php echo $metaOgTitleProduto ?>" />
     <meta property="og:description" content="<?php echo $metaOgDescProduto ?>" />
@@ -109,9 +109,9 @@ include_once ("inc/header.php");
         <h4 itemprop="description"><?php echo $descricaoProduto ?></h4>
       </article>
       <p>
-        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a hreflang='pt-br' alt='Clique para acessar a homepage' href="<?php echo $siteNegocio ?>" itemprop="url"><span itemprop="title">Home</span></a> › </span>
-        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a href="http://digitalgrupo.provisorio.ws/produtos.php" itemprop="url"><span itemprop="title">Produtos</span></a> › </span>
-        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://digitalgrupo.provisorio.ws/produtos.php" itemprop="url"> <span itemprop="title"><?php echo $tituloCategoria ?></span> </a> › </span>
+        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a title="Home" name="home" hreflang='pt-br' alt='Clique para acessar a homepage' href="<?php echo $siteNegocio ?>" itemprop="url"><span itemprop="title">Home</span></a> › </span>
+        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a title="Produtos" name="produtos" hreflang='pt-br' alt='Clique para ver todos os produtos' href="http://digitalgrupo.provisorio.ws/produtos.php" itemprop="url"> <span itemprop="title">Produtos</span> </a> › </span>
+        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a title="<?php echo $tituloCategoria ?>" name="categoria" hreflang='pt-br' alt='Clique para ver todos os produtos dessa categoria' href="http://digitalgrupo.provisorio.ws/produtos.php" itemprop="url"> <span itemprop="title"><?php echo $tituloCategoria ?></span> </a> › </span>
         <?php echo $nomeProduto ?>
       </p>
     </section>
@@ -123,19 +123,19 @@ include_once ("inc/header.php");
             <!--<a href="#" alt="Clique para ver a próxima imagem"><i class="slider-seta fas fa-angle-left"></i></a>-->
             
 
-            <img itemprop="image" id="pdt-det-img1" src="assets/images/produto-01.jpg" alt="Cor 01" class="pdt-det-img" style="width:100%;max-width:500px;">
-            <img itemprop="image" id="pdt-det-img2" src="assets/images/produto-02.jpg" alt="Cor 02" class="pdt-det-img" style="width:100%;max-width:500px;">
-            <img itemprop="image" id="pdt-det-img" src="assets/images/produto-03.jpg" alt="Cor 03" class="pdt-det-img" style="width:100%;max-width:500px;">
+            <img itemprop="image" id="pdt-det-img1" src="assets/images/produto-01.jpg" alt="Cor 01" title="Cor 01" class="pdt-det-img" style="width:100%;max-width:500px;">
+            <img itemprop="image" id="pdt-det-img2" src="assets/images/produto-02.jpg" alt="Cor 02" title="Cor 02" class="pdt-det-img" style="width:100%;max-width:500px;">
+            <img itemprop="image" id="pdt-det-img" src="assets/images/produto-03.jpg" alt="Cor 03" title="Cor 03" class="pdt-det-img" style="width:100%;max-width:500px;">
 
             <div class="w3-row-padding w3-section">
               <div class="w3-col s4">
-                <img itemprop="image" class="pdt-det-img-zoom w3-opacity w3-hover-opacity-off" src="assets/images/produto-01.jpg" style="width:100%" onclick="currentDiv(1)">
+                <img itemprop="image" alt="Cor 01" title="Cor 01" class="pdt-det-img-zoom w3-opacity w3-hover-opacity-off" src="assets/images/produto-01.jpg" style="width:100%" onclick="currentDiv(1)">
               </div>
               <div class="w3-col s4">
-                <img itemprop="image" class="pdt-det-img-zoom w3-opacity w3-hover-opacity-off" src="assets/images/produto-02.jpg" style="width:100%" onclick="currentDiv(2)">
+                <img itemprop="image" alt="Cor 02" title="Cor 02" class="pdt-det-img-zoom w3-opacity w3-hover-opacity-off" src="assets/images/produto-02.jpg" style="width:100%" onclick="currentDiv(2)">
               </div>
               <div class="w3-col s4">
-                <img itemprop="image" class="pdt-det-img-zoom w3-opacity w3-hover-opacity-off" src="assets/images/produto-03.jpg" style="width:100%" onclick="currentDiv(3)">
+                <img itemprop="image" alt="Cor 03" title="Cor 03" class="pdt-det-img-zoom w3-opacity w3-hover-opacity-off" src="assets/images/produto-03.jpg" style="width:100%" onclick="currentDiv(3)">
               </div>
             </div>
             
@@ -204,15 +204,15 @@ include_once ("inc/header.php");
           </div>
           <span class="col-12" id="paginacao">
             <div class="col-4">
-              <a href="#" alt="Clique para ver a review 1"><i class="fas fa-angle-double-left"></i></a>
-              <a href="#" alt="Clique para ver a review anterior"><i class="fas fa-angle-left"></i></a>
+              <a href="#" title="Primeira Review" name="frstReview" hreflang="pt-br" alt="Clique para ver a review 1"><i class="fas fa-angle-double-left"></i></a>
+              <a href="#" title="Review Anterior" name="prvReview" hreflang="pt-br"  alt="Clique para ver a review anterior"><i class="fas fa-angle-left"></i></a>
             </div>
             <div class="col-4">
-              24 de 96
+              1 de 6
               </div>
             <div class="col-4">
-              <a href="#" alt="Clique para ver a próxima review"><i class="fas fa-angle-right"></i></a>
-              <a href="#" alt="Clique para ver a última review"><i class="fas fa-angle-double-right"></i></a>
+              <a href="#" title="Próxima Review" name="nxtReview" hreflang="pt-br"  alt="Clique para ver a próxima review"><i class="fas fa-angle-right"></i></a>
+              <a href="#" title="Última Review" name="lstReview" hreflang="pt-br"  alt="Clique para ver a última review"><i class="fas fa-angle-double-right"></i></a>
             </div>
         </span>
         </div>
@@ -224,7 +224,7 @@ include_once ("inc/header.php");
               <meta itemprop="priceCurrency" content="BRL" />
               <form action="produto.php" method="post">
                 <small>de R$ <?php echo $valorTotal ?> por</small>
-                <legend itemprop="price"><b>R$ <?php echo $valorReal; ?></b> à vista</legend>
+                <legend><b>R$ <span itemprop="price"><?php echo $valorReal; ?></span></b> à vista</legend>
                 <p>ou <?php echo $valorProdutoCompleto; ?></p>
                 <label for="tamanhos">Tamanho</label>
                 <select name="tamanhos">
@@ -263,9 +263,9 @@ include_once ("inc/header.php");
                 <input type="number" min="1" value="1" name="qnt" id="qnt">
                 <br/>
                 <fieldset>
-                  <input type="submit" value="Favoritar" name="submit" class="pdt-det-btn buy col-12 col-md-4"></input>
-                  <input type="submit" value="Adicionar" name="submit" class="pdt-det-btn buy col-12 col-md-4"></input>
-                  <input type="submit" value="Finalizar" name="submit" class="pdt-det-btn buy col-12 col-md-4"></input>
+                  <input type="submit" value="Favoritar" name="submit" title="Adicionar aos Favoritos" alt="Clique para adicionar aos Favoritos" class="pdt-det-btn buy col-12 col-md-4"></input>
+                  <input type="submit" value="Adicionar" name="submit" title="Adicionar ao carrinho e continuar comprando" alt="Clique para Adicionar ao carrinho" class="pdt-det-btn buy col-12 col-md-4"></input>
+                  <input type="submit" value="Finalizar" name="submit" title="Adicionar ao carrinho e Finalizar a compra" alt="Clique para incluir na compra e ir para o Carrinho" class="pdt-det-btn buy col-12 col-md-4"></input>
                 </fieldset>
               </form>
               <?php
@@ -345,10 +345,10 @@ include_once ("inc/header.php");
               <h4>Compartilhe esse produto!</h4>
               <div class="social-share col-12">
                 <ul class="row">
-                  <li class="col-3"><a href="http://www.facebook.com/sharer.php?u=http://digitalgrupo.provisorio.ws/produto.php" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-                  <li class="col-3"><a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><i class="fab fa-pinterest-square"></i></a></li>
-                  <li class="col-3"><a href="https://plus.google.com/share?url=http://digitalgrupo.provisorio.ws/produto.php" target="_blank"><i class="fab fa-google-plus"></i></a></li>
-                  <li class="col-3"><a href="mailto:marcelo@djament.com.br?Subject=Veja esse produto da Digital Grupo!&Body=Veja essse produto! Lembrei de você!"><i class="fas fa-envelope"></i></a></li>
+                  <li class="col-3"><a name="socialShareFacebook" alt="Clique para compartilhar esse produto no Face" title="Compartilhar esse produto no Facebook" href="http://www.facebook.com/sharer.php?u=http://digitalgrupo.provisorio.ws/produto.php" target="_blank" rel="noopener"><i class="fab fa-facebook-square"></i></a></li>
+                  <li class="col-3"><a name="socialSharePinterest" alt="Clique para pinar esse produto no Pinterest" title="Pinar esse produto no Pinterest" href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><i class="fab fa-pinterest-square"></i></a></li>
+                  <li class="col-3"><a name="socialShareGooglePlus" alt="Clique para compartilhar esse produto no Google+" title="Compartilhar esse produto no GooglePlus" href="https://plus.google.com/share?url=http://digitalgrupo.provisorio.ws/produto.php" target="_blank" rel="noopener"><i class="fab fa-google-plus"></i></a></li>
+                  <li class="col-3"><a name="socialShareEmail" alt="Clique para compartilhar esse produto por email" title="Compartilhar esse produto por Email" href="mailto:marcelo@djament.com.br?Subject=Veja esse produto da Digital Grupo!&Body=Veja essse produto! Lembrei de você!" target="_blank" rel="noopener"><i class="fas fa-envelope"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -377,10 +377,10 @@ include_once ("inc/header.php");
       </article>
       <article class="row justify-content-center video">
         <div class="mobileOnly col-12">
-          <iframe width="300" height="169" src="https://www.youtube.com/embed/rRVcPVZgksA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <iframe title="Assistir ao video do Produto" name="pdtVideoMobile" alt="Clique para assistir ao filme" width="300" height="169" src="https://www.youtube.com/embed/rRVcPVZgksA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
         <div class="desktopOnly col-12">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/rRVcPVZgksA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <iframe title="Assistir ao video do Produto" name="pdtVideoDesktop" alt="Clique para assistir ao filme" width="560" height="315" src="https://www.youtube.com/embed/rRVcPVZgksA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </article>
     </section>
@@ -388,35 +388,35 @@ include_once ("inc/header.php");
     <!-- ## VIRTINE DE PRODUTOS ## -->
     <section class="pdt-vitrine row">
       <!-- ### BANNER PROMOCIONAL HORIZONTAL (IGUAL AO DA VITRINE DE PRODUTOS) -->
-      <span class="cta-banner-horizontal"><a href="http://digitalgrupo.provisorio.ws/produto.php"><strong><?php echo $bannerHorizontal ?></strong></a></span>
+      <span class="cta-banner-horizontal"><a title="Banner Vitrine de Produto" alt="Clique para ver os detalhes desse produto" name="bannerPdt" href="http://digitalgrupo.provisorio.ws/produto.php" hreflang="pt-br" itemprop="isRelatedTo"><strong><?php echo $bannerHorizontal ?></strong></a></span>
       <!-- ### AGRUPAMENTO DE 4 ARTICLES/CARDS DE PRODUTOS -->
       <h4 class="col-12">Produtos Relacionados</h4>
       <article class="pdt-card col-12 col-sm-6 col-md-3" itemprop="isRelatedTo">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3" itemprop="isRelatedTo">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3" itemprop="isRelatedTo">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3" itemprop="isRelatedTo">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
       </article>
     </section>
