@@ -1,28 +1,74 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html prefix="og: http://ogp.me/ns#">
+<html lang="pt-br" dir="ltr">
   <head>
+    <!-- RESPOSTA AO FORMULÁRIO DE FAVORITAR/ADICIONAR/FINALIZAR -->
     <?php
       if (isset($_POST['submit']) && $_POST['submit'] === 'Finalizar'){
                     header("location: http://digitalgrupo.provisorio.ws/carrinho.php");exit;
                   }
     ?>
+    <!-- DADOS ESTRUTURADOS - SCHEMA.ORG -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://digitalgrupo.provisorio.ws",
+        "logo": "http://digitalgrupo.provisorio.ws/assets/images/logo.png",
+        "description": "Digital Grupo é o projeto integrado de conclusão do curso de Desenvolvimento Full Stack da Digital House Brasil (TN01)",
+        "additionalType": "http://www.productontology.org/doc/Web_design",
+        "telephone" : "+55-11-97605-2723",
+        "email" : "contato@djament.com.br",
+        "address" : {
+          "@type" : "PostalAddress",
+          "streetAddress" : "Rua Guaipá, 223, Vila Leopoldina",
+          "addressLocality" : "São Paulo",
+          "addressRegion" : "São Paulo",
+          "postalCode" : "05089-001"
+        },
+        "sameAs" : [ "https://www.facebook.com/digitalgrupo", "https://www.youtube.com/channel/digitalgrupo", "https://pinterest.com/digitalgrupo/", "https://twitter.com/digitalgrupo", "https://vimeo.com/digitalgrupo" ]  
+      }
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "telephone": "+55-11-97605-2723",
+          "contactType": "customer service"
+        }]
+      }
+    </script>
+    <!-- INFORMAÇÕES GERAIS BÁSICAS -->
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,width=device-width,user-scalable=no">
+    <title><?php echo $nomeProduto ?></title>
+    <!-- ESTILOS, FONTES... -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/style-produtos-marcelo.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <meta name="title" content="Produto Exemplo">
-    <meta name="author" content="Digital Grupo">
-    <meta name="decription" content="Template de ecommerce desenvolvido com fins didáticos, parte do projeto integrador do curso de Full Stack da Digital House Brasil">
-    <meta name="keywords" content="html, css, php, js, digital house, digital grupo, projeto integrador">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="icon" type="image/png" sizes="96x96" href="https://br.digitalhouse.com/wp-content/themes/dh/assets/img/icons/favicon-96x96.png">
     <meta name="theme-color" content="#4285f4">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-    <script src="assets/js/script.js"></script>
+    <!-- SCRIPTS E INCLUDES -->
     <?php include_once("assets/php/functions.php") ?>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>Produto Exemplo</title>
+    <script src="assets/js/script.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <!-- META DATA (SEO) / OG -->
+    <meta name="title" content="<?php echo $nomeProduto ?>">
+    <meta name="author" content="<?php echo $autores ?>">
+    <meta name="decription" content="Template de ecommerce desenvolvido com fins didáticos, parte do projeto integrador do curso de Full Stack da Digital House Brasil">
+    <meta name="keywords" content="html, css, php, js, digital house, digital grupo, projeto integrador">
+    <meta name="robots" content="noindex,nofollow">
+    <meta property="og:site_name" content="<?php echo $metaOgSiteName ?>" />
+    <meta property="og:title" content="<?php echo $metaOgTitleProduto ?>" />
+    <meta property="og:description" content="<?php echo $metaOgDescProduto ?>" />
+    <meta property="og:url" content="<?php echo $metaOgUrlProduto ?>" />
+    <meta property="og:locale" content="<?php echo $metaOgLocalProduto ?>" />
+    <meta property="og:type" content="<?php echo $metaOgTypeProduto ?>" />
+    <meta property="og:image" content="<?php echo $metaOgImageProduto ?>" />
+    <meta property="og:image:alt" content="<?php echo $metaOgImageAltProduto ?>" />
+    <meta property="og:image:url" content="<?php echo $metaOgImageUrlProduto ?>" />
+    <meta property="og:image:type" content="<?php echo $metaOgImageTypeProduto ?>" />
   </head>
 <body>
 <!-- HEADER -->
@@ -54,18 +100,19 @@ include_once ("inc/header.php");
 
 
   <!-- # CONTÂINER DO CONTEÚDO PRINCIPAL # -->
-  <main class="container-fluid">
+  <main class="container-fluid" itemscope itemtype="http://schema.org/Product">
 
     <!-- ## TOPO DA PÁGINA (PADRÃO ENTRE TODAS) ## -->
     <section class="top row">
       <article class="top-title col-12">
-        <h1><?php echo $nomeProduto ?></h1>
-        <h4><?php echo $descricaoProduto ?></h4>
+        <h1 itemprop="name"><?php echo $nomeProduto ?></h1>
+        <h4 itemprop="description"><?php echo $descricaoProduto ?></h4>
       </article>
       <p>
-        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a href="http://digitalgrupo.provisorio.ws/" itemprop="url"><span itemprop="title">Home</span></a> › </span>
+        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a hreflang='pt-br' alt='Clique para acessar a homepage' href="<?php echo $siteNegocio ?>" itemprop="url"><span itemprop="title">Home</span></a> › </span>
         <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a href="http://digitalgrupo.provisorio.ws/produtos.php" itemprop="url"><span itemprop="title">Produtos</span></a> › </span>
-        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://digitalgrupo.provisorio.ws/produtos.php" itemprop="url"> <span itemprop="title">Categoria 01</span> </a> › </span><?php echo $nomeProduto ?>
+        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://digitalgrupo.provisorio.ws/produtos.php" itemprop="url"> <span itemprop="title"><?php echo $tituloCategoria ?></span> </a> › </span>
+        <?php echo $nomeProduto ?>
       </p>
     </section>
 
@@ -76,19 +123,19 @@ include_once ("inc/header.php");
             <!--<a href="#" alt="Clique para ver a próxima imagem"><i class="slider-seta fas fa-angle-left"></i></a>-->
             
 
-            <img id="pdt-det-img1" src="assets/images/produto-01.jpg" alt="Cor 01" class="pdt-det-img" style="width:100%;max-width:500px;">
-            <img id="pdt-det-img2" src="assets/images/produto-02.jpg" alt="Cor 02" class="pdt-det-img" style="width:100%;max-width:500px;">
-            <img id="pdt-det-img" src="assets/images/produto-03.jpg" alt="Cor 03" class="pdt-det-img" style="width:100%;max-width:500px;">
+            <img itemprop="image" id="pdt-det-img1" src="assets/images/produto-01.jpg" alt="Cor 01" class="pdt-det-img" style="width:100%;max-width:500px;">
+            <img itemprop="image" id="pdt-det-img2" src="assets/images/produto-02.jpg" alt="Cor 02" class="pdt-det-img" style="width:100%;max-width:500px;">
+            <img itemprop="image" id="pdt-det-img" src="assets/images/produto-03.jpg" alt="Cor 03" class="pdt-det-img" style="width:100%;max-width:500px;">
 
             <div class="w3-row-padding w3-section">
               <div class="w3-col s4">
-                <img class="pdt-det-img-zoom w3-opacity w3-hover-opacity-off" src="assets/images/produto-01.jpg" style="width:100%" onclick="currentDiv(1)">
+                <img itemprop="image" class="pdt-det-img-zoom w3-opacity w3-hover-opacity-off" src="assets/images/produto-01.jpg" style="width:100%" onclick="currentDiv(1)">
               </div>
               <div class="w3-col s4">
-                <img class="pdt-det-img-zoom w3-opacity w3-hover-opacity-off" src="assets/images/produto-02.jpg" style="width:100%" onclick="currentDiv(2)">
+                <img itemprop="image" class="pdt-det-img-zoom w3-opacity w3-hover-opacity-off" src="assets/images/produto-02.jpg" style="width:100%" onclick="currentDiv(2)">
               </div>
               <div class="w3-col s4">
-                <img class="pdt-det-img-zoom w3-opacity w3-hover-opacity-off" src="assets/images/produto-03.jpg" style="width:100%" onclick="currentDiv(3)">
+                <img itemprop="image" class="pdt-det-img-zoom w3-opacity w3-hover-opacity-off" src="assets/images/produto-03.jpg" style="width:100%" onclick="currentDiv(3)">
               </div>
             </div>
             
@@ -173,10 +220,11 @@ include_once ("inc/header.php");
           <h3>Descrição do Produto</h3>
           <p>Esse produto é um produto feito especialmente para você. A ideia é que você o use sempre - de dia, à noite, à tarde, de manhã... Não importa quando, use o produto! Aproveite nossas promoções para compras acima de mil reais - promoção por tempo limitado!</p>
           <div class="row">
-            <div class="comprar col-12 col-sm-6">
+            <div class="comprar col-12 col-sm-6" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+              <meta itemprop="priceCurrency" content="BRL" />
               <form action="produto.php" method="post">
                 <small>de R$ <?php echo $valorTotal ?> por</small>
-                <legend><b>R$ <?php echo $valorReal; ?></b> à vista</legend>
+                <legend itemprop="price"><b>R$ <?php echo $valorReal; ?></b> à vista</legend>
                 <p>ou <?php echo $valorProdutoCompleto; ?></p>
                 <label for="tamanhos">Tamanho</label>
                 <select name="tamanhos">
@@ -307,7 +355,7 @@ include_once ("inc/header.php");
           </div>
           <ul>
             <li>
-              <ul>
+              <ul itemprop="material">
                 <li><strong>Materiais:</strong> </li>
                 <li><?php echo $pdtMateriais ?></li>
               </ul>
@@ -319,7 +367,7 @@ include_once ("inc/header.php");
               </ul>
             </li>
             <li>
-              <ul>
+              <ul itemprop="color">
                 <li><strong>Cor:</strong> </li>
                 <li><?php echo $cor ?></li>
               </ul>
@@ -343,28 +391,28 @@ include_once ("inc/header.php");
       <span class="cta-banner-horizontal"><a href="http://digitalgrupo.provisorio.ws/produto.php"><strong><?php echo $bannerHorizontal ?></strong></a></span>
       <!-- ### AGRUPAMENTO DE 4 ARTICLES/CARDS DE PRODUTOS -->
       <h4 class="col-12">Produtos Relacionados</h4>
-      <article class="pdt-card col-12 col-sm-6 col-md-3">
+      <article class="pdt-card col-12 col-sm-6 col-md-3" itemprop="isRelatedTo">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
           <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
         </div>
       </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-3">
+      <article class="pdt-card col-12 col-sm-6 col-md-3" itemprop="isRelatedTo">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
           <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
         </div>
       </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-3">
+      <article class="pdt-card col-12 col-sm-6 col-md-3" itemprop="isRelatedTo">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
           <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
         </div>
       </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-3">
+      <article class="pdt-card col-12 col-sm-6 col-md-3" itemprop="isRelatedTo">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>

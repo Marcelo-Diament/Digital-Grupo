@@ -1,26 +1,68 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html prefix="og: http://ogp.me/ns#">
+<html lang="pt-br" dir="ltr">
   <head>
+    <!-- DADOS ESTRUTURADOS - SCHEMA.ORG -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://digitalgrupo.provisorio.ws",
+        "logo": "http://digitalgrupo.provisorio.ws/assets/images/logo.png",
+        "description": "Digital Grupo é o projeto integrado de conclusão do curso de Desenvolvimento Full Stack da Digital House Brasil (TN01)",
+        "additionalType": "http://www.productontology.org/doc/Web_design",
+        "telephone" : "+55-11-97605-2723",
+        "email" : "contato@djament.com.br",
+        "address" : {
+          "@type" : "PostalAddress",
+          "streetAddress" : "Rua Guaipá, 223, Vila Leopoldina",
+          "addressLocality" : "São Paulo",
+          "addressRegion" : "São Paulo",
+          "postalCode" : "05089-001"
+        },
+        "sameAs" : [ "https://www.facebook.com/digitalgrupo", "https://www.youtube.com/channel/digitalgrupo", "https://pinterest.com/digitalgrupo/", "https://twitter.com/digitalgrupo", "https://vimeo.com/digitalgrupo" ]  
+      }
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "telephone": "+55-11-97605-2723",
+          "contactType": "customer service"
+        }]
+      }
+    </script>
+    <!-- INFORMAÇÕES GERAIS BÁSICAS -->
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,width=device-width,user-scalable=no">
+    <title><?php echo $tituloContato ?></title>
+    <!-- ESTILOS, FONTES... -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/style-produtos-marcelo.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <?php include_once("assets/php/functions.php") ?>
-    <meta name="title" content="<?php echo $tituloContato ?>">
-    <meta name="author" content="Digital Grupo">
-    <meta name="decription" content="Template de ecommerce desenvolvido com fins didáticos, parte do projeto integrador do curso de Full Stack da Digital House Brasil">
-    <meta name="keywords" content="html, css, php, js, digital house, digital grupo, projeto integrador">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="icon" type="image/png" sizes="96x96" href="https://br.digitalhouse.com/wp-content/themes/dh/assets/img/icons/favicon-96x96.png">
     <meta name="theme-color" content="#4285f4">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <!-- SCRIPTS E INCLUDES -->
+    <?php include_once("assets/php/functions.php") ?>
     <script src="assets/js/script.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title><?php echo $tituloContato ?></title>
+    <!-- META DATA (SEO) / OG -->
+    <meta name="title" content="<?php echo $tituloContato ?>">
+    <meta name="author" content="<?php echo $autores ?>">
+    <meta name="decription" content="Template de ecommerce desenvolvido com fins didáticos, parte do projeto integrador do curso de Full Stack da Digital House Brasil">
+    <meta name="keywords" content="html, css, php, js, digital house, digital grupo, projeto integrador">
+    <meta name="robots" content="noindex,nofollow">
+    <meta property="og:site_name" content="<?php echo $metaOgSiteName ?>" />
+    <meta property="og:title" content="<?php echo $metaOgTitleContato ?>" />
+    <meta property="og:description" content="<?php echo $metaOgDescContato ?>" />
+    <meta property="og:url" content="<?php echo $metaOgUrlContato ?>" />
+    <meta property="og:locale" content="<?php echo $metaOgLocalContato ?>" />
+    <meta property="og:type" content="<?php echo $metaOgTypeContato ?>" />
+    <meta property="og:image" content="<?php echo $metaOgImageContato ?>" />
+    <meta property="og:image:alt" content="<?php echo $metaOgImageAltContato ?>" />
+    <meta property="og:image:url" content="<?php echo $metaOgImageUrlContato ?>" />
+    <meta property="og:image:type" content="<?php echo $metaOgImageTypeContato ?>" />
   </head>
 <body>
 <!-- HEADER -->
@@ -37,7 +79,7 @@ include_once ("inc/header.php");
         <h4><?php echo $subtituloContato ?></h4>
       </article>
       <p>
-        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a href="http://digitalgrupo.provisorio.ws/" itemprop="url"><span itemprop="title">Home</span></a> › </span>
+        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a hreflang='pt-br' alt='Clique para acessar a homepage' href="<?php echo $siteNegocio ?>" itemprop="url"><span itemprop="title">Home</span></a> › </span>
         <?php echo $tituloContato ?>
       </p>
     </section>
@@ -87,27 +129,27 @@ include_once ("inc/header.php");
                   <article class='dadosContato col-12'>
                     <ul>
                       <br/>
-                      <li style='text-align:center;'><a href='tel:".$telefoneFixo."'><i class='fas fa-phone-volume'></i> ".$telefoneFixo."</a></li>
-                      <li style='text-align:center;'><a href='tel:+55 ".$telefoneCelular."' target='_blank'><i class='fab fa-whatsapp'></i> ".$telefoneCelular."</a></li>
-                      <li style='text-align:center;'><a href='mailto:'".$emailContato."?Subject=Contato via template eCommerce Digital Grupo&Body=Tenho interesse em adquirir um eCommerce com o Digital Grupo' target='_blank'><i class='fas fa-envelope'></i> ".$emailContato."</a></li>
-                      <li style='text-align:center;'><a href='https://goo.gl/maps/BNMCvVriyyt' target='_blank'><i class='fas fa-map-marker-alt'></i> Rua Cardoso de Melo, nº 90</a></li>
-                      <li style='text-align:center;'><a href='https://goo.gl/maps/BNMCvVriyyt' target='_blank'>Vila Olímpia | São Paulo/SP</a></li>
+                      <li style='text-align:center;'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='tel:".$telefoneFixo."'><i class='fas fa-phone-volume'></i> ".$telefoneFixo."</a></li>
+                      <li style='text-align:center;'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='tel:+55 ".$telefoneCelular."' target='_blank'><i class='fab fa-whatsapp'></i> ".$telefoneCelular."</a></li>
+                      <li style='text-align:center;'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='mailto:'".$emailContato."?Subject=Contato via template eCommerce Digital Grupo&Body=Tenho interesse em adquirir um eCommerce com o Digital Grupo' target='_blank'><i class='fas fa-envelope'></i> ".$emailContato."</a></li>
+                      <li style='text-align:center;'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='https://goo.gl/maps/BNMCvVriyyt' target='_blank'><i class='fas fa-map-marker-alt'></i> Rua Cardoso de Melo, nº 90</a></li>
+                      <li style='text-align:center;'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='https://goo.gl/maps/BNMCvVriyyt' target='_blank'>Vila Olímpia | São Paulo/SP</a></li>
                     </ul>
                     <h4>Compartilhe nossa página!</h4>
                     <br/>
                     <div class='social-share col-12'>
                       <ul class='row'>
-                        <li class='col-3'><a href='http://www.facebook.com/sharer.php?u=http://digitalgrupo.provisorio.ws/index.php' target='_blank'><i class='fab fa-facebook-square'></i></a></li>
-                        <li class='col-3'><a href='javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());'><i class='fab fa-pinterest-square'></i></a></li>
-                        <li class='col-3'><a href='https://plus.google.com/share?url=http://digitalgrupo.provisorio.ws/index.php' target='_blank'><i class='fab fa-google-plus'></i></a></li>
-                        <li class='col-3'><a href='mailto:marcelo@djament.com.br?Subject=Veja esse site da Digital Grupo!&Body=Veja essse site! Lembrei de você!'><i class='fas fa-envelope'></i></a></li>
+                        <li class='col-3'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='http://www.facebook.com/sharer.php?u=http://digitalgrupo.provisorio.ws/index.php' target='_blank'><i class='fab fa-facebook-square'></i></a></li>
+                        <li class='col-3'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());'><i class='fab fa-pinterest-square'></i></a></li>
+                        <li class='col-3'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='https://plus.google.com/share?url=http://digitalgrupo.provisorio.ws/index.php' target='_blank'><i class='fab fa-google-plus'></i></a></li>
+                        <li class='col-3'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='mailto:marcelo@djament.com.br?Subject=Veja esse site da Digital Grupo!&Body=Veja essse site! Lembrei de você!'><i class='fas fa-envelope'></i></a></li>
                       </ul>
                     </div>
                     <article class='insta-card col-12'>
                       <div>
                         <div class='insta-card-subtitle'>acesse nosso insta</div>
                         <h3 class='insta-card-title'><strong>".$instaUser."</strong></h3>
-                        <button class='insta-card-btn'><a href='".$instaUrl."' target='_blank'>Visitar</a></button>
+                        <button class='insta-card-btn'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='".$instaUrl."' target='_blank'>Visitar</a></button>
                       </div>
                     </article>
                   </article>
@@ -158,17 +200,17 @@ include_once ("inc/header.php");
           <h4 class="col-12">Dados de Contato</h4>
           <p class="col-12">Se preferir, entre em contato diretamente conosco, será um prazer te ajudar!</p>
           <br/>
-          <li><a href="tel:<?php echo $telefoneFixo ?>"><i class="fas fa-phone-volume"></i> <?php echo $telefoneFixo ?></a></li>
-          <li><a href="tel:+55 <?php echo $telefoneCelular ?>" target="_blank"><i class="fab fa-whatsapp"></i> <?php echo $telefoneCelular ?></a></li>
-          <li><a href="<?php echo "mailto:".$emailContato."?Subject=Contato via template eCommerce Digital Grupo&Body=Tenho interesse em adquirir um eCommerce com o Digital Grupo"; ?>" target="_blank"><i class="fas fa-envelope"></i> <?php echo $emailContato ?></a></li>
-          <li><a href="https://goo.gl/maps/BNMCvVriyyt" target="_blank"><i class="fas fa-map-marker-alt"></i> Rua Cardoso de Melo, nº 90</a></li>
-          <li><a href="https://goo.gl/maps/BNMCvVriyyt" target="_blank">Vila Olímpia | São Paulo/SP</a></li>
+          <li><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="tel:<?php echo $telefoneFixo ?>"><i class="fas fa-phone-volume"></i> <?php echo $telefoneFixo ?></a></li>
+          <li><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="tel:+55 <?php echo $telefoneCelular ?>" target="_blank"><i class="fab fa-whatsapp"></i> <?php echo $telefoneCelular ?></a></li>
+          <li><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="<?php echo "mailto:".$emailContato."?Subject=Contato via template eCommerce Digital Grupo&Body=Tenho interesse em adquirir um eCommerce com o Digital Grupo"; ?>" target="_blank"><i class="fas fa-envelope"></i> <?php echo $emailContato ?></a></li>
+          <li><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="https://goo.gl/maps/BNMCvVriyyt" target="_blank"><i class="fas fa-map-marker-alt"></i> Rua Cardoso de Melo, nº 90</a></li>
+          <li><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="https://goo.gl/maps/BNMCvVriyyt" target="_blank">Vila Olímpia | São Paulo/SP</a></li>
           <div class="social-share col-12">
                 <ul class="row">
-                  <li class="col-3"><a href="http://www.facebook.com/digitalgrupo" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-                  <li class="col-3"><a href="https://pinterest.com/digitalgrupo"><i class="fab fa-pinterest-square"></i></a></li>
-                  <li class="col-3"><a href="https://plus.google.com/digitalgrupo" target="_blank"><i class="fab fa-google-plus"></i></a></li>
-                  <li class="col-3"><a href="https://instagram.com/digitalgrupo"><i class="fab fa-instagram"></i></a></li>
+                  <li class="col-3"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="http://www.facebook.com/digitalgrupo" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                  <li class="col-3"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="https://pinterest.com/digitalgrupo"><i class="fab fa-pinterest-square"></i></a></li>
+                  <li class="col-3"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="https://plus.google.com/digitalgrupo" target="_blank"><i class="fab fa-google-plus"></i></a></li>
+                  <li class="col-3"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="https://instagram.com/digitalgrupo"><i class="fab fa-instagram"></i></a></li>
                 </ul>
               </div>
         </ul>
@@ -176,7 +218,7 @@ include_once ("inc/header.php");
           <div>
             <div class="insta-card-subtitle">acesse nosso insta</div>
             <h3 class="insta-card-title"><strong><?php echo $instaUser ?></strong></h3>
-            <button class="insta-card-btn"><a href="<?php echo $instaUrl ?>" target="_blank">Visitar</a></button>
+            <button class="insta-card-btn"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="<?php echo $instaUrl ?>" target="_blank">Visitar</a></button>
           </div>
         </article>
       </article>
@@ -189,7 +231,7 @@ include_once ("inc/header.php");
     <section class="pdt-vitrine row">
 
       <!-- ### BANNER PROMOCIONAL HORIZONTAL (IGUAL AO DA VITRINE DE PRODUTOS) -->
-      <span class="cta-banner-horizontal desktopOnly"><a href="#"><strong><?php echo $bannerHorizontal ?></strong></a></span>
+      <span class="cta-banner-horizontal desktopOnly"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="#"><strong><?php echo $bannerHorizontal ?></strong></a></span>
 
       <!-- ### AGRUPAMENTO DE 4 ARTICLES/CARDS DE PRODUTOS -->
       <h4 class="col-12">Produtos em Destaque</h4>
@@ -197,28 +239,28 @@ include_once ("inc/header.php");
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
         </div>
       </article>
       <article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
+          <button class="pdt-card-btn"><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href="http://digitalgrupo.provisorio.ws/produto.php">Ver Mais</a></button>
         </div>
       </article>
     </section>
