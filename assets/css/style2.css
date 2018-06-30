@@ -1,13 +1,13 @@
 .login{
   text-align: center;
-  padding-top: 180px;
-  height: 100%;
+  position: relative;
+  top: 120px;
 }
 
 .copyright, .footer-links{
   text-align: center;
   position: relative;
-  bottom: 60px;
+  top: 180px;
 }
 
 .altura{

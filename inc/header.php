@@ -1,15 +1,16 @@
 <header>
   <div class="div_header">
-    <img  src="assets/images/logo.png" class="img_logo" alt="Logo da Página">
+    <a class="logo" href="index.php">LOGO</a>
     <i class="fas fa-align-justify"></i>
-    <img src="assets/images/shopping-cart.png" alt="Carrinho de Supermercado" class="img_cart">
+    <i class="fas fa-shopping-cart"></i>
     <div class="header-links">
       <a href="FAQ.php">FAQ</a>
       <a class="header_login" href="login.php">Login</a>
     </div>
-    <form class="form-inline my-2 my-lg-0 barra_de_pesquisa">
-      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"></button>
+
+    <form class="barra_de_pesquisa" action="index.php" method="post">
+      <input type="search" placeholder="Do que você precisa?" class="espaco-pesquisa">
+      <input type="submit" name="botao-pesquisa" value="&#xf002;" class="fas fa-search botao-pesquisa">
     </form>
   </div>
 </header>
