@@ -40,7 +40,7 @@
     <!-- INFORMAÇÕES GERAIS BÁSICAS -->
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,width=device-width,user-scalable=no">
-    <title><?php echo $tituloContato ?></title>
+    <title><?php echo $tituloBusca ?></title>
     <!-- ESTILOS, FONTES... -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/style-produtos-marcelo.css">
@@ -51,21 +51,21 @@
     <meta name="theme-color" content="#4285f4">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <!-- META DATA (SEO) / OG -->
-    <meta name="title" content="<?php echo $metaTitleContato ?>">
+    <meta name="title" content="<?php echo $metaTitleBusca ?>">
     <meta name="author" content="<?php echo $autores ?>">
-    <meta name="description" content="<?php echo $metaDescContato ?>">
-    <meta name="keywords" content="<?php echo $metaKeyWordsContato ?>">
+    <meta name="description" content="<?php echo $metaDescBusca ?>">
+    <meta name="keywords" content="<?php echo $metaKeyWordsBusca ?>">
     <meta name="robots" content="index,follow">
     <meta property="og:site_name" content="<?php echo $metaOgSiteName ?>" />
-    <meta property="og:title" content="<?php echo $metaOgTitleContato ?>" />
-    <meta property="og:description" content="<?php echo $metaOgDescContato ?>" />
-    <meta property="og:url" content="<?php echo $metaOgUrlContato ?>" />
-    <meta property="og:locale" content="<?php echo $metaOgLocalContato ?>" />
-    <meta property="og:type" content="<?php echo $metaOgTypeContato ?>" />
-    <meta property="og:image" content="<?php echo $metaOgImageContato ?>" />
-    <meta property="og:image:alt" content="<?php echo $metaOgImageAltContato ?>" />
-    <meta property="og:image:url" content="<?php echo $metaOgImageUrlContato ?>" />
-    <meta property="og:image:type" content="<?php echo $metaOgImageTypeContato ?>" />
+    <meta property="og:title" content="<?php echo $metaOgTitleBusca ?>" />
+    <meta property="og:description" content="<?php echo $metaOgDescBusca ?>" />
+    <meta property="og:url" content="<?php echo $metaOgUrlBusca ?>" />
+    <meta property="og:locale" content="<?php echo $metaOgLocalBusca ?>" />
+    <meta property="og:type" content="<?php echo $metaOgTypeBusca ?>" />
+    <meta property="og:image" content="<?php echo $metaOgImageBusca ?>" />
+    <meta property="og:image:alt" content="<?php echo $metaOgImageAltBusca ?>" />
+    <meta property="og:image:url" content="<?php echo $metaOgImageUrlBusca ?>" />
+    <meta property="og:image:type" content="<?php echo $metaOgImageTypeBusca ?>" />
   </head>
 <body>
 <!-- HEADER -->
@@ -78,130 +78,42 @@ include_once ("inc/header.php");
     <!-- ## TOPO DA PÁGINA (PADRÃO ENTRE TODAS) ## -->
     <section class="top row">
       <article class="top-title col-12">
-        <h1><?php echo $tituloContato ?></h1>
-        <h4><?php echo $subtituloContato ?></h4>
+        <h1><?php echo $tituloBusca ?></h1>
+        <h4><?php echo $subtituloBusca ?></h4>
       </article>
       <p>
         <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a title="Home" name="home" hreflang='pt-br' alt='Clique para acessar a homepage' href="<?php echo $siteNegocio ?>" itemprop="url"><span itemprop="title">Home</span></a> › </span>
-        <?php echo $tituloContato ?>
+        <?php echo $tituloBusca ?>
       </p>
     </section>
 
-    <!-- ## FORMULÁRIO DE CONTATO ## -->
+    <!-- ## BUSCA DO GOOGLE ## -->
     <section class="row contato">
-      <article class="formContato col-12 col-md-8">
-        <div class="col-12 offset-md-2 col-md-9">
-
-          <?php
-            // SE CLICAREM EM ENVIAR
-              if (!isset($_POST['submit'])) {
-
-                // Mensagem padrão da página de contato
-                echo "<h4>Envie sua Mensagem</h4><p>Tem dúvidas, sugestões, comentários? Envie sua mensagem!</p>";
-
-                // Se o submit for verdadeiro (estiver setado), carrega as informações (POST) e exibe mensagem personalizada
-                } else{
-                  $nome = $_POST['nome'];
-                  $telefoneFixoForm = $_POST['telefoneFixo'];
-                  $telefoneCelularForm = $_POST['telefoneCelular'];
-                  $emailContatoForm = $_POST['emailContato'];
-
-                  // Ocultação dos 5 primeiros dígitos dos dados de contato
-                  $i = 0;
-                  while ($i<5) {
-                    $emailContatoForm{$i} = "*";
-                    $telefoneCelularForm{$i} = "*";
-                    $telefoneFixoForm{$i} = "*";
-                    $i = $i+1;
-                  }
-
-                  // Mensagem personalizada
-                  echo "<h4>Obrigado ".$nome.", mensagem enviada!</h4><p>Retornaremos em breve ";
-                  if ($_POST['formcontato'] == "Whatsapp") {
-                    echo " (através do seu Whatsapp - ".$telefoneCelularForm."). Até logo!</p>";
-                  } else if ($_POST['formcontato'] == "email") {
-                    echo "(através do email ".$emailContatoForm."). Até logo!</p>";
-                  } else if ($_POST['formcontato'] == "Telefone") {
-                    echo "(através do telefone ".$telefoneFixoForm."). Até logo!</p>";
-                  } else{
-                    echo "Até logo!";
-                  }
-                  // Restante da página após envio da mensagem (dados de contato, share)
-                  echo "
-                  
-                  <article class='dadosContato col-12'>
-                    <ul>
-                      <br/>
-                      <li style='text-align:center;'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='tel:".$telefoneFixo."'><i class='fas fa-phone-volume'></i> ".$telefoneFixo."</a></li>
-                      <li style='text-align:center;'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='tel:+55 ".$telefoneCelular."' target='_blank'><i class='fab fa-whatsapp'></i> ".$telefoneCelular."</a></li>
-                      <li style='text-align:center;'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='mailto:'".$emailContato."?Subject=Contato via template eCommerce Digital Grupo&Body=Tenho interesse em adquirir um eCommerce com o Digital Grupo' target='_blank'><i class='fas fa-envelope'></i> ".$emailContato."</a></li>
-                      <li style='text-align:center;'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='https://goo.gl/maps/BNMCvVriyyt' target='_blank'><i class='fas fa-map-marker-alt'></i> Rua Cardoso de Melo, nº 90</a></li>
-                      <li style='text-align:center;'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='https://goo.gl/maps/BNMCvVriyyt' target='_blank'>Vila Olímpia | São Paulo/SP</a></li>
-                    </ul>
-                    <h4>Compartilhe nossa página!</h4>
-                    <br/>
-                    <div class='social-share col-12'>
-                      <ul class='row'>
-                        <li class='col-3'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='http://www.facebook.com/sharer.php?u=http://digitalgrupo.provisorio.ws/index.php' target='_blank'><i class='fab fa-facebook-square'></i></a></li>
-                        <li class='col-3'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());'><i class='fab fa-pinterest-square'></i></a></li>
-                        <li class='col-3'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='https://plus.google.com/share?url=http://digitalgrupo.provisorio.ws/index.php' target='_blank'><i class='fab fa-google-plus'></i></a></li>
-                        <li class='col-3'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='mailto:marcelo@djament.com.br?Subject=Veja esse site da Digital Grupo!&Body=Veja essse site! Lembrei de você!'><i class='fas fa-envelope'></i></a></li>
-                      </ul>
-                    </div>
-                    <article class='insta-card col-12'>
-                      <div>
-                        <div class='insta-card-subtitle'>acesse nosso insta</div>
-                        <h3 class='insta-card-title'><strong>".$instaUser."</strong></h3>
-                        <button class='insta-card-btn'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='".$instaUrl."' target='_blank'>Visitar</a></button>
-                      </div>
-                    </article>
-                  </article>
-                </section>
-
-                  ";
-                  exit;
-                }
-            ?>
-          <br/>
-        </div>
-        <form action="contato.php" method="post" id="contato" class="col-12 offset-md-2 col-md-9">
-          <label for="nome">Nome*:</label>
-          <input type="text" name="nome" id="nome" placeholder=" Insira seu nome" autofocus required>
-          <br/>
-          <label for="telefoneCelular">Telefone Celular*:</label>
-          <input type="text" name="telefoneCelular" id="telefoneCelular" placeholder=" Insira seu telefone com DDD" required>
-          <br/>
-          <label for="telefoneFixo">Telefone Fixo*:</label>
-          <input type="text" name="telefoneFixo" id="telefoneFixo" placeholder=" Insira seu telefone com DDD">
-          <br/>
-          <label for="emailContato">email:</label>
-          <input type="email" name="emailContato" id="emailContato" placeholder=" Insira seu email" required>
-          <br/> 
-            <h6>Como prefere que a gente entre em contato? (opcional)</h6><br/>
-            <div class="row">
-              <div class="col-3 col-md-2 radio">
-                <input type="radio" name="formcontato" id="formcontato-tel" value="Telefone" class="col-2">
-                <label for="formcontato-tel">Telefone</label>
-              </div>
-              <div class="col-3 col-md-2 radio">
-                <input type="radio" name="formcontato" id="formcontato-email" value="email" class="col-2">
-                <label for="formcontato-email">email</label>
-              </div>
-              <div class="col-3 col-md-2 radio">
-                <input type="radio" name="formcontato" id="formcontato-whatsapp" value="Whatsapp" class="col-2">
-                <label for="formcontato-whatsapp">Whatsapp</label>
-              </div>
-            </div>
-          <br/>
-          <label for="mensagem">Mensagem:</label>
-          <textarea name="mensagem" id="mensagem" form="contato" cols="30" rows="10" placeholder=" Envie sua mensagem, teremos prazer em te ajudar!" resize="y"></textarea>
-          <input type="submit" value="Enviar" name="submit" class="pdt-det-btn buy col-12 col-md-4">
-        </form>
-      </article>
       <article class="dadosContato col-12 col-md-4">
+        <h4 class="col-12">Realize sua busca</h4>
+        <div class="col-12">
+          <script>
+            (function() {
+              var cx = '014642095393488901278:3t1tazqpecm';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+            })();
+          </script>
+          <gcse:search></gcse:search>
+        </div>
+      </article>
+    </section>
+
+    <!-- ## DADOS DE CONTATO ## -->
+    <section class="row contato">
+      <article class="dadosContato col-12">
         <ul>
           <h4 class="col-12">Dados de Contato</h4>
-          <p class="col-12">Se preferir, entre em contato diretamente conosco, será um prazer te ajudar!</p>
+          <p class="col-12">Ainda não encontrou o que buscava? Entre em contato com a gente!</p>
           <br/>
           <li><a title="Ligar" name="tel" hreflang='pt-br' alt='Ligar' target="_blank" rel="noopener" href="tel:<?php echo $telefoneFixo ?>"><i class="fas fa-phone-volume"></i> <?php echo $telefoneFixo ?></a></li>
           <li><a title="Ligar ou enviar Whatsapp" name="whats" hreflang='pt-br' alt='Ligar ou enviar Whatsapp' href="tel:+55 <?php echo $telefoneCelular ?>"  target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <?php echo $telefoneCelular ?></a></li>

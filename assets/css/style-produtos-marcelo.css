@@ -471,6 +471,22 @@ html, body{
   scroll-behavior: smooth;
 }
 
+/* # HEADER */
+
+.bg-dark{
+  background-color: #000 !important;
+}
+
+/*.buscaGoogle{
+  display: inline-block;
+  height: inherit;
+  line-height: inherit;
+  position: relative;
+}*/
+
+main.container-fluid{
+  padding-top: 75px;
+}
 /* # HOMEPAGE */
 #bannerHome{
   width: 100%;
@@ -565,9 +581,6 @@ html, body{
   }
 
 /* # PRODUTOS - VITRINE */
-main.container-fluid{
-  padding-top: 68px;
-}
 
 h1, h2, h3, h4, h5, h6, p, small, b, strong{
   font-family: 'Poiret One' !important;

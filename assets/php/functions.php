@@ -47,6 +47,10 @@
 		    $metaOgImageUrlCategoria = $metaOgImageHome;
 		    $metaOgImageTypeCategoria = "image/gif";
 		    
+			    // #### ARRAY DE CATEGORIAS DE PRODUTOS (id_cat e categoria)
+		    	// Obs.: ainda falta inserir todas as informações acima atreladas a cada categoria criada no CMS E, dentro de cada uma, um array dos produtos, cada qual com suas informações.
+		    	$categorias = array('Rodas de Skate'=>'rodas-de-skate','Vestidos'=>'vestidos', 'Óculos de Sol'=>'oculos-de-sol');
+
 
 		    // ### PRODUTO (DETALHES)
 
@@ -83,6 +87,8 @@
 
 			    // #### VIDEO YOUTUBE
 			    /*$larguraMobile = */
+
+
 
 
 			// ### SOBRE (QUEM SOMOS)	
@@ -167,7 +173,21 @@
 		    $metaOgImageUrlTermos = $metaOgImageTermos;
 		    $metaOgImageTypeTermos = "image/gif";
 
-
+		    // ### BUSCA (GOOGLE SEARCH CONSOLE - BUSCA PERSONALIZADA)
+		    $tituloBusca = "Digital Grupo | Busca por Produto";
+		    $subtituloBusca = "Insira o nome ou característica do produto que procura";
+		    $metaTitleBusca = $tituloBusca;
+		    $metaDescBusca = "Busca | Template de ecommerce desenvolvido com fins didáticos, parte do projeto integrador do curso de Full Stack da Digital House Brasil";
+		    $metaKeyWordsBusca ="template de eCommerce, template de loja virtual, template loja, template loja online, eCommerce, loja virtual, loja online, desenvolvimento de eCommerce, desenvolvimento de loja virtual, desenvolvimento de loja online, desenvolvimento de loja, programação de eCommerce, programação de loja virtual, programação de loja online, programação de loja";
+		    $metaOgTitleBusca = $tituloBusca;
+		    $metaOgDescBusca = $metaDescBusca;
+		    $metaOgUrlBusca = "http://digitalgrupo.provisorio.ws/busca.php";
+		    $metaOgLocalBusca = "pt-BR";
+		    $metaOgTypeBusca = "website";
+		    $metaOgImageBusca = "http://digitalgrupo.provisorio.ws/assets/images/insta-card.gif";
+		    $metaOgImageAltBusca = "Digital Grupo";
+		    $metaOgImageUrlBusca = $metaOgImageBusca;
+		    $metaOgImageTypeBusca = "image/gif";
 
 		// ## ADITIVOS (BANNERS, POP UPS, ALERTAS, MODAIS...)
 		    
