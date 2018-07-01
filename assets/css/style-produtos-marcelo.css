@@ -473,6 +473,11 @@ html, body{
 
 /* # HEADER */
 
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.text-white.fixed-top{
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
 .bg-dark{
   background-color: #000 !important;
 }
