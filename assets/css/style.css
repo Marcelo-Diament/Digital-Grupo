@@ -466,6 +466,25 @@ aside{
  padding-top: 90px;
 }
 
+
+.date, .gender, .check-terms{
+  padding-left: 20px;
+}
+
+.register label{
+  margin-right: 15px;
+}
+
+.register h3{
+  text-align: center;
+  padding-top: 15px;
+}
+
+.register article a:hover{
+  color: blue;
+  text-decoration: underline;
+}
+
 .register-buttons{
   display: block;
   text-align: center;
@@ -476,10 +495,11 @@ aside{
   height: 35px;
   border: 1px solid black;
   padding: 0 2px;
+  border-radius: 5px;
 }
 
 .register span{
-  display: block;
+  display: inline-block;
   margin: auto;
 }
 
@@ -489,6 +509,7 @@ aside{
   background-color: buttonface;
   color: black;
   padding: 3px;
+  border-radius: 5px;
 }
 
 .register a:hover{
@@ -656,9 +677,15 @@ margin: 0 15px;
 .menu-2 ul a:hover{
   text-decoration: none;
 }
+
+/* Página de Cadastro */
+
+.check-terms{
+  padding-left: 105px;
 }
 
 footer a:hover{
   color: white;
   text-decoration: none;
+}
 }
