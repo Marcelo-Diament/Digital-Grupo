@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
     <link rel="icon" type="image/png" sizes="96x96" href="http://digitalgrupo.provisorio.ws/assets/images/logo.png">
-    <meta name="theme-color" content="#4285f4">
+    <meta name="theme-color" content="#000000">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <!-- META DATA (SEO) / OG -->
     <meta name="title" content="<?php echo $metaTitleCategoria ?>">

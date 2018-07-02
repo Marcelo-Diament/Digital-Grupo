@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
     <link rel="icon" type="image/png" sizes="96x96" href="http://digitalgrupo.provisorio.ws/assets/images/logo.png">
-    <meta name="theme-color" content="#4285f4">
+    <meta name="theme-color" content="#000000">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <!-- META DATA (SEO) / OG -->
     <meta name="title" content="<?php echo $metaTitleHome ?>">
@@ -116,90 +116,50 @@ include_once ("inc/header.php");
     <section class="pdt-vitrine row">
       <h4 class="col-12">Produtos em Destaque</h4>
       <!-- ### AGRUPAMENTO DE 8 ARTICLES/CARDS DE PRODUTOS -->
-      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique para ver os detalhes desse produto" hreflang="pt-br" alt="Clique para ver os detalhes do produto" name="pdtCardHome1" href="produto.php">Ver Mais</a></button>
-        </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique para ver os detalhes desse produto" hreflang="pt-br" alt="Clique para ver os detalhes do produto" name="pdtCardHome2" href="produto.php">Ver Mais</a></button>
-        </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique para ver os detalhes desse produto" hreflang="pt-br" alt="Clique para ver os detalhes do produto" name="pdtCardHome3" href="produto.php">Ver Mais</a></button>
-        </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique para ver os detalhes desse produto" hreflang="pt-br" alt="Clique para ver os detalhes do produto" name="pdtCardHome4" href="produto.php">Ver Mais</a></button>
-        </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique para ver os detalhes desse produto" hreflang="pt-br" alt="Clique para ver os detalhes do produto" name="pdtCardHome5" href="produto.php">Ver Mais</a></button>
-        </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique para ver os detalhes desse produto" hreflang="pt-br" alt="Clique para ver os detalhes do produto" name="pdtCardHome6" href="produto.php">Ver Mais</a></button>
-        </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique para ver os detalhes desse produto" hreflang="pt-br" alt="Clique para ver os detalhes do produto" name="pdtCardHome7" href="produto.php">Ver Mais</a></button>
-        </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique para ver os detalhes desse produto" hreflang="pt-br" alt="Clique para ver os detalhes do produto" name="pdtCardHome8" href="produto.php">Ver Mais</a></button>
-        </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique para ver os detalhes desse produto" hreflang="pt-br" alt="Clique para ver os detalhes do produto" name="pdtCardHome9" href="produto.php">Ver Mais</a></button>
-        </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique para ver os detalhes desse produto" hreflang="pt-br" alt="Clique para ver os detalhes do produto" name="pdtCardHome10" href="produto.php">Ver Mais</a></button>
-        </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique para ver os detalhes desse produto" hreflang="pt-br" alt="Clique para ver os detalhes do produto" name="pdtCardHome11" href="produto.php">Ver Mais</a></button>
-        </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique para ver os detalhes desse produto" hreflang="pt-br" alt="Clique para ver os detalhes do produto" name="pdtCardHome12" href="produto.php">Ver Mais</a></button>
-        </div>
-      </article>
+      <?php
+        if (isset($produtos)){
+          for ($i = 0; $i < 6; $i++){
+            $valorTotal = $produtos[$i]['valores']['valorTotal'];
+            $valorDesc = $produtos[$i]['valores']['valorDesc'];
+            $valorReal = ($valorTotal - $valorDesc);
+            $valorParcelas = $produtos[$i]['valores']['parcelas'];
+            $valorParcela = number_format((float)$valorReal/$valorParcelas, 2, ',', '');;
+            $valorProdutoCompleto = $valorParcelas."x de R$ ".$valorParcela." sem juros";
+
+            echo "
+              <article class='pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2'>
+                <div style='background-image:url(".$produtos[$i]['imagemDestaque'].");'>
+                  <h3 class='pdt-card-title'><strong>".$produtos[$i]['nome']."</strong></h3>
+                  <div class='pdt-card-price'>".$valorProdutoCompleto."</div>
+                  <button class='pdt-card-btn'><a title='Clique e veja os detalhes desse produto!' alt='Clique para ver os detalhes desse produto' name='".$produtos[$i]['nome']."' href='".$produtos[$i]['url']."' hreflang='pt-br'>Ver Mais</a></button>
+                </div>
+              </article>
+            ";
+          }
+        }
+      ?>
+<?php
+        if (isset($produtos)){
+          for ($i = 42; $i < 48; $i++){
+            $valorTotal = $produtos[$i]['valores']['valorTotal'];
+            $valorDesc = $produtos[$i]['valores']['valorDesc'];
+            $valorReal = ($valorTotal - $valorDesc);
+            $valorParcelas = $produtos[$i]['valores']['parcelas'];
+            $valorParcela = number_format((float)$valorReal/$valorParcelas, 2, ',', '');;
+            $valorProdutoCompleto = $valorParcelas."x de R$ ".$valorParcela." sem juros";
+
+            echo "
+              <article class='pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2'>
+                <div style='background-image:url(".$produtos[$i]['imagemDestaque'].");'>
+                  <h3 class='pdt-card-title'><strong>".$produtos[$i]['nome']."</strong></h3>
+                  <div class='pdt-card-price'>".$valorProdutoCompleto."</div>
+                  <button class='pdt-card-btn'><a title='Clique e veja os detalhes desse produto!' alt='Clique para ver os detalhes desse produto' name='".$produtos[$i]['nome']."' href='".$produtos[$i]['url']."' hreflang='pt-br'>Ver Mais</a></button>
+                </div>
+              </article>
+            ";
+          }
+        }
+      ?>
     </section>
   </main>
 <?php

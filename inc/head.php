@@ -11,8 +11,8 @@
     <meta name="author" content="Digital Grupo">
     <meta name="decription" content="Template de ecommerce desenvolvido com fins didáticos, parte do projeto integrador do curso de Full Stack da Digital House Brasil">
     <meta name="keywords" content="html, css, php, js, digital house, digital grupo, projeto integrador">
-    <link rel="icon" type="image/png" sizes="96x96" href="https://br.digitalhouse.com/wp-content/themes/dh/assets/img/icons/favicon-96x96.png">
-    <meta name="theme-color" content="#4285f4">
+    <link rel="icon" type="image/png" sizes="96x96" href="http://digitalgrupo.provisorio.ws/assets/images/logo.png">
+    <meta name="theme-color" content="#000">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <title>Nosso site</title>
   </head>

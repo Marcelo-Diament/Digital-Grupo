@@ -201,11 +201,26 @@ include_once ("inc/header.php");
           </script>
           
 
-          <div class="col-12">
+          <div class="review col-12">
             <h3>Reviews</h3>
-            <p><i>"Esse produto é um produto feito especialmente para você. A ideia é que você o use sempre - de dia, à noite, à tarde, de manhã... Não importa quando, use o produto! Aproveite nossas promoções para compras acima de mil reais - promoção por tempo limitado!"</i></p>
-            <p class="review_author"><b>Fulano de Tal</b>, São Paulo/SP</p>
+
+            <div class="reviewdet col-12">
+                <p><i>"Esse produto é um produto feito especialmente para você. A ideia é que você o use sempre - de dia, à noite, à tarde, de manhã... Não importa quando, use o produto! Aproveite nossas promoções para compras acima de mil reais - promoção por tempo limitado!"</i></p>
+                <p class="review_author"><b>Fulano de Tal</b>, São Paulo/SP</p>
           </div>
+
+          <div class="reviewdet col-12">
+               <p><i>"Esse produto é um produto feito especialmente para você. A ideia é que você o use sempre - de dia, à noite, à tarde, de manhã... Não importa quando, use o produto! Aproveite nossas promoções para compras acima de mil reais - promoção por tempo limitado!"</i></p>
+               <p class="review_author"><b>Ciclano de Tal</b>, São Paulo/SP</p>
+          </div>
+        </div>
+<style>
+    .reviewdet { display: inline-block; position: absolute; opacity:1; transition: all .5s ease-in-out; } .reviewdet + .reviewdet { opacity: 0;}
+</style>
+<script>
+    var current = 0, slides = document.getElementsByClassName("reviewdet"); setInterval(function() { for (var i = 0; i < slides.length; i++) { slides[i].style.opacity = 0; } current = (current != slides.length - 1) ? current + 1 : 0; slides[current].style.opacity = 1;}, 5000);
+</script>
+
           <span class="col-12" id="paginacao">
             <div class="col-4">
               <a href="#" title="Primeira Review" name="frstReview" hreflang="pt-br" alt="Clique para ver a review 1"><i class="fas fa-angle-double-left"></i></a>
