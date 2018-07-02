@@ -95,10 +95,19 @@ include_once ("inc/header.php");
           <label for="toogleDropdown" class="animate" id="menuFaqCat">Categorias FAQ<i class="fas fa-caret-down"></i></label>
           <!--<div class="submenuFaq animate">-->
             <ul class="col-12 faqCat animate">
-              <li><a class="animate dropli" title="FAQ - Garantia" name="FAQ - Garantia" alt="Clique para acessar as perguntas desse tema" href="#faqcat01">Garantia <i class="fas fa-caret-left"></i></a></li>
+              <?php
+                if (isset($faqCategorias)) {
+                  foreach ($faqCategorias as $faqUrl => $faqCat) {
+                    echo "
+                      <li><a class='animate dropli' href='#".$faqUrl."'>".$faqCat." <i class='fas fa-caret-right'></i></a></li>
+                    ";
+                  }
+                }
+              ?>
+              <!--<li><a class="animate dropli" title="FAQ - Garantia" name="FAQ - Garantia" alt="Clique para acessar as perguntas desse tema" href="#faqcat01">Garantia <i class="fas fa-caret-left"></i></a></li>
               <li><a class="animate dropli" title="FAQ - Frete e Entrega" name="FAQ - Frete e Entrega" alt="Clique para acessar as perguntas desse tema" href="#faqcat02">Frete e Entrega <i class="fas fa-caret-right"></i></a></li>
               <li><a class="animate dropli" title="FAQ - Trocas e Devoluções" name="FAQ - Trocas e Devoluções" alt="Clique para acessar as perguntas desse tema" href="#faqcat03">Trocas e Devoluções <i class="fas fa-caret-right"></i></a></li>
-              <li><a class="animate dropli" title="Encomendas Especiais" name="Encomendas Especiais" alt="Clique para acessar as perguntas desse tema" href="#faqcat04">Encomendas Especiais <i class="fas fa-caret-right"></i></a></li>
+              <li><a class="animate dropli" title="Encomendas Especiais" name="Encomendas Especiais" alt="Clique para acessar as perguntas desse tema" href="#faqcat04">Encomendas Especiais <i class="fas fa-caret-right"></i></a></li>-->
             </ul>
             <h6 class="animate">Ainda com dúvidas?<br/><a href="/contato.php" title="Dúvidas" alt="Clique para tirar suas dúvidas conosco!" name="FAQ-duvidas" target="_blank">Entre em contato</a> e envie sua dúvida</h6>
             <span class="animate cta-banner-horizontal mobileOnly"><a title="Banner Vitrine de Produto" alt="Clique para ver os detalhes desse produto" name="bannerPdt" href="http://digitalgrupo.provisorio.ws/produto.php" hreflang="pt-br"><strong><?php echo $bannerHorizontal ?></strong></a></span>
@@ -116,54 +125,43 @@ include_once ("inc/header.php");
       <section class="col-12 offset-md-3 col-md-9 faqListas">
         <div class="row">
           <small>Clique nas perguntas a seguir para visualizar a resposta</small>
-          <article class="faqLista" >
-            <div class="destino" id="faqcat01"></div>
-            <h4>Garantia</h4>
-            <button class="faqDuvida" id="faqpergunta0101">Por quanto tempo vale a garantia?</button>
-            <div class="faqDuvidaEResposta">
-              <p class="faqResposta" id="faqresposta0101">A garantia é válida em todo o território nacional e seu termo é de 1 ano (12 meses) após a data da aquisição do produto (ou seja, da data em que foi comprado). A garantia cobre problemas de caráter técnico e falhas de programação, porém não inclui danos causdos por mal uso ou acidentes. Para saber mais sobre os planos de seguros que oferecemos para nossos produtos consulte a categoria FAQ para Seguros.</p>
-            </div>
-            <button class="faqDuvida" id="faqpergunta0102">A garantia cobre roubo ou furto?</button>
-            <div class="faqDuvidaEResposta">
-              <p class="faqResposta" id="faqresposta0102">Não, a garantia cobre apenas defeitos de fabricação. Para uma avaliação o produto deverá ser enviado via Correios para os dados de cadastro da empresa - isso após aviso prévio e confirmação do SAC (Serviço de Atendimento ao Cliente). Em caso de dúvida ligue para 0800 987 6543.</p>
-            </div>
-            <button class="faqDuvida" id="faqpergunta0103">Se meu produto chegar com defeito, a garantia passa a valer apenas depois da troca?</button>
-            <div class="faqDuvidaEResposta">
-              <p class="faqResposta" id="faqresposta0103">A garantia é válida a partir da data da compra do produto. Caso haja algum defeito de fabricação comprovado, iremos realizar a troca do produto e a enviaremos uma nova garantia ou uma garantia extendida.</p>
-            </div>
-            <button class="faqDuvida" id="faqpergunta0104">É possível comprar a garantira extendida pelo site?</button>
-            <div class="faqDuvidaEResposta">
-              <p class="faqResposta" id="faqresposta0104">Sim, basta clicar na opção 'Garantia Extendida' antes de finalizar a compra. Caso o produto tenha sido comprado a menos de 1 mês (30 dias corridos) será possível realizar a extensão da garantia. Para intervalos maiores de 30 dias já não será possível extender a garantia, pois não temos condições de certificar o bom estado e manutenção do produto.</p>
-            </div>
-          </article>
-          <article class="faqLista" >
-            <div class="destino" id="faqcat02"></div>
-            <h4>Frete e Entrega</h4>
-            <button class="faqDuvida" id="faqpergunta0201">Em quanto tempo chegará meu pedido?</button>
-            <div class="faqDuvidaEResposta">
-              <p class="faqResposta" id="faqresposta0201">A estimativa de entrega é considerada com base nos cálculos do Correios, seu CEP e o CEP de remetente (matriz ou filial mais próxima da nossa marca). Também incluímos 2 dias de margem para logística, empacotamento, trâmites burocráticos e envio. Mas lembre-se: esse prazo é apenas uma previsão, podem ocorrer imprevistos. Caso ocorra algum imprevisto, você poderá acompanhar o status do envio de seu pedido através do próprio site do Correios. Em caso de dúvidas, pode ligar para nosso serviço de atendimento ao consumidor tabmém (SAC - 0800 987 6543).</p>
-            </div>
-            <button class="faqDuvida" id="faqpergunta0202">Em quanto tempo chegará meu pedido?</button>
-            <div class="faqDuvidaEResposta">
-              <p class="faqResposta" id="faqresposta0202">A estimativa de entrega é considerada com base nos cálculos do Correios, seu CEP e o CEP de remetente (matriz ou filial mais próxima da nossa marca). Também incluímos 2 dias de margem para logística, empacotamento, trâmites burocráticos e envio. Mas lembre-se: esse prazo é apenas uma previsão, podem ocorrer imprevistos. Caso ocorra algum imprevisto, você poderá acompanhar o status do envio de seu pedido através do próprio site do Correios. Em caso de dúvidas, pode ligar para nosso serviço de atendimento ao consumidor tabmém (SAC - 0800 987 6543).</p>
-            </div>
-          </article>
-          <article class="faqLista" >
+          <?php
+            if (isset($faqPerguntas)){
+              $length = count($faqPerguntas)/8;
+              for ($i = 0; $i < $length; $i++){
+                
+                foreach ($faqPerguntas as $idCategoria => $arrayPerguntas) {
+                  
+                  echo "
+                    <article class='faqLista' >
+                      <div class='destino' id='".$idCategoria."'></div>
+                      <h4>".$faqCategorias[$idCategoria]."</h4>
+                  ";
+                  
+                  foreach ($arrayPerguntas as $pergunta => $resposta) {
+                    echo "
+                      <button class='faqDuvida' id='faqpergunta0101'>".$pergunta."</button>
+                      <div class='faqDuvidaEResposta'>
+                        <p class='faqResposta' id='faqresposta0101'>".$resposta."</p>
+                      </div>
+                    ";
+                  }
+
+                  echo "
+                    </article>
+                  ";
+                }
+              }
+            }
+          ?>
+          <!--<article class="faqLista" >
             <div class="destino" id="faqcat03"></div>
             <h4>Trocas e Devoluções</h4>
             <button class="faqDuvida" id="faqpergunta0301">Por que é necessário fazer tal coisa antes de usar o produto?</button>
             <div class="faqDuvidaEResposta">
               <p class="faqResposta" id="faqresposta0301">A garantia é válida em todo o território nacional e seu termo é de 1 ano (12 meses) após a data da aquisição do produto (ou seja, da data em que foi comprado). A garantia cobre problemas de caráter técnico e falhas de programação, porém não inclui danos causdos por mal uso ou acidentes. Para saber mais sobre os planos de seguros que oferecemos para nossos produtos consulte a categoria FAQ para Seguros.</p>
             </div>
-          </article>
-          <article class="faqLista" >
-            <div class="destino" id="faqcat04"></div>
-            <h4>Encomendas Especiais</h4>
-            <button class="faqDuvida" id="faqpergunta0401">Como faço para solicitar um produto customizado? Vendem em grande quantidade/atacado?</button>
-            <div class="faqDuvidaEResposta">
-              <p class="faqResposta" id="faqresposta0401">Entre em contato com nossa equipe Comercial para solicitar seu projeto especial! Fazemos produtos customizados e sob medida. Também temos condições especiais para pedidos acima de 50 mil unidades. Ligue para 0800 987 6541 (de 2ª a Sábado das 09:00 às 13:00 e das 14:00 às 18:00) ou envie um email para contato@digitalgrupo.provisorio.ws - responderemos em até 48 horas!</p>
-            </div>
-          </article>
+          </article>-->
         </div>
       </section>
     </section>

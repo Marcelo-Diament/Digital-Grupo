@@ -84,7 +84,7 @@ include_once ("inc/header.php");
       <p>
         <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a title="Home" name="home" hreflang='pt-br' alt='Clique para acessar a homepage' href="<?php echo $siteNegocio ?>" itemprop="url"><span itemprop="title">Home</span></a> › </span>
         <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a title="Produtos" name="produtos" hreflang='pt-br' alt='Clique para ver todos os produtos' href="http://digitalgrupo.provisorio.ws/produtos.php" itemprop="url"> <span itemprop="title">Produtos</span> </a> › </span>
-        <?php echo $tituloCategoria ?>
+        <?php echo $categorias['Rodas de Skate']['titulo'] ?>
       </p>
     </section>
 

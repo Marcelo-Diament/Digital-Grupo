@@ -1206,7 +1206,6 @@ nav.row{
       padding-left: 12px;
     }
 
-
     .faq .faqMenu{
       line-height: 2em;
       position: sticky;
@@ -1235,6 +1234,7 @@ nav.row{
       font-weight: bold;
       font-size: 1.03em;
     }
+
 
     .faqListas article button.faqDuvida:hover{
       font-weight: bold;

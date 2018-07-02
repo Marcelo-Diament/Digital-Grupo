@@ -95,7 +95,7 @@ include_once ("inc/header.php");
         <div class="col-4">
           <a title="Frete para todo o Brasil" name="destHome1" alt="Clique e veja todos os nossos produtos" href="produtos.php">
             <i class="fas fa-shipping-fast"></i>
-            <h5 class="">Atendemos todo Brasil</h5>
+            <h5 class="">Frete em todo Brasil</h5>
           </a>
         </div>
         <div class="col-4">
@@ -138,7 +138,7 @@ include_once ("inc/header.php");
           }
         }
       ?>
-<?php
+      <?php
         if (isset($produtos)){
           for ($i = 42; $i < 48; $i++){
             $valorTotal = $produtos[$i]['valores']['valorTotal'];

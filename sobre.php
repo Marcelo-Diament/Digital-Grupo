@@ -97,15 +97,15 @@ include_once ("inc/header.php");
         </div>
         <div class="pdt-info col-12 col-md-5">
           <h3>Quem Somos</h3>
-          <p>O Digital Grupo surgiu com apenas uma missão em mente: desenvolver sites que primam pela Experiência do Usuário - seja do lado do visitante, usuário, consumidor final (promovendo uma navegação intuitiva, dinâmica e agradável) ou seja do lado do administrador, cliente, empresário ou comerciante (possibilitando a fácil gestão do conteúdo através de um CMS personalizado e de ferramentas desenvolvidas especialmente para a manutenção do posicionamento da marca na Internet).</p>
+          <p><?php echo $sobreQuemSomos ?></p>
           <p class="cta-visita">Quer conhecer nosso negócio de perto? Entre em contato clicando <a class="cta-visita" title="Contato" alt="Clique para entrar em contato e agendar sua visita" name="contatoVisita" href="contato.php" target="_blank">aqui</a> e agende sua visita!</p>
         </div>
       </article>
       <article class="row">
         <div class="col-12 col-md-8">
-          <h3>Depoimento do nosso Diretor</h3>
-          <p><i>"Nós criamos a Digital Grupo para mostrar que sabemos programar - e muito bem! Desde Maio de 2018 o Digital Grupo vem evoluindo constantemente, otimizando suas soluções, revisando projetos já realizados e alcançando (ou melhor, superando) os resultados desejados!"</i></p>
-          <p class="review_author"><b>Ciclano de Itaquaquecetuba Junior</b>, Diretor Executivo do Digital Grupo</p>
+          <h3>Depoimentos</h3>
+          <p><i>"<?php echo $depoimentos['depoimento'] ?>"</i></p>
+          <p class="review_author"><b><?php echo $depoimentos['depoente'] ?></b>, <?php echo $depoimentos['cargoDepoente'] ?></p>
         </div>
         <div class="col-12 col-md-4">
           <h4>Compartilhe nosso site!</h4>
@@ -127,36 +127,58 @@ include_once ("inc/header.php");
       <span class="cta-banner-horizontal"><a title="Banner Vitrine de Produto" alt="Clique para ver os detalhes desse produto" name="bannerPdt" href="http://digitalgrupo.provisorio.ws/produto.php" hreflang="pt-br"><strong><?php echo $bannerHorizontal ?></strong></a></span>
       <!-- ### AGRUPAMENTO DE 4 ARTICLES/CARDS DE PRODUTOS -->
       <h4 class="col-12">Lançamentos</h4>
-      <article class="pdt-card col-12 col-sm-6 col-md-3">
+      <!--<article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
           <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-3">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
-        </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-3">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
-        </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-3">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
-        </div>
-      </article>
+      </article>-->
+      <?php
+        if (isset($produtos)){
+          for ($i = 0; $i < 6; $i++){
+            $valorTotal = $produtos[$i]['valores']['valorTotal'];
+            $valorDesc = $produtos[$i]['valores']['valorDesc'];
+            $valorReal = ($valorTotal - $valorDesc);
+            $valorParcelas = $produtos[$i]['valores']['parcelas'];
+            $valorParcela = number_format((float)$valorReal/$valorParcelas, 2, ',', '');;
+            $valorProdutoCompleto = $valorParcelas."x de R$ ".$valorParcela." sem juros";
+
+            echo "
+              <article class='pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2'>
+                <div style='background-image:url(".$produtos[$i]['imagemDestaque'].");'>
+                  <h3 class='pdt-card-title'><strong>".$produtos[$i]['nome']."</strong></h3>
+                  <div class='pdt-card-price'>".$valorProdutoCompleto."</div>
+                  <button class='pdt-card-btn'><a title='Clique e veja os detalhes desse produto!' alt='Clique para ver os detalhes desse produto' name='".$produtos[$i]['nome']."' href='".$produtos[$i]['url']."' hreflang='pt-br'>Ver Mais</a></button>
+                </div>
+              </article>
+            ";
+          }
+        }
+      ?>
+      <?php
+        if (isset($produtos)){
+          for ($i = 42; $i < 48; $i++){
+            $valorTotal = $produtos[$i]['valores']['valorTotal'];
+            $valorDesc = $produtos[$i]['valores']['valorDesc'];
+            $valorReal = ($valorTotal - $valorDesc);
+            $valorParcelas = $produtos[$i]['valores']['parcelas'];
+            $valorParcela = number_format((float)$valorReal/$valorParcelas, 2, ',', '');;
+            $valorProdutoCompleto = $valorParcelas."x de R$ ".$valorParcela." sem juros";
+
+            echo "
+              <article class='pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2'>
+                <div style='background-image:url(".$produtos[$i]['imagemDestaque'].");'>
+                  <h3 class='pdt-card-title'><strong>".$produtos[$i]['nome']."</strong></h3>
+                  <div class='pdt-card-price'>".$valorProdutoCompleto."</div>
+                  <button class='pdt-card-btn'><a title='Clique e veja os detalhes desse produto!' alt='Clique para ver os detalhes desse produto' name='".$produtos[$i]['nome']."' href='".$produtos[$i]['url']."' hreflang='pt-br'>Ver Mais</a></button>
+                </div>
+              </article>
+            ";
+          }
+        }
+      ?>
     </section>
-    
   </main>
 <?php
 include ("inc/footer.php");
