@@ -76,11 +76,18 @@ include_once ("inc/header.php");
   <main class="container-fluid">
     <!-- ## BANNER -->
     <section class="row">
-      <article class="col-12" id="bannerHome">
-        <h2>Banner Homepage</h2>
-        <h4>Conheça o produto ABCDEF!</h4>
-        <button class="home-btn"><a title="Clique para saber mais" name="bannerHome" alt="Clique para acessar o destaque" href="produto.php">Ver Mais</a></button>
-      </article>
+      <!-- SCRIPT PARA PEGAR TODOS OS BANNERS E INSERIR - DEPOIS PODEMOS TENTAR IMPLEMENTAR UM SLIDER HORIZONTAL -->
+      <?php
+        foreach ($banners as $banner => $conteudo) {
+          echo "
+            <article class='col-12' id='bannerHome' style='background-image: url(assets/images/".$banner.")';>
+              <h2>".$conteudo['title']."</h2>
+              <h4>".$conteudo['subtitle']."</h4>
+              <button class='home-btn'><a title='".$conteudo['atitle']."' name='bannerHome' alt='".$conteudo['aalt']."' href='".$conteudo['aurl']."'>Ver Mais</a></button>
+            </article>
+          ";
+        } 
+      ?>
     </section>
     <!-- ## DESTAQUES -->
     <section class="row">

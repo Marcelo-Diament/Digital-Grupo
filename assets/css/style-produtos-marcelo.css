@@ -496,7 +496,7 @@ main.container-fluid{
 #bannerHome{
   width: 100%;
   min-width: 100%;
-  height: 80vh;
+  height: 91vh;
   margin: 0;
   padding: 10px;
   background-image: url(../images/produto-banner-01.jpg);
@@ -517,7 +517,7 @@ main.container-fluid{
   }
 }*/
 #bannerHome h2{
-  margin-top: 20%;
+  margin-top: 13%;
   font-size: 3em;
 }
 
@@ -660,14 +660,18 @@ h1, h2, h3, h4, h5, h6, p, small, b, strong{
     padding: 13px;
     height: 333px;
   }
+  /*.pdt-card > div h3{
+    color: #fff;
+  }*/
   .pdt-card > div{
     padding: 10px;
-    background-image: url(../images/pdt.png);
-    background-size: contain;
+    /*background-image: url(../images/pdt.png);*/
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #22c5c5;
     color: #fff;
+    font-weight: bold;
     height: 100%;
     position: relative;
     -webkit-transition: all 0.5s ease-in-out;

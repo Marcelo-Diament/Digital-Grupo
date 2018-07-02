@@ -7,10 +7,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto text-white d-flex justify-content-around">
         <li class="nav-item active">
-          <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+          <a title="Acessar página inicial" alt="Acessar página inicial" class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="sobre.php">Sobre</a>
+          <a title="Conheça melhor o Digital Grupo" alt="Conheça melhor o Digital Grupo" class="nav-link" href="sobre.php">Sobre</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -19,27 +19,28 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             
             <?php
-              foreach ($categorias as $categoria => $catSlug) {
-                echo "<a class='dropdown-item' href='http://digitalgrupo.provisorio.ws/".$catSlug.".php' title='Clique para acessar a categoria' alt='Clique para acessar a categoria'>".$categoria."</a>";
+              foreach ($categorias as $categoria) {
+                echo "<a class='dropdown-item' href='".$categoria['url']."' title='Clique para ver ".$categoria['titulo']."' alt='Clique para ver ".$categoria['titulo']."'>".$categoria['titulo']."</a>";
               }
             ?>
             <!--<a class="dropdown-item" href="#">Vestidos</a>
             <a class="dropdown-item" href="#">Another action</a>-->
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="contato.php">Produtos customizados</a>
+            <a title="Clique para ver todos os produtos" alt="Clique para ver todos os produtos" class="dropdown-item" href="produtos.php">Todos os produtos</a>
+            <a title="Clique para solicitar seu produto sob encomenda" alt="Clique para solicitar seu produto sob encomenda" class="dropdown-item" href="contato.php">Produtos customizados</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="faq-duvidas.php">FAQ</a>
+          <a title="Clique para ver as perguntas feitas com maior frequência" alt="Clique para ver as perguntas feitas com maior frequência" class="nav-link" href="faq-duvidas.php">FAQ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="login.php">Login</a>
+          <a title="Clique e faça login" alt="Clique e faça login" class="nav-link" href="login.php">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="register.php">Cadastre-se</a>
+          <a title="Faça seu cadastro rapidamente" alt="Faça seu cadastro rapidamente" class="nav-link" href="register.php">Cadastre-se</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+          <a title="Conferir carrinho de compras" alt="Conferir carrinho de compras" class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
         </li>
         <!--<li class="nav-item">
           <a class="nav-link disabled" href="#">Disabled</a>
