@@ -136,6 +136,24 @@
 					    'metaOgImageAlt' => 'Óculos de Sol',
 					    'metaOgImageUrl' => 'http://digitalgrupo.provisorio.ws/assets/images/banner-oculos-de-sol.jpg',
 					    'metaOgImageType' => 'image/jpg'
+		    		),
+'Óculos de Grau'=> array(
+		    			'idcategoria' => '3',
+		    			'url' => 'http://digitalgrupo.provisorio.ws/oculos-de-grau.php',
+		    			'titulo' => 'Óculos de Grau',
+		    			'subtitulo' => 'Óculos de Sol de inúmeras cores',
+					    'metaTitle' => 'Óculos de Sol de diversas cores',
+					    'metaDesc' => 'Óculos de Sol de diferentes cores - óculos azul, óculos amarelo, óculos laranja, óculos roxo, óculos verde e muito mais!',
+					    'metaKeyWords' =>'oculos, oculos de sol, oculos amarelo, oculos de sol amarelo, oculos azul, oculos de sol azul, oculos branco, oculos de sol branco, oculos cinza, oculos de sol cinza, oculos verde, oculos de sol verde, oculos rosa, oculos de sol rosa, oculos roxo, oculos de sol roxo, oculos vermelho, oculos de sol vermelho, oculos verde, oculos de sol verde',
+					    'metaOgTitle' => 'Óculos de Sol',
+					    'metaOgDesc' => 'Óculos de Sol de inúmeras cores! E aí, qual a sua cor predileta?',
+					    'metaOgUrl' => 'http://digitalgrupo.provisorio.ws/oculos-de-sol.php',
+					    'metaOgLocal' => 'pt-BR',
+					    'metaOgType' => 'website',
+					    'metaOgImage' => 'http://digitalgrupo.provisorio.ws/assets/images/banner-oculos-de-sol.jpg',
+					    'metaOgImageAlt' => 'Óculos de Sol',
+					    'metaOgImageUrl' => 'http://digitalgrupo.provisorio.ws/assets/images/banner-oculos-de-sol.jpg',
+					    'metaOgImageType' => 'image/jpg'
 		    		)
 		    	);
 

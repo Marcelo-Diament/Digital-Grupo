@@ -132,20 +132,20 @@ include_once ("inc/header.php");
                   <article class='dadosContato col-12'>
                     <ul>
                       <br/>
-                      <li style='text-align:center;'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='tel:".$telefoneFixo."'><i class='fas fa-phone-volume'></i> ".$telefoneFixo."</a></li>
-                      <li style='text-align:center;'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='tel:+55 ".$telefoneCelular."' target='_blank'><i class='fab fa-whatsapp'></i> ".$telefoneCelular."</a></li>
-                      <li style='text-align:center;'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='mailto:'".$emailContato."?Subject=Contato via template eCommerce Digital Grupo&Body=Tenho interesse em adquirir um eCommerce com o Digital Grupo' target='_blank'><i class='fas fa-envelope'></i> ".$emailContato."</a></li>
-                      <li style='text-align:center;'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='https://goo.gl/maps/BNMCvVriyyt' target='_blank'><i class='fas fa-map-marker-alt'></i> Rua Cardoso de Melo, nº 90</a></li>
-                      <li style='text-align:center;'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='https://goo.gl/maps/BNMCvVriyyt' target='_blank'>Vila Olímpia | São Paulo/SP</a></li>
+                      <li style='text-align:center;'><a hreflang='pt-br' alt='Ligue para a gente' title='Ligue para a gente' href='tel:".$telefoneFixo."'><i class='fas fa-phone-volume'></i> ".$telefoneFixo."</a></li>
+                      <li style='text-align:center;'><a hreflang='pt-br' alt='Ligue para a gente' title='Ligue para a gente' href='tel:+55 ".$telefoneCelular."' target='_blank'><i class='fab fa-whatsapp'></i> ".$telefoneCelular."</a></li>
+                      <li style='text-align:center;'><a hreflang='pt-br' alt='Envie um email para a gente' title='Envie um email para a gente' href='mailto:'".$emailContato."?Subject=Contato via template eCommerce Digital Grupo&Body=Tenho interesse em adquirir um eCommerce com o Digital Grupo' target='_blank'><i class='fas fa-envelope'></i> ".$emailContato."</a></li>
+                      <li style='text-align:center;'><a hreflang='pt-br' alt='Abra nossa localização no Google Maps' title='Abra nossa localização no Google Maps' href='https://goo.gl/maps/BNMCvVriyyt' target='_blank'><i class='fas fa-map-marker-alt'></i> Rua Cardoso de Melo, nº 90</a></li>
+                      <li style='text-align:center;'><a hreflang='pt-br' alt='Abra nossa localização no Google Maps' title='Abra nossa localização no Google Maps' href='https://goo.gl/maps/BNMCvVriyyt' target='_blank'>Vila Olímpia | São Paulo/SP</a></li>
                     </ul>
                     <h4>Compartilhe nossa página!</h4>
                     <br/>
                     <div class='social-share col-12'>
                       <ul class='row'>
-                        <li class='col-3'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='http://www.facebook.com/sharer.php?u=http://digitalgrupo.provisorio.ws/index.php' target='_blank'><i class='fab fa-facebook-square'></i></a></li>
-                        <li class='col-3'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());'><i class='fab fa-pinterest-square'></i></a></li>
-                        <li class='col-3'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='https://plus.google.com/share?url=http://digitalgrupo.provisorio.ws/index.php' target='_blank'><i class='fab fa-google-plus'></i></a></li>
-                        <li class='col-3'><a hreflang='pt-br' alt='Clique e veja mais informações sobre o produto' href='mailto:marcelo@djament.com.br?Subject=Veja esse site da Digital Grupo!&Body=Veja essse site! Lembrei de você!'><i class='fas fa-envelope'></i></a></li>
+                        <li class='col-3'><a hreflang='pt-br' alt='Compartilhe nosso site no Facebook' title='Compartilhe nosso site no Facebook' href='http://www.facebook.com/sharer.php?u=http://digitalgrupo.provisorio.ws/index.php' target='_blank'><i class='fab fa-facebook-square'></i></a></li>
+                        <li class='col-3'><a hreflang='pt-br' alt='Crie um Pin de nosso site' title='Crie um Pin de nosso site' href='javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());'><i class='fab fa-pinterest-square'></i></a></li>
+                        <li class='col-3'><a hreflang='pt-br' alt='Compartilhe nosso site no Google Plus' title='Compartilhe nosso site no Google Plus' href='https://plus.google.com/share?url=http://digitalgrupo.provisorio.ws/index.php' target='_blank'><i class='fab fa-google-plus'></i></a></li>
+                        <li class='col-3'><a hreflang='pt-br' alt='Envie nosso site por email' title='Envie nosso site por email' href='mailto:marcelo@djament.com.br?Subject=Veja esse site da Digital Grupo!&Body=Veja essse site! Lembrei de você!'><i class='fas fa-envelope'></i></a></li>
                       </ul>
                     </div>
                     <article class='insta-card col-12'>
@@ -203,9 +203,9 @@ include_once ("inc/header.php");
           <h4 class="col-12">Dados de Contato</h4>
           <p class="col-12">Se preferir, entre em contato diretamente conosco, será um prazer te ajudar!</p>
           <br/>
-          <li><a title="Ligar" name="tel" hreflang='pt-br' alt='Ligar' target="_blank" rel="noopener" href="tel:<?php echo $telefoneFixo ?>"><i class="fas fa-phone-volume"></i> <?php echo $telefoneFixo ?></a></li>
+          <li><a title="Ligar" name='tel' hreflang='pt-br' alt='Ligar' target="_blank" rel="noopener" href="tel:<?php echo $telefoneFixo ?>"><i class="fas fa-phone-volume"></i> <?php echo $telefoneFixo ?></a></li>
           <li><a title="Ligar ou enviar Whatsapp" name="whats" hreflang='pt-br' alt='Ligar ou enviar Whatsapp' href="tel:+55 <?php echo $telefoneCelular ?>"  target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <?php echo $telefoneCelular ?></a></li>
-          <li><a title="Enviar email" name="mailto" hreflang='pt-br' alt='Enviar email' href="<?php echo "mailto:".$emailContato."?Subject=Contato via template eCommerce Digital Grupo&Body=Tenho interesse em adquirir um eCommerce com o Digital Grupo"; ?>"  target="_blank" rel="noopener"><i class="fas fa-envelope"></i> <?php echo $emailContato ?></a></li>
+          <li><a title="Enviar email" name="mailto" hreflang='pt-br' alt='Enviar email' href="<?php echo "mailto:'.$emailContato.'?Subject=Contato via template eCommerce Digital Grupo&Body=Tenho interesse em adquirir um eCommerce com o Digital Grupo"; ?>"  target="_blank" rel="noopener"><i class="fas fa-envelope"></i> <?php echo $emailContato ?></a></li>
           <li><a title="Acessar mapa no Google" name="map" hreflang='pt-br' alt='Acessar mapa no Google' href="https://goo.gl/maps/BNMCvVriyyt"  target="_blank" rel="noopener"><i class="fas fa-map-marker-alt"></i> Rua Cardoso de Melo, nº 90</a></li>
           <li><a title="Acessar mapa no Google" name="map" hreflang='pt-br' alt='Acessar mapa no Google' href="https://goo.gl/maps/BNMCvVriyyt"  target="_blank" rel="noopener">Vila Olímpia | São Paulo/SP</a></li>
           <div class="social-share col-12">

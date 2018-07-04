@@ -173,34 +173,57 @@ include_once ("inc/header.php");
 
       <!-- ### AGRUPAMENTO DE 4 ARTICLES/CARDS DE PRODUTOS -->
       <h4 class="col-12">Produtos em Destaque</h4>
-      <article class="pdt-card col-12 col-sm-6 col-md-3">
+      <!--<article class="pdt-card col-12 col-sm-6 col-md-3">
         <div>
           <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
           <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
           <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
         </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-3">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
-        </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-3">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
-        </div>
-      </article>
-      <article class="pdt-card col-12 col-sm-6 col-md-3">
-        <div>
-          <h3 class="pdt-card-title"><strong><?php echo $nomeProduto ?></strong></h3>
-          <div class="pdt-card-price"><?php echo $valorProdutoCompleto ?></div>
-          <button class="pdt-card-btn"><a title="Clique e veja os detalhes desse produto!" alt="Clique para ver os detalhes desse produto" name="produto" href="produto.php" hreflang="pt-br">Ver Mais</a></button>
-        </div>
-      </article>
+      </article>-->
+      <?php
+        if (isset($produtos)){
+          for ($i = 0; $i < 6; $i++){
+            $valorTotal = $produtos[$i]['valores']['valorTotal'];
+            $valorDesc = $produtos[$i]['valores']['valorDesc'];
+            $valorReal = ($valorTotal - $valorDesc);
+            $valorParcelas = $produtos[$i]['valores']['parcelas'];
+            $valorParcela = number_format((float)$valorReal/$valorParcelas, 2, ',', '');;
+            $valorProdutoCompleto = $valorParcelas."x de R$ ".$valorParcela." sem juros";
+
+            echo "
+              <article class='pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2'>
+                <div style='background-image:url(".$produtos[$i]['imagemDestaque'].");'>
+                  <h3 class='pdt-card-title'><strong>".$produtos[$i]['nome']."</strong></h3>
+                  <div class='pdt-card-price'>".$valorProdutoCompleto."</div>
+                  <button class='pdt-card-btn'><a title='Clique e veja os detalhes desse produto!' alt='Clique para ver os detalhes desse produto' name='".$produtos[$i]['nome']."' href='".$produtos[$i]['url']."' hreflang='pt-br'>Ver Mais</a></button>
+                </div>
+              </article>
+            ";
+          }
+        }
+      ?>
+      <?php
+        if (isset($produtos)){
+          for ($i = 42; $i < 48; $i++){
+            $valorTotal = $produtos[$i]['valores']['valorTotal'];
+            $valorDesc = $produtos[$i]['valores']['valorDesc'];
+            $valorReal = ($valorTotal - $valorDesc);
+            $valorParcelas = $produtos[$i]['valores']['parcelas'];
+            $valorParcela = number_format((float)$valorReal/$valorParcelas, 2, ',', '');;
+            $valorProdutoCompleto = $valorParcelas."x de R$ ".$valorParcela." sem juros";
+
+            echo "
+              <article class='pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2'>
+                <div style='background-image:url(".$produtos[$i]['imagemDestaque'].");'>
+                  <h3 class='pdt-card-title'><strong>".$produtos[$i]['nome']."</strong></h3>
+                  <div class='pdt-card-price'>".$valorProdutoCompleto."</div>
+                  <button class='pdt-card-btn'><a title='Clique e veja os detalhes desse produto!' alt='Clique para ver os detalhes desse produto' name='".$produtos[$i]['nome']."' href='".$produtos[$i]['url']."' hreflang='pt-br'>Ver Mais</a></button>
+                </div>
+              </article>
+            ";
+          }
+        }
+      ?>
     </section>
     <!-- SCRIPT ACCORDION JS COPIADO DA PÁGINA FAQ ANTERIOR MAS ADAPTADO, FOI FEITO NO COLEARNING -->
     <script>
