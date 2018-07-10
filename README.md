@@ -35,10 +35,9 @@ Grupo da classe de Web Full Stack da Digital House Brasil (Vila Olímipia, TN01)
   - Entrega: DER e integração de Login e Cadastro ao MYSQL.
   - Linguagens: SQL
   - Papéis:
-    > P.O.: ? | 
-    > Scrum Master: ? | 
-    > Dev 1: ? | 
-    > Dev 2: ?.
+    > P.O.: Hector | 
+    > Scrum Master: Marcelo | 
+    > Dev : Lucas.
   
   #### Sprint #04 | 16/07 a 30/07
   - Entrega: Código de Login e Cadastro organizados com classes.
