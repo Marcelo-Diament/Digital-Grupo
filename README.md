@@ -45,8 +45,7 @@ Grupo da classe de Web Full Stack da Digital House Brasil (Vila Olímipia, TN01)
   - Papéis:
     > P.O.: ? | 
     > Scrum Master: ? | 
-    > Dev 1: ? | 
-    > Dev 2: ?.
+    > Dev: ?.
   
   #### Sprint #05 | 06/08 a 20/08
   - Entregas:
@@ -56,8 +55,7 @@ Grupo da classe de Web Full Stack da Digital House Brasil (Vila Olímipia, TN01)
   - Papéis:
     > P.O.: ? | 
     > Scrum Master: ? | 
-    > Dev 1: ? | 
-    > Dev 2: ?.
+    > Dev: ?.
   
   #### Sprint #06 | 20/08 a 03/09
   - Entregas:
@@ -67,8 +65,7 @@ Grupo da classe de Web Full Stack da Digital House Brasil (Vila Olímipia, TN01)
   - Papéis:
     > P.O.: ? | 
     > Scrum Master: ? | 
-    > Dev 1: ? | 
-    > Dev 2: ?.
+    > Dev: ?.
   
 
 # Histórico:
