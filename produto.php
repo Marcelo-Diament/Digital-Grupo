@@ -218,7 +218,21 @@ include_once ("inc/header.php");
     .reviewdet { display: inline-block; position: absolute; opacity:1; transition: all .5s ease-in-out; } .reviewdet + .reviewdet { opacity: 0;}
 </style>
 <script>
-    var current = 0, slides = document.getElementsByClassName("reviewdet"); setInterval(function() { for (var i = 0; i < slides.length; i++) { slides[i].style.opacity = 0; } current = (current != slides.length - 1) ? current + 1 : 0; slides[current].style.opacity = 1;}, 5000);
+    var current = 0, slides = document.getElementsByClassName("reviewdet"); 
+    setInterval(function() { 
+      for (var i = 0; i < slides.length; i++) { 
+        slides[i].style.opacity = 0; 
+        setTimeout(function() {
+          slides[i].style.display = 'none';
+        },1000) 
+      } 
+      
+      current = (current != slides.length - 1) ? current + 1 : 0; 
+      slides[current].style.opacity = 1;
+      setTimeout(function() {
+        slides[current].style.display = 'inline-block';
+      },1000)
+    }, 5000);
 </script>
 
           <span class="col-12" id="paginacao">
