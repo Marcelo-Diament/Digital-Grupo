@@ -1,4 +1,5 @@
 <?php
-echo "Seu email é :".$_POST["email"];
-echo "Sua senha é :".$_POST["senha"];
+if (isset($_POST)) {
+  var_dump($_POST);
+}
  ?>
