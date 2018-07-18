@@ -50,6 +50,14 @@ include ("inc/header.php"); ?>
           <input class="form-control" placeholder="1234-5678" type="number" name="cpf" required>
         </div>
       </article>
+      <article class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="form-group col-sm-5">
+          <label for=""><b>Celular: </b></label>
+          <input class="form-control" type="text" name="celular" value="" placeholder="91234-5678">
+        </div>
+      </article>
       <article class="form-group row gender">
         <div class="col-sm-1"></div>
         <label><b>Gênero: </b></label>
