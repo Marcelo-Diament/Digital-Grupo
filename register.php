@@ -10,31 +10,39 @@ try {
   $email->execute(){[
     ":email" => $_POST["email"]
   ]};
-  // if ($email->rowCount() > 0) {
-  //   echo "O email inserido já está cadastrado.";
-  // }else{
-  //
-  // }
-  if ($_POST && $_POST["senha"] == $_POST["senha_confirm"] && $_POST["email"] == $_POST["email_confirm"]) {
-      $hash = password_hash($_POST["senha"],PASSWORD_DEFAULT);
-      $usuarios = $db->prepare("INSERT into usuarios(nome,sobrenome,email,senha,cpf,telefone,genero,CEP,numero,bairro,uf_fk,data_nascimento) values (:nome,:sobrenome,:email,:senha,:cpf,:telefone,:genero,:CEP,:numero,:bairro,:uf_fk,:data)");
-      $usuarios->execute([
-        ':nome' => $_POST["nome"],
-        ":sobrenome" => $_POST["Sobrenome"],
-        ":email" => $_POST["email"],
-        ":senha" => $hash,
-        ":cpf" => $_POST["cpf"],
-        ":telefone" => $_POST["telefone"],
-        ":genero" => $_POST["genero"],
-        ":CEP" => $_POST["cep"],
-        ":numero" => $_POST["number"],
-        ":bairro" => $_POST["bairro"],
-        ":uf_fk" => $_POST["estado"],
-        ":data" => $_POST["nascimento"]
-      ]);
-  }else {
-    echo "A senha ou email são diferentes de seus respectivos campos de confirmação";
+  $cpf = $db->prepare("SELECT * from usuarios where cpf like '%:cpf%'");
+  $cpf->execute(){[
+    ":cpf" => $_POST["cpf"]
+    ]};
+  if ($email->rowCount() > 0){
+    echo "O email inserido já está cadastrado.";
+  }else{
+    if($cpf->rowCount() > 0){
+      echo "O cpf já está cadastro";
+    }else{
+      if ($_POST && $_POST["senha"] == $_POST["senha_confirm"] && $_POST["email"] == $_POST["email_confirm"]) {
+          $hash = password_hash($_POST["senha"],PASSWORD_DEFAULT);
+          $usuarios = $db->prepare("INSERT into usuarios(nome,sobrenome,email,senha,cpf,telefone,genero,CEP,numero,bairro,uf_fk,data_nascimento) values (:nome,:sobrenome,:email,:senha,:cpf,:telefone,:genero,:CEP,:numero,:bairro,:uf_fk,:data)");
+          $usuarios->execute([
+            ':nome' => $_POST["nome"],
+            ":sobrenome" => $_POST["Sobrenome"],
+            ":email" => $_POST["email"],
+            ":senha" => $hash,
+            ":cpf" => $_POST["cpf"],
+            ":telefone" => $_POST["telefone"],
+            ":genero" => $_POST["genero"],
+            ":CEP" => $_POST["cep"],
+            ":numero" => $_POST["number"],
+            ":bairro" => $_POST["bairro"],
+            ":uf_fk" => $_POST["estado"],
+            ":data" => $_POST["nascimento"]
+          ]);
+      }else {
+        echo "A senha ou email são diferentes de seus respectivos campos de confirmação";
+      }
+    }
   }
+
 }
   catch (PDOException $Exception) {
     echo $Exception->getMessage();
