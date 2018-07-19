@@ -1,30 +1,42 @@
 <?php
-include ("inc/head.php");
-include ("inc/header.php");
 session_start();
-$_session["logado"]=false;
-try {
-  $email = $_POST["email-login"];
-  $db = new PDO('mysql:host=localhost;dbname=ecommerce;charset=utf8mb4','root', '')
+include ("inc/head.php");
+// include ("inc/header.php");
+$_SESSION["logado"]=false;
+if ($_POST) {
+  try {
+    $email = $_POST["email-login"];
+    $db = new PDO('mysql:host=localhost;dbname=ecommerce;charset=utf8mb4','root', '');
 
-  $id = $db->prepare("SELECT id FROM usuarios where email = :email");
-  $id->execute([
-      ":email" => $email;
-  ]);
-  $senha = $db->prepare("SELECT senha FROM usuarios where id= :id");
-  $senha->execute([
-    ":id" => $id;
-  ]);
-    if (password_verify($_POST["senha-login"],$senha) &&) {
-      header('Location: index.php');
-      $_session["logado"]= true;
+    $id = $db->prepare("SELECT id FROM usuarios where email = :email");
+    $id->execute([
+        ":email" => $email
+    ]);
+    $ids = $id->fetch(PDO::FETCH_ASSOC);
+      if ($id->rowCount() > 0) {
+        $senha = $db->prepare("SELECT senha FROM usuarios where id= :id");
+        $senha->execute([
+          ":id" => $ids["id"]
+        ]);
+        $senhas = $senha->fetch(PDO::FETCH_ASSOC);
+        if ($senha->rowCount() > 0) {
+          if (password_verify($_POST["senha-login"],$senhas["senha"])) {
+            header('Location: index.php');
+            $_SESSION["logado"]= true;
+          }
+        }else{
+          echo "A senha inserida não está no nosso banco de dados";
+        }
+      }else{
+        echo "O email inserido não está no nosso banco de dados";
+      };
+  } catch (PDOException $Exception) {
+    echo $Exception->getMessage();
   }
-} catch (PDOException $Exception) {
-  echo $Exception->getMessage();
 }
 ?>
 <div class="altura">
-<form class="login" action="informacoes.php" method="post">
+<form class="login" action="login.php" method="post">
   <div class="form-group">
     <input class="caixa-login" type="email" name="email-login" placeholder="E-mail">
   </div>

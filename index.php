@@ -1,8 +1,9 @@
 <!DOCTYPE html prefix="og: http://ogp.me/ns#">
 <html lang="pt-br" dir="ltr">
   <head>
+  <?php session_start() ?>
     <!-- SCRIPTS E INCLUDES (PHP, JQUERY E ENTÃO JS) -->
-    <?php include_once("assets/php/functions.php") ?>
+    <!-- <?php include_once("assets/php/functions.php") ?> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -28,7 +29,7 @@
           "addressRegion" : "São Paulo",
           "postalCode" : "05089-001"
         },
-        "sameAs" : [ "https://www.facebook.com/digitalgrupo", "https://www.youtube.com/channel/digitalgrupo", "https://pinterest.com/digitalgrupo/", "https://twitter.com/digitalgrupo", "https://vimeo.com/digitalgrupo" ]  
+        "sameAs" : [ "https://www.facebook.com/digitalgrupo", "https://www.youtube.com/channel/digitalgrupo", "https://pinterest.com/digitalgrupo/", "https://twitter.com/digitalgrupo", "https://vimeo.com/digitalgrupo" ]
       }
         "contactPoint": [{
           "@type": "ContactPoint",
@@ -70,7 +71,11 @@
 <body>
 <!-- HEADER -->
 <?php
+if ($_SESSION["logado"]){
+include_once ("inc/header_logado.php");
+}else{
 include_once ("inc/header.php");
+}
 ?>
   <!-- # CONTÂINER DO CONTEÚDO PRINCIPAL # -->
   <main class="container-fluid">
@@ -86,7 +91,7 @@ include_once ("inc/header.php");
               <button class='home-btn'><a title='".$conteudo['atitle']."' name='bannerHome' alt='".$conteudo['aalt']."' href='".$conteudo['aurl']."'>Ver Mais</a></button>
             </article>
           ";
-        } 
+        }
       ?>
     </section>
     <!-- ## DESTAQUES -->

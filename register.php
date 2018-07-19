@@ -4,15 +4,19 @@ include ("inc/header.php");
 $db_command = "mysql:host=localhost;dbname=ecommerce;charset=utf8mb4";
 $db_user = "root";
 $db_password = "";
-$logado = false;
-$senha = $_POST["senha"];
-$senha_confirm = $_POST["senha_confirm"];
-$email = $_POST["email"];
-$email_confirm = $_POST["email_confirm"];
+$db = new PDO($db_command,$db_user,$db_password);
 try {
-  if ($_POST && $senha_confirm == $senha && $email == $email_confirm) {
-      $hash = password_hash($senha,PASSWORD_DEFAULT);
-      $db = new PDO($db_command,$db_user,$db_password);
+  $email = $db->prepare("SELECT * from usuarios where email like '%:email%'");
+  $email->execute(){[
+    ":email" => $_POST["email"]
+  ]};
+  // if ($email->rowCount() > 0) {
+  //   echo "O email inserido já está cadastrado.";
+  // }else{
+  //
+  // }
+  if ($_POST && $_POST["senha"] == $_POST["senha_confirm"] && $_POST["email"] == $_POST["email_confirm"]) {
+      $hash = password_hash($_POST["senha"],PASSWORD_DEFAULT);
       $usuarios = $db->prepare("INSERT into usuarios(nome,sobrenome,email,senha,cpf,telefone,genero,CEP,numero,bairro,uf_fk,data_nascimento) values (:nome,:sobrenome,:email,:senha,:cpf,:telefone,:genero,:CEP,:numero,:bairro,:uf_fk,:data)");
       $usuarios->execute([
         ':nome' => $_POST["nome"],
@@ -29,7 +33,7 @@ try {
         ":data" => $_POST["nascimento"]
       ]);
   }else {
-    echo "A senha ou email são diferentes de seus campos de confirmação";
+    echo "A senha ou email são diferentes de seus respectivos campos de confirmação";
   }
 }
   catch (PDOException $Exception) {

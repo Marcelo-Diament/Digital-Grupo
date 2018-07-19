@@ -16,29 +16,37 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `meios`
+-- Table structure for table `pagamentos`
 --
 
-DROP TABLE IF EXISTS `meios`;
+DROP TABLE IF EXISTS `pagamentos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `meios` (
+CREATE TABLE `pagamentos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(50) DEFAULT NULL,
-  `taxa_transacao` decimal(6,2) DEFAULT NULL,
-  `taxa_parcela` int(3) DEFAULT NULL,
-  `taxa_outras` int(3) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `pedido_id_fk` int(11) DEFAULT NULL,
+  `parcelas` tinyint(2) NOT NULL,
+  `horario_transacao` datetime NOT NULL,
+  `status_fk` int(11) DEFAULT NULL,
+  `id_transacao` varchar(20) NOT NULL,
+  `lucro_liquido` decimal(6,2) NOT NULL,
+  `forma` varchar(50) NOT NULL,
+  `id_meio_fk` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `ligacao_pagamentos_status` (`status_fk`),
+  KEY `ligacao_pagamentos_meios` (`id_meio_fk`),
+  CONSTRAINT `ligacao_pagamentos_meios` FOREIGN KEY (`id_meio_fk`) REFERENCES `meios` (`id`),
+  CONSTRAINT `ligacao_pagamentos_status` FOREIGN KEY (`status_fk`) REFERENCES `status_tabela` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `meios`
+-- Dumping data for table `pagamentos`
 --
 
-LOCK TABLES `meios` WRITE;
-/*!40000 ALTER TABLE `meios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `meios` ENABLE KEYS */;
+LOCK TABLES `pagamentos` WRITE;
+/*!40000 ALTER TABLE `pagamentos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pagamentos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-19 17:37:31
+-- Dump completed on 2018-07-18 22:25:05

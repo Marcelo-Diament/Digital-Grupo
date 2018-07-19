@@ -31,7 +31,7 @@ CREATE TABLE `usuarios` (
   `celular` int(11) unsigned DEFAULT NULL,
   `email` varchar(50) NOT NULL,
   `email_recup` varchar(50) DEFAULT NULL,
-  `senha` varchar(100) NOT NULL,
+  `senha` varchar(8) NOT NULL,
   `cpf` int(12) NOT NULL,
   `endereco` varchar(100) DEFAULT NULL,
   `numero` tinyint(5) NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE `usuarios` (
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`cidades_fk`) REFERENCES `cidades` (`id`),
   CONSTRAINT `usuarios_ibfk_3` FOREIGN KEY (`favoritos_fk`) REFERENCES `favoritos` (`id`),
   CONSTRAINT `usuarios_ibfk_4` FOREIGN KEY (`historico_fk`) REFERENCES `historico` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,7 +63,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Hector','Queiróz','2018-07-17',121232,NULL,'hectorqrs@gmail.com',NULL,'$2y$10$5ZcfR3nc8jhoOagpRNZouu7eW4B5lU7WeZ60zHyBnscsX3n27Irlm',213213,NULL,127,NULL,'Vila Maria',12313421,NULL,8,NULL,NULL,'Masculino');
+INSERT INTO `usuarios` VALUES (31,'Hector','Queiróz','0000-00-00',123,NULL,'hectorqrs@gmail.com',NULL,'213',123,NULL,123,NULL,'123',123,NULL,17,NULL,NULL,'Masculino'),(33,'Lucas','1234','2018-07-16',12334,NULL,'1221@email.com',NULL,'123',1234,NULL,54,NULL,'Vila',765,NULL,8,NULL,NULL,'Masculino');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -76,4 +76,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-19 17:37:32
+-- Dump completed on 2018-07-18 22:25:03
