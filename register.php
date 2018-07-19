@@ -1,13 +1,59 @@
 <?php include ("inc/head.php");
-include ("inc/header.php"); ?>
+include ("inc/header.php");
+
+$db_command = "mysql:host=localhost;dbname=ecommerce;charset=utf8mb4";
+$db_user = "root";
+$db_password = "";
+$logado = false;
+$senha = $_POST["senha"];
+$senha_confirm = $_POST["senha_confirm"];
+$email = $_POST["email"];
+$email_confirm = $_POST["email_confirm"];
+try {
+  if ($_POST && $senha_confirm == $senha && $email == $email_confirm) {
+      $hash = password_hash($senha,PASSWORD_DEFAULT);
+      $db = new PDO($db_command,$db_user,$db_password);
+      $usuarios = $db->prepare("INSERT into usuarios(nome,sobrenome,email,senha,cpf,telefone,genero,CEP,numero,bairro,uf_fk,data_nascimento) values (:nome,:sobrenome,:email,:senha,:cpf,:telefone,:genero,:CEP,:numero,:bairro,:uf_fk,:data)");
+      $usuarios->execute([
+        ':nome' => $_POST["nome"],
+        ":sobrenome" => $_POST["Sobrenome"],
+        ":email" => $_POST["email"],
+        ":senha" => $hash,
+        ":cpf" => $_POST["cpf"],
+        ":telefone" => $_POST["telefone"],
+        ":genero" => $_POST["genero"],
+        ":CEP" => $_POST["cep"],
+        ":numero" => $_POST["number"],
+        ":bairro" => $_POST["bairro"],
+        ":uf_fk" => $_POST["estado"],
+        ":data" => $_POST["nascimento"]
+      ]);
+  }else {
+    echo "A senha ou email são diferentes de seus campos de confirmação";
+  }
+}
+  catch (PDOException $Exception) {
+    echo $Exception->getMessage();
+}
+
+
+
+
+
+
+
+
+
+
+?>
   <section class="register">
-    <form action="informacoes.php" method="post">
+    <form action="register.php" method="post">
       <article class="row">
         <div class="col-sm-1">
         </div>
         <div class="form-group col-sm-5">
           <label><b>Nome: </b></label>
-          <input class="form-control" placeholder="Nome" type="text" name="Nome" required>
+          <input class="form-control" placeholder="Nome" type="text" name="nome" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Sobrenome: </b></label>
@@ -19,11 +65,11 @@ include ("inc/header.php"); ?>
         </div>
         <div class="form-group col-sm-5">
           <label><b>E-mail: </b></label>
-          <input class="form-control" placeholder="Ex: seu-email@email.com" type="email" name="E-mail" required>
+          <input class="form-control" placeholder="Ex: seu-email@email.com" type="email" name="email" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Confirme seu e-mail: </b></label>
-          <input class="form-control" placeholder="EX: seu-email@email.com" type="email" name="E-mail_confirm" required>
+          <input class="form-control" placeholder="EX: seu-email@email.com" type="email" name="email_confirm">
         </div>
       </article>
       <article class="row">
@@ -31,11 +77,11 @@ include ("inc/header.php"); ?>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Senha: </b></label>
-          <input class="form-control" placeholder="*********" type="password" name="Senha" required>
+          <input class="form-control" placeholder="*********" type="password" name="senha" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Confirme sua senha: </b></label>
-          <input class="form-control" placeholder="*********" type="password" name="Senha" required>
+          <input class="form-control" placeholder="*********" type="password" name="senha_confirm" required>
         </div>
       </article>
       <article class="row">
@@ -84,7 +130,7 @@ include ("inc/header.php"); ?>
         </div>
         <div class="form-group col-sm-5">
           <label><b>CEP:</b></label>
-          <input class="form-control" type="text" name="cep" placeholder="00000-000">
+          <input class="form-control" type="text" name="cep" placeholder="00000-000" required>
           <small><a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank">Não sei meu CEP</a></small>
         </div>
       </article>
@@ -93,7 +139,7 @@ include ("inc/header.php"); ?>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Número: </b></label>
-          <input class="form-control" type="text" name="number" placeholder="987">
+          <input class="form-control" type="text" name="number" placeholder="987" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Complemento: </b> (Opcional)</label>
@@ -105,7 +151,7 @@ include ("inc/header.php"); ?>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Bairro: </b></label>
-          <input class="form-control" type="text" name="bairro" placeholder="987">
+          <input class="form-control" type="text" name="bairro" placeholder="987" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Cidade: </b></label>
@@ -117,7 +163,7 @@ include ("inc/header.php"); ?>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Estado: </b></label>
-          <select class="form-control" name="estado">
+          <select class="form-control" name="estado" required>
             <option value="null">Selecione seu estado</option>
             <option value="1">Acre</option>
             <option value="2">Alagoas</option>
