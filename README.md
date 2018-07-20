@@ -31,15 +31,15 @@ Grupo da classe de Web Full Stack da Digital House Brasil (Vila Olímipia, TN01)
     > Dev 1: Hector | 
     > Dev 2: Marcelo.
   
-  #### Sprint #03 | 02/07 a 16/07
+  #### Sprint #03 | 02/07 a 23/07
   - Entrega: DER e integração de Login e Cadastro ao MYSQL.
   - Linguagens: SQL
   - Papéis:
-    > P.O.: Hector | 
-    > Scrum Master: Marcelo | 
-    > Dev : Lucas.
+    > P.O.: Marcelo | 
+    > Scrum Master: Lucas | 
+    > Dev : Hector.
   
-  #### Sprint #04 | 16/07 a 30/07
+  #### Sprint #04 | 23/07 a 30/07
   - Entrega: Código de Login e Cadastro organizados com classes.
   - Linguagens: OOP.
   - Papéis:
