@@ -71,10 +71,10 @@
 <body>
 <!-- HEADER -->
 <?php
-if ($_SESSION["logado"]){
-include_once ("inc/header_logado.php");
+if($_SESSION && $_SESSION["logado"]){
+  include ("inc/header_logado.php");
 }else{
-include_once ("inc/header.php");
+  include "inc/header.php";
 }
 ?>
   <!-- # CONTÂINER DO CONTEÚDO PRINCIPAL # -->

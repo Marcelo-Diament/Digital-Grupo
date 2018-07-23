@@ -56,6 +56,61 @@ header .div_header .fa-shopping-cart, .menu-2, .header-links{
   display: none;
 }
 
+/* Header Logado */
+
+#header_logado{
+  height: 75px;
+}
+
+#header_logado ul{
+  position:relative;
+  top: 5px;
+  list-style: none;
+  display: inline-block;
+}
+
+#header_logado ul li{
+  display: inline;
+}
+
+#header_logado ul li a{
+  padding: 0 10px;
+  color: red;
+  font-size: 25px;
+}
+
+#header_logado ul li a:hover{
+  text-decoration: none;
+}
+
+#header_logado a{
+  color: yellow;
+  font-size:
+  text-decoration: none;
+}
+
+#header_logado span{
+  position:relative;
+  left: 420px;
+  font-size: 20px;
+  color: white;
+}
+
+#header_logado .fas{
+  color: white;
+  position: relative;
+  top: 20px;
+  right: 35px;
+}
+
+#header_logado #contador{
+  font-size: 19px;
+  color: blue;
+  position: absolute;
+  top: 22px;
+  left: 1291px;
+  font-family: sans-serif !important;
+}
 
 /* BANNER */
 

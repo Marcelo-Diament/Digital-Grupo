@@ -1,18 +1,21 @@
 <?php
 session_start();
 include ("inc/head.php");
-// include ("inc/header.php");
+include ("inc/header.php");
 $_SESSION["logado"]=false;
 if ($_POST) {
   try {
     $email = $_POST["email-login"];
     $db = new PDO('mysql:host=localhost;dbname=ecommerce;charset=utf8mb4','root', '');
 
-    $id = $db->prepare("SELECT id FROM usuarios where email = :email");
+
+
+    $id = $db->prepare("SELECT id, nome FROM usuarios where email = :email");
     $id->execute([
         ":email" => $email
     ]);
     $ids = $id->fetch(PDO::FETCH_ASSOC);
+    $_SESSION["nome"] = $ids["nome"];
       if ($id->rowCount() > 0) {
         $senha = $db->prepare("SELECT senha FROM usuarios where id= :id");
         $senha->execute([
@@ -21,7 +24,7 @@ if ($_POST) {
         $senhas = $senha->fetch(PDO::FETCH_ASSOC);
         if ($senha->rowCount() > 0) {
           if (password_verify($_POST["senha-login"],$senhas["senha"])) {
-            header('Location: index.php');
+            header('Location: produtos.php');
             $_SESSION["logado"]= true;
           }
         }else{
