@@ -27,12 +27,18 @@ if ($_POST) {
             $_SESSION["visitado"] = 1;
             $_SESSION["logado"]= true;
             header('Location: index.php');
+          }else{?>
+            <div class="alerta alert alert-warning" role="alert">
+              Senha inválida.
+            </div>
+            <?php
           }
-        }else{
-          echo "A senha inserida não está no nosso banco de dados";
         }
-      }else{
-        echo "O email inserido não está no nosso banco de dados";
+      }else{?>
+          <div class="alerta alert alert-warning" role="alert">
+            E-mail Inválido.
+          </div>
+      <?php
       };
   } catch (PDOException $Exception) {
     echo $Exception->getMessage();
@@ -43,33 +49,33 @@ if ($_POST) {
   <div id="log-subtitulo">
     <h2>Login</h2>
   </div>
-<form class="login" action="login.php" method="post">
-  <div class="form-group">
-    <input class="caixa-login" type="email" name="email-login" placeholder="E-mail">
-  </div>
-  <div class="form-group">
-    <input class="caixa-login" type="password" name="senha-login" placeholder="Senha">
-      </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input checkbox">
-      <label class="form-check-label logado"> Permanecer logado</label>
-  </div>
-  <div>
-    <input class="btn btn-primary botao-logar" type="submit" name="enviar" value="Logar">
-  </div>
+  <form class="login" action="login.php" method="post">
+    <div class="form-group">
+      <input class="caixa-login" type="email" name="email-login" placeholder="E-mail">
+    </div>
+    <div class="form-group">
+      <input class="caixa-login" type="password" name="senha-login" placeholder="Senha">
+        </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input checkbox">
+        <label class="form-check-label logado"> Permanecer logado</label>
+    </div>
+    <div>
+      <input class="btn btn-primary botao-logar" type="submit" name="enviar" value="Logar">
+    </div>
 
-<p class="ou">ou</p>
-  <button class="botao-entrar" type="button" name="button">Entrar com Facebook</button><br>
-  <a class="criar-conta"href="register.php">Criar uma conta</a>
-</form>
+  <p class="ou">ou</p>
+    <button class="botao-entrar" type="button" name="button">Entrar com Facebook</button><br>
+    <a class="criar-conta"href="register.php">Criar uma conta</a>
+  </form>
 <div class="footer-links">
-  <a href="#">FAQ</a>
+  <a href="FAQ.php">FAQ</a>
   <span>|</span>
-  <a href="#">Contatos</a>
+  <a href="contato.php">Contatos</a>
   <span>|</span>
   <a href="#">Políticas de Troca e Devolução</a>
   <span>|</span>
-  <a href="#">Políticas de Privacidade</a>
+  <a href="políticas-e-termos.php">Políticas de Privacidade</a>
 </div>
 <div class="copyright">
   ©2018 Digital-Grupo, INC. TODOS OS DIREITOS RESERVADOS A Hector Queiróz.
