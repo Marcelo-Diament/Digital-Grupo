@@ -24,8 +24,9 @@ if ($_POST) {
         $senhas = $senha->fetch(PDO::FETCH_ASSOC);
         if ($senha->rowCount() > 0) {
           if (password_verify($_POST["senha-login"],$senhas["senha"])) {
-            header('Location: index.php');
+            $_SESSION["visitado"] = 1;
             $_SESSION["logado"]= true;
+            header('Location: index.php');
           }
         }else{
           echo "A senha inserida não está no nosso banco de dados";
@@ -39,6 +40,9 @@ if ($_POST) {
 }
 ?>
 <div class="altura">
+  <div id="log-subtitulo">
+    <h2>Login</h2>
+  </div>
 <form class="login" action="login.php" method="post">
   <div class="form-group">
     <input class="caixa-login" type="email" name="email-login" placeholder="E-mail">

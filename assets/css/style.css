@@ -697,20 +697,29 @@ aside{
 
 /* Página de login */
 
+#log-subtitulo{
+  display: block;
+  text-align: center;
+  padding-top: 75px;
+}
+
+#log-subtitulo h2{
+  font-size: 40px;
+  background-color: #f1f1f1;
+  width: 100%;
+  padding: 35px 0;
+}
+
 .login{
   text-align: center;
   position: relative;
-  top: 120px;
+  top: 30px;
 }
 
 .copyright, .footer-links{
   text-align: center;
   position: relative;
-  top: 180px;
-}
-
-.altura{
-  height: 100vh;
+  top: 110px;
 }
 
 .caixa-login{
