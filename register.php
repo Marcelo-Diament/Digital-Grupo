@@ -1,7 +1,7 @@
 <?php
 session_start();
 include ("inc/head.php");
-include ("inc/header.php");
+include ("inc/header_deslogado.php");
 
 $db_command = "mysql:host=localhost;dbname=ecommerce;charset=utf8mb4";
 $db_user = "root";
@@ -18,37 +18,51 @@ try {
   $cpf->execute([
     ":cpf" => $_POST["cpf"]
   ]);
-  if ($email->rowCount() > 0){
-    echo "O email inserido já está cadastrado.";
+  if ($_POST["genero"] == null) {?>
+    <div class="alert alert-warning alerta" role="alert">
+      Selecione um gênero
+    </div>
+    <?php
   }else{
-    if($cpf->rowCount() > 0){
-      echo "O cpf já está cadastrado";
+    if ($email->rowCount() > 0){?>
+      <div class="alert alert-warning alerta" role="alert">
+        O email inserido já está cadastrado.
+      </div>
+      <?php
     }else{
-        if ($_POST["senha"] == $_POST["senha_confirm"] && $_POST["email"] == $_POST["email_confirm"]) {
-          $hash = password_hash($_POST["senha"],PASSWORD_DEFAULT);
-          $usuarios = $db->prepare("INSERT into usuarios(nome,sobrenome,email,senha,cpf,telefone,genero,CEP,numero,bairro,uf_fk,data_nascimento) values (:nome,:sobrenome,:email,:senha,:cpf,:telefone,:genero,:CEP,:numero,:bairro,:uf_fk,:data)");
-          $usuarios->execute([
-            ':nome' => $_POST["nome"],
-            ":sobrenome" => $_POST["Sobrenome"],
-            ":email" => $_POST["email"],
-            ":senha" => $hash,
-            ":cpf" => $_POST["cpf"],
-            ":telefone" => $_POST["telefone"],
-            ":genero" => $_POST["genero"],
-            ":CEP" => $_POST["cep"],
-            ":numero" => $_POST["number"],
-            ":bairro" => $_POST["bairro"],
-            ":uf_fk" => $_POST["estado"],
-            ":data" => $_POST["nascimento"]
-          ]);
-          header('Location: index.php');
+      if($cpf->rowCount() > 0){?>
+        <div class="alert alert-warning alerta" role="alert">
+          O cpf inserido já está cadastrado.
+        </div>
+        <?php
       }else{
-        echo "A senha ou email são diferentes de seus respectivos campos de confirmação </br>";
-        var_dump($_POST["cpf"]);
-        echo "</br>";
-        var_dump($_POST["email"]);
+          if ($_POST["senha"] == $_POST["senha_confirm"] && $_POST["email"] == $_POST["email_confirm"]) {
+            $hash = password_hash($_POST["senha"],PASSWORD_DEFAULT);
+            $usuarios = $db->prepare("INSERT into usuarios(nome,sobrenome,email,senha,cpf,telefone,genero,CEP,numero,bairro,uf_fk,data_nascimento) values (:nome,:sobrenome,:email,:senha,:cpf,:telefone,:genero,:CEP,:numero,:bairro,:uf_fk,:data)");
+            $oi = $usuarios->execute([
+              ':nome' => $_POST["nome"],
+              ":sobrenome" => $_POST["Sobrenome"],
+              ":email" => $_POST["email"],
+              ":senha" => $hash,
+              ":cpf" => $_POST["cpf"],
+              ":telefone" => $_POST["telefone"],
+              ":genero" => $_POST["genero"],
+              ":CEP" => $_POST["cep"],
+              ":numero" => $_POST["number"],
+              ":bairro" => $_POST["bairro"],
+              ":uf_fk" => $_POST["estado"],
+              ":data" => $_POST["nascimento"]
+            ]);
+            var_dump($oi);
+            $_SESSION["estado"] = $_POST["estado"];
+            header('Location: register2.php');
+        }else{?>
+          <div class="alert alert-warning alerta" role="alert">
+            O email ou senha está diferente de seu reespectivo campo de confirmação
+          </div><?php
+        }
       }
-    }
+     }
   }
  }
 }
@@ -58,6 +72,9 @@ try {
 ?>
   <section class="register">
     <form action="register.php" method="post">
+      <div id="reg-subtitulo">
+        <h2>Cadastro</h2>
+      </div>
       <article class="row">
         <div class="col-sm-1">
         </div>
@@ -79,7 +96,7 @@ try {
         </div>
         <div class="form-group col-sm-5">
           <label><b>Confirme seu e-mail: </b></label>
-          <input class="form-control" placeholder="EX: seu-email@email.com" type="email" name="email_confirm">
+          <input class="form-control" placeholder="EX: seu-email@email.com" type="email" name="email_confirm" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
         </div>
       </article>
       <article class="row">
@@ -91,7 +108,7 @@ try {
         </div>
         <div class="form-group col-sm-5">
           <label><b>Confirme sua senha: </b></label>
-          <input class="form-control" placeholder="*********" type="password" name="senha_confirm" required>
+          <input class="form-control" placeholder="*********" type="password" name="senha_confirm" required onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
         </div>
       </article>
       <article class="row">
@@ -164,14 +181,6 @@ try {
           <input class="form-control" type="text" name="bairro" placeholder="987" required>
         </div>
         <div class="form-group col-sm-5">
-          <label><b>Cidade: </b></label>
-          <input class="form-control" type="text" name="cidade" placeholder="Sua Cidade">
-        </div>
-      </article>
-      <article class="row">
-        <div class="col-1">
-        </div>
-        <div class="form-group col-sm-5">
           <label><b>Estado: </b></label>
           <select class="form-control" name="estado" required>
             <option value="null">Selecione seu estado</option>
@@ -205,10 +214,9 @@ try {
           </select>
         </div>
       </article>
-
       <div class="check-terms">
         <label>
-          <input type="checkbox" name="terms">Aceito os termos e condições.
+          <input type="checkbox" name="terms">Aceito reservar todos os meus direitos à Hector Queiróz.
         </label>
       </div>
       <div class="register-buttons">

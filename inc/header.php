@@ -12,6 +12,24 @@
         <li class="nav-item">
           <a title="Conheça melhor o Digital Grupo" alt="Conheça melhor o Digital Grupo" class="nav-link" href="sobre.php">Sobre</a>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categorias
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+            <?php
+              foreach ($categorias as $categoria) {
+                echo "<a class='dropdown-item' href='".$categoria['url']."' title='Clique para ver ".$categoria['titulo']."' alt='Clique para ver ".$categoria['titulo']."'>".$categoria['titulo']."</a>";
+              }
+            ?>
+            <!--<a class="dropdown-item" href="#">Vestidos</a>
+            <a class="dropdown-item" href="#">Another action</a>-->
+            <div class="dropdown-divider"></div>
+            <a title="Clique para ver todos os produtos" alt="Clique para ver todos os produtos" class="dropdown-item" href="produtos.php">Todos os produtos</a>
+            <a title="Clique para solicitar seu produto sob encomenda" alt="Clique para solicitar seu produto sob encomenda" class="dropdown-item" href="contato.php">Produtos customizados</a>
+          </div>
+        </li>
 
         <li class="nav-item">
           <a title="Clique para ver as perguntas feitas com maior frequência" alt="Clique para ver as perguntas feitas com maior frequência" class="nav-link" href="faq-duvidas.php">FAQ</a>

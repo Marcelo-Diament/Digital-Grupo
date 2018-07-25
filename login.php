@@ -1,7 +1,7 @@
 <?php
 session_start();
 include ("inc/head.php");
-include ("inc/header.php");
+include ("inc/header_deslogado.php");
 $_SESSION["logado"]=false;
 if ($_POST) {
   try {
@@ -24,7 +24,7 @@ if ($_POST) {
         $senhas = $senha->fetch(PDO::FETCH_ASSOC);
         if ($senha->rowCount() > 0) {
           if (password_verify($_POST["senha-login"],$senhas["senha"])) {
-            header('Location: produtos.php');
+            header('Location: index.php');
             $_SESSION["logado"]= true;
           }
         }else{
