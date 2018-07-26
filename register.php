@@ -37,6 +37,7 @@ try {
         <?php
       }else{
           if ($_POST["senha"] == $_POST["senha_confirm"] && $_POST["email"] == $_POST["email_confirm"]) {
+
             $hash = password_hash($_POST["senha"],PASSWORD_DEFAULT);
             $usuarios = $db->prepare("INSERT into usuarios(nome,sobrenome,email,senha,cpf,telefone,genero,CEP,numero,bairro,uf_fk,data_nascimento) values (:nome,:sobrenome,:email,:senha,:cpf,:telefone,:genero,:CEP,:numero,:bairro,:uf_fk,:data)");
             $oi = $usuarios->execute([
@@ -55,6 +56,7 @@ try {
             ]);
             var_dump($oi);
             $_SESSION["estado"] = $_POST["estado"];
+            $_SESSION["cpf"] = $_POST["cpf"];
             header('Location: register2.php');
         }else{?>
           <div class="alert alert-warning alerta" role="alert">
