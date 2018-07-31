@@ -70,7 +70,7 @@ header .div_header .fa-shopping-cart, .menu-2, .header-links{
 }
 
 #header_logado ul li{
-  display: inline;
+  display: none;
 }
 
 #header_logado ul li a{
@@ -89,9 +89,7 @@ header .div_header .fa-shopping-cart, .menu-2, .header-links{
 }
 
 #header_logado span{
-  position:relative;
-  left: 420px;
-  font-size: 20px;
+  font-size: 18px;
   color: white;
 }
 
@@ -103,11 +101,11 @@ header .div_header .fa-shopping-cart, .menu-2, .header-links{
 }
 
 #header_logado #contador{
-  font-size: 19px;
+  font-size: 20px;
   color: blue;
   position: absolute;
-  top: 22px;
-  left: 1291px;
+  top: 21px;
+  right: 47px;
   font-family: sans-serif !important;
 }
 
@@ -121,26 +119,12 @@ header .div_header .fa-shopping-cart, .menu-2, .header-links{
   text-decoration: none;
 }
 
+#header_deslogado a img{
+  height: 75px;
+}
+
 #header_deslogado ul{
-  display: inline;
-  list-style: none;
-  position: relative;
-  top: 5px;
-}
-
-#header_deslogado ul li{
-  display: inline-block;
-}
-
-#header_deslogado ul li a{
-  padding: 0 10px;
-  color: white;
-  font-size: 25px;
-}
-
-#header_deslogado ul li a:hover{
-  text-decoration: none;
-  color: white;
+  display: none;
 }
 
 /* Caixa de Alerta da Home caso esteja logado */
@@ -389,14 +373,6 @@ footer .contatos{
   margin-top: 10px;
 }
 
-      /* CSS login */
-.conteiner-login{
-  text-align: center;
-  margin-top: 12vh;
-  margin-bottom: 50px;
-}
-
-
       /* CSS FAQ */
 .categorias-faq{
   text-align: center;
@@ -638,24 +614,21 @@ aside{
 /* Segunda Página de Cadastro */
 
 #register2{
-  position:relative;
-  left:37%;
-  top:29%;
-  width:350px;
+  margin: auto;
+  width:300px;
   height:300px;
   padding-top: 90px;
   margin-bottom: 52px;
 }
 
-#area #form-reg-2{
-  position:absolute;
+#register2 #form-reg-2{
   display:block;
 }
 
  #register2 fieldset {
     display: block;
     margin-left: 2px;
-    margin-right: 2px;
+    /* margin-right: 2px; */
     padding-top: 0.35em;
     padding-bottom: 0.625em;
     padding-left: 0.75em;
@@ -695,7 +668,7 @@ aside{
   font-family: roboto;
 }
 
-/* Página de login */
+/* Página De Login */
 
 #log-subtitulo{
   display: block;
@@ -704,10 +677,10 @@ aside{
 }
 
 #log-subtitulo h2{
-  font-size: 40px;
+  font-size: 50px;
   background-color: #f1f1f1;
   width: 100%;
-  padding: 35px 0;
+  padding: 20px 0;
 }
 
 .login{
@@ -716,20 +689,23 @@ aside{
   top: 30px;
 }
 
-.copyright, .footer-links{
-  text-align: center;
-  position: relative;
-  top: 110px;
-}
-
 .caixa-login{
   height: 40px;
-  width: 25%;
+  width: 250px;;
   font-size: 20px;
 }
 
-.logado{
-  font-size: 20px;
+
+.botao-entrar{
+  color: white;
+  padding: 5px;
+  width: 170px;
+  font-family: sans-serif;
+  background-color: #19547c ;
+}
+
+.form-check{
+  font-size: 18px;
 }
 
 .checkbox{
@@ -737,29 +713,32 @@ aside{
   width: 20px;
 }
 
+.logado{
+  font-weight: bold;
+  margin-left: 5px;
+  font-size: 18px;
+}
+
 .botao-logar{
-  height: 40px;
-  width: 90px;
+  font-size: 19px;
   margin-top: 10px;
 }
 
 .ou{
   font-size: 20px;
-  margin-top: 10px;
-}
-
-.botao-entrar{
-  height: 35px;
-  background-color: #19547c ;
-  color: white;
-  width: 20%;
-  margin-bottom: 20px;
+  position: relative;
+  top: 10px;
 }
 
 .criar-conta{
-  font-size: 20px;
+  font-size: 21px;
 }
 
+.copyright, .footer-links{
+  text-align: center;
+  position: relative;
+  top: 110px;
+}
 
 @media (min-width: 776px){
 
@@ -937,10 +916,139 @@ margin: 0 15px;
   left: 28px;
 }
 
+/* Header Logado */
+
+#header_logado{
+  height: 75px;
+}
+
+#header_logado ul{
+  position:relative;
+  top: 5px;
+  list-style: none;
+  display: inline-block;
+}
+
+#header_logado ul li{
+  display: inline;
+}
+
+#header_logado ul li a{
+  padding: 0 10px;
+  color: red;
+  font-size: 25px;
+}
+
+#header_logado ul li a:hover{
+  text-decoration: none;
+}
+
+#header_logado a{
+  color: yellow;
+  text-decoration: none;
+}
+
+#header_logado span{
+  position:relative;
+  left: 420px;
+  font-size: 20px;
+  color: white;
+}
+
+#header_logado .fas{
+  color: white;
+  position: relative;
+  top: 20px;
+  right: 35px;
+}
+
+#header_logado #contador{
+  font-size: 19px;
+  color: blue;
+  position: absolute;
+  top: 22px;
+  left: 1291px;
+  font-family: sans-serif !important;
+}
+
+/* Header Deslogado */
+
+#header_deslogado{
+  height: 75px;
+}
+
+#header_deslogado a{
+  text-decoration: none;
+}
+
+#header_deslogado ul{
+  display: inline;
+  list-style: none;
+  position: relative;
+  top: 5px;
+}
+
+#header_deslogado ul li{
+  display: inline-block;
+}
+
+#header_deslogado ul li a{
+  padding: 0 10px;
+  color: white;
+  font-size: 25px;
+}
+
+#header_deslogado ul li a:hover{
+  text-decoration: none;
+  color: white;
+}
+
 /* Footer */
 
 footer a:hover{
   color: white;
   text-decoration: none;
+}
+
+/* Página de login */
+
+#log-subtitulo h2{
+  font-size: 40px;
+  background-color: #f1f1f1;
+  width: 100%;
+  padding: 35px 0;
+}
+
+.caixa-login{
+  height: 40px;
+  width: 25%;
+  font-size: 20px;
+}
+
+.logado{
+  font-size: 20px;
+}
+
+.botao-logar{
+  height: 40px;
+  width: 90px;
+  margin-top: 10px;
+}
+
+.ou{
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.botao-entrar{
+  height: 35px;
+  background-color: #19547c ;
+  color: white;
+  width: 20%;
+  margin-bottom: 20px;
+}
+
+.criar-conta{
+  font-size: 20px;
 }
 }

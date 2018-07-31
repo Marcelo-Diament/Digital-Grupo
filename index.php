@@ -71,24 +71,24 @@
 <body>
 <!-- HEADER -->
 <?php
-if($_SESSION && $_SESSION["logado"]){
-  include ("inc/header_logado.php");
-    if ($_SESSION["visitado"] == 1) {?>
-    <div class="alert alert-success" role="alert">
-      <h3>Cadastro bem sucedido!</h3>
-      <p>Obrigado por se cadastrar no Digital-Grupo.</p>
-      <p>Agora você pode comprar as melhores rodas de skate para seu filho, ou até aquele vestido lindo para dar de aniversário para a esposa não é mesmo? HAHAHA</p>
-      <p>Então vamos as compras.</p> <b><a href="produtos.php">Ver lista de produtos</a></b>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <?php
-    }
-    $_SESSION["visitado"]++;
-}else{
-  include ("inc/header.php");
-}
+  if(isset($_SESSION["logado"]) && $_SESSION["logado"]){
+    include ("inc/header_logado.php");
+      if ($_SESSION["visitado"] == 1) {?>
+      <div class="alert alert-success" role="alert">
+        <h3>Cadastro bem sucedido!</h3>
+        <p>Obrigado por se cadastrar no Digital-Grupo.</p>
+        <p>Agora você pode comprar as melhores rodas de skate para seu filho, ou até aquele vestido lindo para dar de aniversário para a esposa não é mesmo? HAHAHA</p>
+        <p>Então vamos as compras.</p> <b><a href="produtos.php">Ver lista de produtos</a></b>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <?php
+      }
+      $_SESSION["visitado"]++;
+  }else{
+    include ("inc/header.php");
+  }
 ?>
   <!-- # CONTÂINER DO CONTEÚDO PRINCIPAL # -->
   <main class="container-fluid">

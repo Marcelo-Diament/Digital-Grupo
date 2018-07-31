@@ -1,5 +1,5 @@
 <header id ="header_deslogado">
-<a href="index.php"><img src="assets/images/logo.png" alt="Logo do Digital Grupo" height="75px">
+<a href="index.php"><img src="assets/images/logo.png" alt="Logo do Digital Grupo">
 <ul>
   <li><a href="sobre.php">Sobre</a></li>
   <li><a href="FAQ.php">FAQ</a></li>

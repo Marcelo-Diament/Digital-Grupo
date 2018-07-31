@@ -16,31 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `cidades`
+-- Table structure for table `marcas`
 --
 
-DROP TABLE IF EXISTS `cidades`;
+DROP TABLE IF EXISTS `marcas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `cidades` (
+CREATE TABLE `marcas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(40) DEFAULT NULL,
-  `DDD` tinyint(2) DEFAULT NULL,
-  `UFs` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `UFs` (`UFs`),
-  CONSTRAINT `cidades_ibfk_1` FOREIGN KEY (`UFs`) REFERENCES `ufs` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+  `nome` varchar(50) DEFAULT NULL,
+  `descricao` varchar(999) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `cidades`
+-- Dumping data for table `marcas`
 --
 
-LOCK TABLES `cidades` WRITE;
-/*!40000 ALTER TABLE `cidades` DISABLE KEYS */;
-INSERT INTO `cidades` VALUES (1,'Rio Branco',68,1),(2,'Maceió',82,2),(3,'Macapá',96,3),(4,'Manaus',92,4),(5,'Salvador',71,5),(6,'Fortaleza',85,6),(7,'Brasília',61,7),(8,'Vitória',27,8),(9,'Goiania',62,9),(10,'São Luís',98,10),(11,'Cuiabá',65,11),(12,'Campo Grande',67,12),(13,'Belo Horizonte',31,13),(14,'Belém',91,14),(15,'João Pessoa',83,15),(16,'Curitiba',41,16),(17,'Recife',81,17),(18,'Teresina',86,18),(19,'Rio de Janeiro',21,19),(20,'Natal',84,20),(21,'Porto Alegre',51,21),(22,'Porto Velho',69,22),(23,'Boa Vista',95,23),(24,'Florianópolis',48,24),(25,'São Paulo',11,25),(26,'Aracaju',79,26),(27,'Palmas',63,27);
-/*!40000 ALTER TABLE `cidades` ENABLE KEYS */;
+LOCK TABLES `marcas` WRITE;
+/*!40000 ALTER TABLE `marcas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `marcas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-19 17:37:34
+-- Dump completed on 2018-07-31 20:31:35

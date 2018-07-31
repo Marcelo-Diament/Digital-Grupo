@@ -54,7 +54,7 @@ CREATE TABLE `usuarios` (
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`cidades_fk`) REFERENCES `cidades` (`id`),
   CONSTRAINT `usuarios_ibfk_3` FOREIGN KEY (`favoritos_fk`) REFERENCES `favoritos` (`id`),
   CONSTRAINT `usuarios_ibfk_4` FOREIGN KEY (`historico_fk`) REFERENCES `historico` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,7 +63,6 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Hector','Queiróz','2018-07-17',121232,NULL,'hectorqrs@gmail.com',NULL,'$2y$10$5ZcfR3nc8jhoOagpRNZouu7eW4B5lU7WeZ60zHyBnscsX3n27Irlm',213213,NULL,127,NULL,'Vila Maria',12313421,NULL,8,NULL,NULL,'Masculino');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -76,4 +75,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-19 17:37:32
+-- Dump completed on 2018-07-31 20:31:34

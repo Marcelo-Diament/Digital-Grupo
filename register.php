@@ -2,74 +2,16 @@
 session_start();
 include ("inc/head.php");
 include ("inc/header_deslogado.php");
+include ("classes/Cadastro.php");
 
 $db_command = "mysql:host=localhost;dbname=ecommerce;charset=utf8mb4";
 $db_user = "root";
 $db_password = "";
 $db = new PDO($db_command,$db_user,$db_password);
-try {
-  if($_POST){
-  $_SESSION["nome"] = $_POST["nome"];
-  $email = $db->prepare("SELECT * from usuarios where email = :email");
-  $email->execute([
-    ":email" => $_POST["email"]
-  ]);
-  $cpf = $db->prepare("SELECT * from usuarios where cpf = :cpf");
-  $cpf->execute([
-    ":cpf" => $_POST["cpf"]
-  ]);
-  if ($_POST["genero"] == null) {?>
-    <div class="alert alert-warning alerta" role="alert">
-      Selecione um gênero
-    </div>
-    <?php
-  }else{
-    if ($email->rowCount() > 0){?>
-      <div class="alert alert-warning alerta" role="alert">
-        O email inserido já está cadastrado.
-      </div>
-      <?php
-    }else{
-      if($cpf->rowCount() > 0){?>
-        <div class="alert alert-warning alerta" role="alert">
-          O cpf inserido já está cadastrado.
-        </div>
-        <?php
-      }else{
-          if ($_POST["senha"] == $_POST["senha_confirm"] && $_POST["email"] == $_POST["email_confirm"]) {
-
-            $hash = password_hash($_POST["senha"],PASSWORD_DEFAULT);
-            $usuarios = $db->prepare("INSERT into usuarios(nome,sobrenome,email,senha,cpf,telefone,genero,CEP,numero,bairro,uf_fk,data_nascimento) values (:nome,:sobrenome,:email,:senha,:cpf,:telefone,:genero,:CEP,:numero,:bairro,:uf_fk,:data)");
-            $oi = $usuarios->execute([
-              ':nome' => $_POST["nome"],
-              ":sobrenome" => $_POST["Sobrenome"],
-              ":email" => $_POST["email"],
-              ":senha" => $hash,
-              ":cpf" => $_POST["cpf"],
-              ":telefone" => $_POST["telefone"],
-              ":genero" => $_POST["genero"],
-              ":CEP" => $_POST["cep"],
-              ":numero" => $_POST["number"],
-              ":bairro" => $_POST["bairro"],
-              ":uf_fk" => $_POST["estado"],
-              ":data" => $_POST["nascimento"]
-            ]);
-            var_dump($oi);
-            $_SESSION["estado"] = $_POST["estado"];
-            $_SESSION["cpf"] = $_POST["cpf"];
-            header('Location: register2.php');
-        }else{?>
-          <div class="alert alert-warning alerta" role="alert">
-            O email ou senha está diferente de seu reespectivo campo de confirmação
-          </div><?php
-        }
-      }
-     }
-  }
- }
-}
-  catch (PDOException $Exception) {
-    echo $Exception->getMessage();
+if($_POST){
+  $cadastro = new Cadastro($_POST["nome"],$_POST["sobrenome"],$_POST["email"],$_POST["email_confirm"],$_POST["senha"],$_POST["senha_confirm"],$_POST["cpf"],$_POST["genero"],$_POST["telefone"],$_POST["celular"],$_POST["cep"],$_POST["numero"],$_POST["bairro"],$_POST["estado"],$_POST["nascimento"],$db);
+  $cadastro->Validacao();
+  $cadastro->SalvarDados();
 }
 ?>
   <section class="register">
@@ -78,21 +20,17 @@ try {
         <h2>Cadastro</h2>
       </div>
       <article class="row">
-        <div class="col-sm-1">
-        </div>
-        <div class="form-group col-sm-5">
+        <div class="form-group offset-1 col-sm-5">
           <label><b>Nome: </b></label>
           <input class="form-control" placeholder="Nome" type="text" name="nome" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Sobrenome: </b></label>
-          <input class="form-control" placeholder="Sobrenome" type="text" name="Sobrenome" required>
+          <input class="form-control" placeholder="Sobrenome" type="text" name="sobrenome" required>
         </div>
       </article>
       <article class="row">
-        <div class="col-sm-1">
-        </div>
-        <div class="form-group col-sm-5">
+        <div class="form-group offset-1 col-sm-5">
           <label><b>E-mail: </b></label>
           <input class="form-control" placeholder="Ex: seu-email@email.com" type="email" name="email" required>
         </div>
@@ -102,9 +40,7 @@ try {
         </div>
       </article>
       <article class="row">
-        <div class="col-sm-1">
-        </div>
-        <div class="form-group col-sm-5">
+        <div class="form-group offset-1 col-sm-5">
           <label><b>Senha: </b></label>
           <input class="form-control" placeholder="*********" type="password" name="senha" required>
         </div>
@@ -114,9 +50,7 @@ try {
         </div>
       </article>
       <article class="row">
-        <div class="col-sm-1">
-        </div>
-        <div class="form-group col-sm-5">
+        <div class="form-group offset-1 col-sm-5">
           <label><b>CPF: </b></label>
           <input class="form-control" placeholder="123.456.789-00" type="number" name="cpf" required>
         </div>
@@ -126,9 +60,7 @@ try {
         </div>
       </article>
       <article class="row">
-        <div class="col-sm-1">
-        </div>
-        <div class="form-group col-sm-5">
+        <div class="form-group offset-1 col-sm-5">
           <label for=""><b>Celular: </b></label>
           <input class="form-control" type="text" name="celular" placeholder="91234-5678">
         </div>
@@ -155,20 +87,16 @@ try {
       <h3>Endereçamento</h3>
 
       <article class="row">
-        <div class="col-1">
-        </div>
-        <div class="form-group col-sm-5">
+        <div class="form-group offset-1 col-sm-5">
           <label><b>CEP:</b></label>
           <input class="form-control" type="text" name="cep" placeholder="00000-000" required>
           <small><a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank">Não sei meu CEP</a></small>
         </div>
       </article>
       <article class="row">
-        <div class="col-1">
-        </div>
-        <div class="form-group col-sm-5">
+        <div class="form-group offset-1 col-sm-5">
           <label><b>Número: </b></label>
-          <input class="form-control" type="text" name="number" placeholder="987" required>
+          <input class="form-control" type="text" name="numero" placeholder="987" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Complemento: </b> (Opcional)</label>
@@ -176,9 +104,7 @@ try {
         </div>
       </article>
       <article class="row">
-        <div class="col-1">
-        </div>
-        <div class="form-group col-sm-5">
+        <div class="form-group offset-1 col-sm-5">
           <label><b>Bairro: </b></label>
           <input class="form-control" type="text" name="bairro" placeholder="987" required>
         </div>
@@ -218,7 +144,7 @@ try {
       </article>
       <div class="check-terms">
         <label>
-          <input type="checkbox" name="terms">Aceito reservar todos os meus direitos à Hector Queiróz.
+          <input type="checkbox" name="terms" required>Aceito reservar todos os meus direitos à Hector Queiróz.
         </label>
       </div>
       <div class="register-buttons">

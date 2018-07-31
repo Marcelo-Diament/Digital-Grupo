@@ -2,47 +2,12 @@
 session_start();
 include ("inc/head.php");
 include ("inc/header_deslogado.php");
+include ("classes/Login.php");
 $_SESSION["logado"]=false;
+$db = new PDO('mysql:host=localhost;dbname=ecommerce;charset=utf8mb4','root', '');
 if ($_POST) {
-  try {
-    $email = $_POST["email-login"];
-    $db = new PDO('mysql:host=localhost;dbname=ecommerce;charset=utf8mb4','root', '');
-
-
-
-    $id = $db->prepare("SELECT id, nome FROM usuarios where email = :email");
-    $id->execute([
-        ":email" => $email
-    ]);
-    $ids = $id->fetch(PDO::FETCH_ASSOC);
-    $_SESSION["nome"] = $ids["nome"];
-      if ($id->rowCount() > 0) {
-        $senha = $db->prepare("SELECT senha FROM usuarios where id= :id");
-        $senha->execute([
-          ":id" => $ids["id"]
-        ]);
-        $senhas = $senha->fetch(PDO::FETCH_ASSOC);
-        if ($senha->rowCount() > 0) {
-          if (password_verify($_POST["senha-login"],$senhas["senha"])) {
-            $_SESSION["visitado"] = 1;
-            $_SESSION["logado"]= true;
-            header('Location: index.php');
-          }else{?>
-            <div class="alerta alert alert-warning" role="alert">
-              Senha inválida.
-            </div>
-            <?php
-          }
-        }
-      }else{?>
-          <div class="alerta alert alert-warning" role="alert">
-            E-mail Inválido.
-          </div>
-      <?php
-      };
-  } catch (PDOException $Exception) {
-    echo $Exception->getMessage();
-  }
+  $login = new Login($_POST["email-login"],$_POST["senha-login"],$db);
+  $login->validacao();
 }
 ?>
 <div class="altura">

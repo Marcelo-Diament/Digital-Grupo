@@ -16,28 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `ufs`
+-- Table structure for table `sub_categoria`
 --
 
-DROP TABLE IF EXISTS `ufs`;
+DROP TABLE IF EXISTS `sub_categoria`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ufs` (
+CREATE TABLE `sub_categoria` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) DEFAULT NULL,
-  `sigla` varchar(20) DEFAULT NULL,
+  `descricao` varchar(999) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `ufs`
+-- Dumping data for table `sub_categoria`
 --
 
-LOCK TABLES `ufs` WRITE;
-/*!40000 ALTER TABLE `ufs` DISABLE KEYS */;
-INSERT INTO `ufs` VALUES (1,'Acre','AC'),(2,'Alagoas','AL'),(3,'Amapá','AP'),(4,'Amazonas','AM'),(5,'Bahia','BA'),(6,'Ceará','CE'),(7,'Distrito Federal','DF'),(8,'Espirito Santo','ES'),(9,'Goiás','GO'),(10,'Maranhão','MA'),(11,'Mato Grosso','MT'),(12,'Mato Grosso do Sul','MS'),(13,'Minas Gerais','MG'),(14,'Pará','PA'),(15,'Paraíba','PB'),(16,'Paraná','PR'),(17,'Pernambuco','PE'),(18,'Piauí','PI'),(19,'Rio de Janeiro','RJ'),(20,'Rio Grande do Norte','RN'),(21,'Rio Grande do Sul','RS'),(22,'Rondônia','RO'),(23,'Roraima','RR'),(24,'Santa Catarina','SC'),(25,'São Paulo','SP'),(26,'Sergipe','SE'),(27,'Tocantins','TO');
-/*!40000 ALTER TABLE `ufs` ENABLE KEYS */;
+LOCK TABLES `sub_categoria` WRITE;
+/*!40000 ALTER TABLE `sub_categoria` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sub_categoria` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-19 17:37:35
+-- Dump completed on 2018-07-31 20:31:35
