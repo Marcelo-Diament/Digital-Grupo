@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        $this->call(StateTableSeeder::class);               
+        $this->call(StateTableSeeder::class);
 
                 \DB::table('cidades')->delete();
 
@@ -7018,7 +7018,7 @@ class DatabaseSeeder extends Seeder
                         'income_per_capita' => '500.00',
                     ),
                 ));
-                \DB::table('cities')->insert(array (
+                \DB::table('cidades')->insert(array (
                     0 =>
                     array (
                         'id' => '501',
@@ -14020,7 +14020,7 @@ class DatabaseSeeder extends Seeder
                         'income_per_capita' => '500.00',
                     ),
                 ));
-                \DB::table('cities')->insert(array (
+                \DB::table('cidades')->insert(array (
                     0 =>
                     array (
                         'id' => '1001',
@@ -21022,7 +21022,7 @@ class DatabaseSeeder extends Seeder
                         'income_per_capita' => '550.45',
                     ),
                 ));
-                \DB::table('cities')->insert(array (
+                \DB::table('cidades')->insert(array (
                     0 =>
                     array (
                         'id' => '1501',
@@ -28024,7 +28024,7 @@ class DatabaseSeeder extends Seeder
                         'income_per_capita' => '500.00',
                     ),
                 ));
-                \DB::table('cities')->insert(array (
+                \DB::table('cidades')->insert(array (
                     0 =>
                     array (
                         'id' => '2001',
@@ -35026,7 +35026,7 @@ class DatabaseSeeder extends Seeder
                         'income_per_capita' => '500.00',
                     ),
                 ));
-                \DB::table('cities')->insert(array (
+                \DB::table('cidades')->insert(array (
                     0 =>
                     array (
                         'id' => '2501',
@@ -42028,7 +42028,7 @@ class DatabaseSeeder extends Seeder
                         'income_per_capita' => '500.00',
                     ),
                 ));
-                \DB::table('cities')->insert(array (
+                \DB::table('cidades')->insert(array (
                     0 =>
                     array (
                         'id' => '3001',
@@ -49030,7 +49030,7 @@ class DatabaseSeeder extends Seeder
                         'income_per_capita' => '1152.61',
                     ),
                 ));
-                \DB::table('cities')->insert(array (
+                \DB::table('cidades')->insert(array (
                     0 =>
                     array (
                         'id' => '3501',
@@ -56032,7 +56032,7 @@ class DatabaseSeeder extends Seeder
                         'income_per_capita' => '664.11',
                     ),
                 ));
-                \DB::table('cities')->insert(array (
+                \DB::table('cidades')->insert(array (
                     0 =>
                     array (
                         'id' => '4001',
@@ -63034,7 +63034,7 @@ class DatabaseSeeder extends Seeder
                         'income_per_capita' => '885.18',
                     ),
                 ));
-                \DB::table('cities')->insert(array (
+                \DB::table('cidades')->insert(array (
                     0 =>
                     array (
                         'id' => '4501',
@@ -70036,7 +70036,7 @@ class DatabaseSeeder extends Seeder
                         'income_per_capita' => '1115.37',
                     ),
                 ));
-                \DB::table('cities')->insert(array (
+                \DB::table('cidades')->insert(array (
                     0 =>
                     array (
                         'id' => '5001',
@@ -77038,7 +77038,7 @@ class DatabaseSeeder extends Seeder
                         'income_per_capita' => '788.03',
                     ),
                 ));
-                \DB::table('cities')->insert(array (
+                \DB::table('cidades')->insert(array (
                     0 =>
                     array (
                         'id' => '5501',
