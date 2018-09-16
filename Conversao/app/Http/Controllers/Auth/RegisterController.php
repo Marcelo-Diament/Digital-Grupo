@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\City;
+use App\State;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -40,6 +42,12 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function showRegister(){
+      $cidades = City::all();
+      $estados = State::all();
+      return view('auth.register')->with('cidades',$cidades)->with('estados',$estados);
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -49,9 +57,22 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'nome' => 'required|string|max:255',
+            'sobrenome' => 'required|string|max:100',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'data_nascimento' => 'required',
+            'telefone' => 'required|min:8|numeric',
+            'celular' => 'required|min:8|numeric',
+            'cpf' => 'required|min:11|numeric',
+            'genero' => 'required',
+            'endereco' => 'required|string|min:5',
+            'numero' => 'required|numeric|max:99999',
+            'complemento' => 'max:999',
+            'bairro' => 'required|string',
+            'cep' => 'required|numeric|min:8',
+            'cidade' => 'required',
+            'estado' => 'required',
         ]);
     }
 
@@ -64,9 +85,22 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'nome' => $data['nome'],
+            'sobrenome' => $data['sobrenome'],
+            'data_nascimento' => $data['data_nascimento'],
+            'telefone' => $data['telefone'],
+            'celular' => $data['celular'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'senha' => Hash::make($data['password']),
+            'genero' => $data['genero'],
+            'cpf' => $data['cpf'],
+            'endereco' => $data['endereco'],
+            'numero' => $data['numero'],
+            'complemento' => $data['complemento'],
+            'bairro' => $data['bairro'],
+            'CEP' => $data['cep'],
+            'cidades_fk' => $data['cidade'],
+            'ufs_fk' => $data['estado'],
         ]);
     }
 }

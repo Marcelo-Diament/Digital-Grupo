@@ -20,26 +20,26 @@ class CreateUsersTable extends Migration
             $table->string('nome');
             $table->string('sobrenome');
             $table->date('data_nascimento');
-            $table->mediumInteger('telefone');
-            $table->mediumInteger('celular')->unique();
+            $table->bigInteger('telefone');
+            $table->bigInteger('celular')->unique();
             $table->string('email')->unique();
-            $table->string('email_recuperacao');
+            // $table->string('email_recuperacao')->nullable();
             $table->string('senha');
             $table->string('genero');
             $table->bigInteger('cpf')->unique();
             $table->string('endereco');
             $table->mediumInteger('numero');
-            $table->mediumInteger('complemento');
+            $table->mediumInteger('complemento')->nullable();
             $table->string('bairro');
             $table->mediumInteger('CEP');
             $table->unsignedInteger('cidades_fk');
             $table->foreign('cidades_fk')->references("id")->on('cidades');
             $table->unsignedInteger('ufs_fk');
             $table->foreign('ufs_fk')->references("id")->on('ufs');
-            $table->unsignedInteger('favoritos_fk');
-            $table->foreign('favoritos_fk')->references("id")->on('favoritos');
-            $table->unsignedInteger('pedidos_fk');
-            $table->foreign('pedidos_fk')->references("id")->on('pedidos');
+            // $table->unsignedInteger('favoritos_fk')->nullable();
+            // $table->foreign('favoritos_fk')->references("id")->on('favoritos');
+            // $table->unsignedInteger('pedidos_fk')->nullable();
+            // $table->foreign('pedidos_fk')->references("id")->on('pedidos');
 
             $table->rememberToken();
             $table->timestamps();
@@ -58,8 +58,8 @@ class CreateUsersTable extends Migration
         Schema::table('users', function(Blueprint $table){
           $table->dropForeign('users_cidades_fk_foreign');
           $table->dropForeign('users_ufs_fk_foreign');
-          $table->dropForeign('users_favoritos_fk_foreign');
-          $table->dropForeign('users_pedidos_fk_foreign');
+          // $table->dropForeign('users_favoritos_fk_foreign');
+          // $table->dropForeign('users_pedidos_fk_foreign');
           $table->dropIfExists('users');
         });
         Schema::enableForeignKeyConstraints();

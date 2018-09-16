@@ -24,6 +24,7 @@ $db = new PDO("mysql:host=localhost;dbname=ecommerce;charset=utf8mb4","root","")
     </select></br>
     <input type="submit" value="Enviar">
   </fieldset>
+  <?php var_dump($_SESSION['array']) ?>
 </form>
 </div>
 
