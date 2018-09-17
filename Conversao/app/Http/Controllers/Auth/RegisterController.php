@@ -48,6 +48,12 @@ class RegisterController extends Controller
       return view('auth.register')->with('cidades',$cidades)->with('estados',$estados);
     }
 
+    public function listarCidades($idEstado){
+      $cidades = City::where('state_id','=',$idEstado)->get();
+      $Json = JSON_encode($cidades);
+      return $Json;
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -63,8 +69,8 @@ class RegisterController extends Controller
             'password' => 'required|string|min:6|confirmed',
             'data_nascimento' => 'required',
             'telefone' => 'required|min:8|numeric',
-            'celular' => 'required|min:8|numeric',
-            'cpf' => 'required|min:11|numeric',
+            'celular' => 'required|min:8|numeric|unique:users',
+            'cpf' => 'required|min:11|numeric|unique:users',
             'genero' => 'required',
             'endereco' => 'required|string|min:5',
             'numero' => 'required|numeric|max:99999',

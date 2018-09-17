@@ -38,3 +38,5 @@ Route::get('/registrar', 'Auth\RegisterController@showRegister');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/list/{idEstado}', 'Auth\RegisterController@listarCidades');

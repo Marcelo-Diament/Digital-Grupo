@@ -141,7 +141,7 @@
                             <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cpf" type="text" class="form-control" name="cpf" >
+                                <input id="cpf" type="text" class="form-control" name="cpf" value="{{ old('cpf') }}">
                             </div>
 
                             @if ($errors->has('cpf'))
@@ -159,7 +159,7 @@
                           <label for="endereco" class="col-md-4 col-form-label text-md-right">Endereço</label>
 
                           <div class="col-md-6">
-                              <input id='endereco' type="text" class="form-control" name='endereco' >
+                              <input id='endereco' type="text" class="form-control" name='endereco' value="{{ old('endereco')}}">
                           </div>
 
                           @if ($errors->has('endereco'))
@@ -173,7 +173,7 @@
                           <label for="numero" class="col-md-4 col-form-label text-md-right">Número</label>
 
                            <div class="col-md-6">
-                              <input id='numero' type="number" class="form-control" name='numero' >
+                              <input id='numero' type="number" class="form-control" name='numero' value="{{ old('numero')}}">
                           </div>
 
                           @if ($errors->has('numero'))
@@ -188,7 +188,7 @@
                           <label for="complemento" class="col-md-4 col-form-label text-md-right">Complemento</label>
 
                           <div class="col-md-6">
-                              <input id='complemento' type="number" class="form-control" name='complemento'>
+                              <input id='complemento' type="number" class="form-control" name='complemento' value="{{ old('complemento')}}">
                           </div>
 
                           @if ($errors->has('complemento'))
@@ -202,7 +202,7 @@
                           <label for="cep" class="col-md-4 col-form-label text-md-right">CEP</label>
 
                           <div class="col-md-6">
-                              <input id='cep' type="number" class="form-control" name='cep' >
+                              <input id='cep' type="number" class="form-control" name='cep' value='{{old("cep")}}'>
                           </div>
 
                           @if ($errors->has('cep'))
@@ -216,7 +216,7 @@
                           <label for="bairro" class="col-md-4 col-form-label text-md-right">Bairro</label>
 
                           <div class="col-md-6">
-                              <input id='bairro' type="text" class="form-control" name='bairro' >
+                              <input id='bairro' type="text" class="form-control" name='bairro' value="{{ old('bairro') }}">
                           </div>
 
                           @if ($errors->has('bairro'))
@@ -251,9 +251,9 @@
                           <div class="col-md-6">
                           <select class="form-control" name="cidade">
                             <option value="null">Selecione sua Cidade</option>
-                            @foreach ($cidades as $cidade)
+                            {{-- @foreach ($cidades as $cidade)
                               <option value="{{$cidade->id}}">{{$cidade->title}}</option>
-                            @endforeach
+                            @endforeach --}}
                           </select>
                         </div>
 
@@ -277,4 +277,28 @@
         </div>
     </div>
 </div>
+<script>
+  let estados = document.forms[0].elements[16]
+  estados.addEventListener('change',function(){
+    let estado = estados.value
+    let xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function(){
+      if (xmlhttp.status == 200 && xmlhttp.readyState == 4) {
+        let resposta = JSON.parse(xmlhttp.responseText)
+        let cidades = Object.entries(resposta)
+
+        let select = ''
+        cidades.forEach(function(cidade){
+          select += '<option value='+cidade[1].id+'>'+cidade[1].title+'</option>'
+        })
+
+        document.forms[0].elements[17].innerHTML = '<option value="Null">Selecione sua Cidade</option>'+select
+      }
+    }
+
+    xmlhttp.open('GET','http://localhost:8000/list/'+estado,true)
+    xmlhttp.send()
+  })
+</script>
 @endsection
