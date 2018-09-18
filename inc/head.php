@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html prefix="og: http://ogp.me/ns#">
+<html lang="pt" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,width=device-width,user-scalable=no">
+    <link rel="alternate" hreflang="pt-br">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <meta name="title" content="Nosso Site">
+    <meta name="title" content="Digital Grupo">
     <meta name="author" content="Digital Grupo">
     <link rel="manifest" href="http://digitalgrupo.provisorio.ws/manifest.json">
     <meta name="decription" content="Template de ecommerce desenvolvido com fins didáticos, parte do projeto integrador do curso de Full Stack da Digital House Brasil">
@@ -28,5 +30,16 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="msapplication-TileColor" content="#FFFFFF">
         <meta name="theme-color" content="#FFFFFF">
+    <!-- META DATA -->
+        <meta name="identifier-URL" content="http://digitalgrupo.provisorio.ws/index.php">
+        <meta name="url" content="http://digitalgrupo.provisorio.ws/index.php">
+        <meta name="abstract" content="Digital Grupo">
+        <meta name="author" content="Digital Grupo, Marcelo Diament, Hector Queiroz, Lucas Palmieri">
+        <meta name="robots" content="index,follow">
+        <meta name="contact" content="contato@digitalgrupo.provisorio.ws">
+        <meta name="reply-to" content="contato@digitalgrupo.provisorio.ws">
+        <meta name="copyright" content="Deezign">
+        <meta name="rating" content="general">
+        <meta name="web_author" content="Digital Grupo, Marcelo Diament, Lucas Palmieri, Hector Queiroz"> 
   </head>
 <body>
