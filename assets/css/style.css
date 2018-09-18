@@ -2,6 +2,7 @@
   font-family: 'Poiret One';
   padding: 0px;
   margin: 0px;
+  /* overflow-x: hidden; */
 }
 .container-fluid{
   padding-left: 0 !important;
@@ -555,6 +556,11 @@ aside{
   padding-left: 20px;
 }
 
+.register select:focus{
+  background-color: #6c757d;
+  color: white;
+}
+
 .register #reg-subtitulo{
   display: block;
   text-align: center;
@@ -572,9 +578,32 @@ aside{
   margin-right: 15px;
 }
 
+.register .check-terms label{
+  font-weight: bold;
+}
+
 .register h3{
   text-align: center;
   padding-top: 15px;
+}
+
+input.form-control{
+  background-color: #6c757d;
+  /* font-family: roboto; */
+}
+
+input.form-control:focus {
+  background-color: #6c757d;
+  color: white;
+}
+
+input.form-control::placeholder{
+  color: white!important;
+}
+
+input[type = date], .register select{
+  background-color: #6c757d;
+  color: white;
 }
 
 .register article a:hover{
@@ -599,6 +628,7 @@ aside{
   display: block;
   text-align: center;
   padding: 15px 0;
+  font-size:
 }
 
 .register span a{

@@ -16,11 +16,12 @@ class Cadastro{
   private $numero;
   private $bairro;
   private $estado;
+  private $cidade;
   private $data_nascimento;
   private $db;
   private $validacao;
 
-  public function __construct($nome,$sobrenome,$email,$email_confirm,$senha,$senha_confirm,$cpf,$genero,$telefone,$celular,$cep,$numero,$bairro,$estado,$data_nascimento,$db){
+  public function __construct($nome,$sobrenome,$email,$email_confirm,$senha,$senha_confirm,$cpf,$genero,$telefone,$celular,$cep,$numero,$bairro,$estado,$cidade,$data_nascimento,$db){
     $this->nome = $nome;
     $this->sobrenome =$sobrenome;
     $this->email = $email;
@@ -35,6 +36,7 @@ class Cadastro{
     $this->numero = $numero;
     $this->bairro = $bairro;
     $this->estado = $estado;
+    $this->cidade = $cidade;
     $this->data_nascimento = $data_nascimento;
     $this->db = $db;
   }
@@ -87,7 +89,7 @@ class Cadastro{
   public function SalvarDados(){
     if ($this->validacao){
       $hash = password_hash($this->senha,PASSWORD_DEFAULT);
-      $usuarios = $this->db->prepare("INSERT into usuarios(nome,sobrenome,email,senha,cpf,telefone,genero,CEP,numero,bairro,uf_fk,data_nascimento,celular) values (:nome,:sobrenome,:email,:senha,:cpf,:telefone,:genero,:CEP,:numero,:bairro,:uf_fk,:data,:celular)");
+      $usuarios = $this->db->prepare("INSERT into usuarios(nome,sobrenome,email,senha,cpf,telefone,genero,CEP,numero,bairro,uf_fk,data_nascimento,celular) values (:nome,:sobrenome,:email,:senha,:cpf,:telefone,:genero,:CEP,:numero,:bairro,:uf_fk,:data,:celular,:cidades_fk)");
       $usuarios->execute([
         ':nome' => $this->nome,
         ":sobrenome" => $this->sobrenome,
@@ -101,11 +103,14 @@ class Cadastro{
         ":bairro" => $this->genero,
         ":uf_fk" => $this->estado,
         ":data" => $this->data_nascimento,
-        ":celular" => $this->celular
+        ":celular" => $this->celular,
+        ":cidades_fk" => $this->cidade
       ]);
       $_SESSION["estado"] = $this->estado;
       $_SESSION["cpf"] = $this->cpf;
-      header('Location: register2.php');
+      $_SESSION["logado"] = true;
+      $_SESSION["visitado"] = 1;
+      header ("Location: index.php");
   }
  }
 }
