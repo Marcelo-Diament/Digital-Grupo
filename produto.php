@@ -249,6 +249,15 @@ include_once ("inc/header.php");
             </div>
         </span>
         </div>
+        <?php
+          // Cálculo de desconto
+            $valorTotal = 579;
+            $valorDesc = 79;
+            $valorReal = ($valorTotal - $valorDesc);
+            $valorParcelas = 12;
+            $valorParcela = number_format((float)$valorTotal/$valorParcelas, 2, ',', '');
+            $valorProdutoCompleto = $valorParcelas."x de R$ ".$valorParcela." sem juros";
+          ?>
         <div class="pdt-info col-12 col-md-7">
           <h3>Descrição do Produto</h3>
           <p>Esse produto é um produto feito especialmente para você. A ideia é que você o use sempre - de dia, à noite, à tarde, de manhã... Não importa quando, use o produto! Aproveite nossas promoções para compras acima de mil reais - promoção por tempo limitado!</p>

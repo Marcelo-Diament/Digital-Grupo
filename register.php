@@ -4,9 +4,9 @@ include ("inc/head.php");
 include ("inc/header_deslogado.php");
 include ("classes/Cadastro.php");
 
-$db_command = "mysql:host=localhost;dbname=ecommerce;charset=utf8mb4";
-$db_user = "root";
-$db_password = "";
+$db_command = "mysql:host=digitalgrupo.mysql.dbaas.com.br;dbname=digitalgrupo;charset=utf8mb4";
+$db_user = "digitalgrupo";
+$db_password = "DG123*";
 $db = new PDO($db_command,$db_user,$db_password);
 $cidades = $db->query('SELECT * from cidades');
 $resultado = $cidades->fetchAll(PDO::FETCH_ASSOC);
@@ -24,47 +24,47 @@ if($_POST){
       <article class="row">
         <div class="form-group offset-1 col-sm-5">
           <label><b>Nome: </b></label>
-          <input class="form-control" placeholder="EX: Silvio" type="text" name="nome" required>
+          <input style="color:#fff !important;" class="form-control" placeholder="EX: Silvio" type="text" name="nome" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Sobrenome: </b></label>
-          <input class="form-control" placeholder="EX: Santos" type="text" name="sobrenome" required>
+          <input style="color:#fff !important;" class="form-control" placeholder="EX: Santos" type="text" name="sobrenome" required>
         </div>
       </article>
       <article class="row">
         <div class="form-group offset-1 col-sm-5">
           <label><b>E-mail: </b></label>
-          <input class="form-control" placeholder="Ex: seu-email@email.com" type="email" name="email" required>
+          <input style="color:#fff !important;" class="form-control" placeholder="Ex: seu-email@email.com" type="email" name="email" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Confirme seu e-mail: </b></label>
-          <input class="form-control" type="email" name="email_confirm" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+          <input style="color:#fff !important;" class="form-control" type="email" name="email_confirm" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
         </div>
       </article>
       <article class="row">
         <div class="form-group offset-1 col-sm-5">
           <label><b>Senha: </b></label>
-          <input class="form-control" placeholder="EX:123" type="password" name="senha" required>
+          <input style="color:#fff !important;" class="form-control" placeholder="EX:123" type="password" name="senha" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Confirme sua senha: </b></label>
-          <input class="form-control" type="password" name="senha_confirm" required onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+          <input style="color:#fff !important;" class="form-control" type="password" name="senha_confirm" required onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
         </div>
       </article>
       <article class="row">
         <div class="form-group offset-1 col-sm-5">
           <label><b>CPF: </b></label>
-          <input class="form-control" placeholder="EX: 123.456.789-00" type="number" name="cpf" required>
+          <input style="color:#fff !important;" class="form-control" placeholder="EX: 123.456.789-00" type="number" name="cpf" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Telefone: </b></label>
-          <input class="form-control" placeholder="EX: 1234-5678" type="number" name="telefone" required>
+          <input style="color:#fff !important;" class="form-control" placeholder="EX: 1234-5678" type="number" name="telefone" required>
         </div>
       </article>
       <article class="row">
         <div class="form-group offset-1 col-sm-5">
           <label for=""><b>Celular: </b></label>
-          <input class="form-control" type="text" name="celular" placeholder="EX: 91234-5678">
+          <input style="color:#fff !important;" class="form-control" type="text" name="celular" placeholder="EX: 91234-5678">
         </div>
       </article>
       <article class="form-group row gender">
@@ -83,7 +83,7 @@ if($_POST){
         <div class="col-sm-1">
         </div>
         <label><b>Data de Nascimento: </b></label>
-        <input type="date" name="nascimento">
+        <input style="color:#fff !important;" type="date" name="nascimento">
       </article>
 
       <h3>Endereçamento</h3>
@@ -91,24 +91,28 @@ if($_POST){
       <article class="row">
         <div class="form-group offset-1 col-sm-5">
           <label><b>CEP:</b></label>
-          <input class="form-control" type="text" name="cep" placeholder="EX: 00000-000" required>
+          <input style="color:#fff !important;" class="form-control" type="text" name="cep" placeholder="EX: 00000-000" required>
           <small><a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank">Não sei meu CEP</a></small>
+        </div>
+        <div class="form-group offset-1 col-sm-5">
+          <label><b>Rua:</b></label>
+          <input style="color:#fff !important;" class="form-control" type="text" name="rua" placeholder="rua" required>
         </div>
       </article>
       <article class="row">
         <div class="form-group offset-1 col-sm-5">
           <label><b>Número: </b></label>
-          <input class="form-control" type="text" name="numero" placeholder="EX: 123" required>
+          <input style="color:#fff !important;" class="form-control" type="text" name="numero" placeholder="EX: 123" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Complemento: </b> (Opcional)</label>
-          <input class="form-control" type="text" name="complemento" placeholder="EX: 05">
+          <input style="color:#fff !important;" class="form-control" type="text" name="complemento" placeholder="EX: 05">
         </div>
       </article>
       <article class="row">
         <div class="form-group offset-1 col-sm-5">
           <label><b>Bairro: </b></label>
-          <input class="form-control" type="text" name="bairro" placeholder="EX: Vila Lobo" required>
+          <input style="color: #fff !important;" class="form-control" type="text" name="bairro" placeholder="EX: Vila Lobo" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Estado: </b></label>

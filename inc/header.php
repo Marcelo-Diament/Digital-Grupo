@@ -38,7 +38,7 @@
           <a title="Clique e faça login" alt="Clique e faça login" class="nav-link" href="http://digitalgrupo.provisorio.ws/login.php">Login</a>
         </li>
         <li class="nav-item">
-          <a title="Faça seu cadastro rapidamente" alt="Faça seu cadastro rapidamente" class="nav-link" href="localhost/register.php">Cadastre-se</a>
+          <a title="Faça seu cadastro rapidamente" alt="Faça seu cadastro rapidamente" class="nav-link" href="http://localhost/Digital-Grupo/register.php">Cadastre-se</a>
         </li>
         <li class="nav-item">
           <a title="Entre em contato conosco" alt="Entre em contato conosco" class="nav-link" href="http://digitalgrupo.provisorio.ws/contato.php">Contato</a>
