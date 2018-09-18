@@ -48,7 +48,7 @@ header i{
 } */
 
 .div_banner{
-  background-image: url("../images/produto-banner-01.jpg");
+  background-image: url("http://digitalgrupo.provisorio.ws/assets/images/banner-rodas-de-skate.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -732,6 +732,7 @@ h1, h2, h3, h4, h5, h6, p, small, b, strong{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     height: 20vh;
     margin: 15px;
     line-height: 20vh;

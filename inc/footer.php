@@ -12,21 +12,11 @@
    <div class="redes-socias col-md-6">
       <h4>Siga-nos</h4>
       <div class="row">
-        <a href="#" class="offset-1 col-2">
-          <img src="assets/images/logo-facebook.png" alt="Logo do Facebook" class="img-redes">
-        </a>
-        <a href="#" class="col-2">
-          <img src="assets/images/logo-instagram.png" alt="Logo do Instagram" class="img-redes">
-        </a>
-        <a href="#" class="col-2">
-          <img src="assets/images/logo-linkedin.png" alt="Logo do Linkedin" class="img-redes">
-        </a>
-        <a href="#" class="col-2">
-          <img src="assets/images/logo-twitter.png" alt="Logo do Twitter" class="img-redes">
-        </a>
-        <a href="#" class="col-2">
-          <img src="assets/images/logo-youtube.png" alt="Logo do Youtube" class="img-redes">
-        </a>
+        <a href="https://facebook.com" class="offset-2 col-2"><i style="font-size:22pt; color:#fff !important;" class="fab fa-facebook-square"></i></a>
+        <a href="https://instagram.com" class="col-2"><i style="font-size:22pt; color:#fff !important;" class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com" class=""><i style="font-size:22pt; color:#fff !important;" class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com" class="col-2"><i style="font-size:22pt; color:#fff !important;" class="fab fa-twitter"></i></a>
+        <a href="https://youtube.com" class="col-2"><i style="font-size:22pt; color:#fff !important;" class="fab fa-youtube"></i></a>
       </div>
     </div>
   </div>
@@ -34,33 +24,30 @@
   <div class="row">
   <div class="categorias col-md-4">
     <h4>Categorias</h4><br>
-    <p>Promoções</p>
     <ul>
-      <li><a href="#">Categoria #1</a></li>
-      <li><a href="#">Categoria #2</a></li>
-      <li><a href="#">Categoria #3</a></li>
-      <li><a href="#">Categoria #4</a></li>
+      <li><a href="http://digitalgrupo.provisorio.ws/rodas-de-skate.php">Rodas de Skate</a></li>
+      <li><a href="http://digitalgrupo.provisorio.ws/oculos-de-sol.php">Óculos de Sol</a></li>
     </ul>
   </div>
   <!-- <div class="row"> -->
   <div class="institucional col-md-4">
     <h4>Institucional</h4><br>
     <ul>
-      <li><a href="#">Sobre</a></li>
-      <li><a href="#">FAQ</a></li>
-      <li><a href="#">Contato</a></li>
-      <li><a href="#">Políticas de Troca e Devolução</a></li>
-      <li><a href="#">Políticas de Privacidade</a></li>
+      <li><a href="http://digitalgrupo.provisorio.ws/sobre.php">Sobre</a></li>
+      <li><a href="http://digitalgrupo.provisorio.ws/faq-duvidas.php">FAQ</a></li>
+      <li><a href="http://digitalgrupo.provisorio.ws/contato.php">Contato</a></li>
+      <li><a href="http://digitalgrupo.provisorio.ws/politicas-e-termos.php#faqcat02">Políticas de Troca e Devolução</a></li>
+      <li><a href="http://digitalgrupo.provisorio.ws/politicas-e-termos.php#faqcat04">Políticas de Privacidade</a></li>
     </ul>
   </div>
 <!-- </div> -->
   <!-- <div class="row"> -->
   <div class="contatos col-md-4">
     <h4>Entre em contato</h4><br>
-    <img src="assets/images/logo-whatsapp.png" alt="Logo do Whatsapp">
+    <i class="fab fa-whatsapp" style="color:#fff;font-size:22px;"></i>
     <a href="tel:+5511987654321">9 8765-4321</a><br>
-    <img src="assets/images/envelope.png" alt="Foto de Envelope">
-    <a href="mailto:hectorqrs@gmail.com?Subject=Contato">hectorqrs@gmail.com</a>
+    <i class="fas fa-envelope" style="color:#fff;font-size:22px;"></i>
+    <a href="mailto:hectorqrs@gmail.com?Subject=Contato">digitalgrupo@digitalhouse.com</a>
   </div>
 </div>
 <!-- </div> -->

@@ -1,0 +1,17 @@
+{
+  "name" : "Digital Grupo - Óculos e SK8",
+  "short_name" : "Digital Grupo",
+  "start_url" : "http://digitalgrupo.provisorio.ws/index.php",
+  "homepage_url" : "http://digitalgrupo.provisorio.ws/index.php",
+  "description" : "Óculos e SK8",
+  "background_color" : "#000",
+  "theme_color" : "#fff",
+  "display" : "standalone",
+  "icons" : [
+  {
+   "src" : "http://digitalgrupo.provisorio.ws/assets/images/logo.png",
+   "sizes" : "96x96",
+   "type" : "image/png"
+  }
+ ]
+}
