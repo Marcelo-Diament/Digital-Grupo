@@ -8,8 +8,10 @@ $db_command = "mysql:host=localhost;dbname=ecommerce;charset=utf8mb4";
 $db_user = "root";
 $db_password = "";
 $db = new PDO($db_command,$db_user,$db_password);
+$cidades = $db->query('SELECT * from cidades');
+$resultado = $cidades->fetchAll(PDO::FETCH_ASSOC);
 if($_POST){
-  $cadastro = new Cadastro($_POST["nome"],$_POST["sobrenome"],$_POST["email"],$_POST["email_confirm"],$_POST["senha"],$_POST["senha_confirm"],$_POST["cpf"],$_POST["genero"],$_POST["telefone"],$_POST["celular"],$_POST["cep"],$_POST["numero"],$_POST["bairro"],$_POST["estado"],$_POST["nascimento"],$db);
+  $cadastro = new Cadastro($_POST["nome"],$_POST["sobrenome"],$_POST["email"],$_POST["email_confirm"],$_POST["senha"],$_POST["senha_confirm"],$_POST["cpf"],$_POST["genero"],$_POST["telefone"],$_POST["celular"],$_POST["cep"],$_POST["numero"],$_POST["bairro"],$_POST["estado"],$_POST["cidade"],$_POST["nascimento"],$db);
   $cadastro->Validacao();
   $cadastro->SalvarDados();
 }
@@ -22,11 +24,11 @@ if($_POST){
       <article class="row">
         <div class="form-group offset-1 col-sm-5">
           <label><b>Nome: </b></label>
-          <input class="form-control" placeholder="Nome" type="text" name="nome" required>
+          <input class="form-control" placeholder="EX: Silvio" type="text" name="nome" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Sobrenome: </b></label>
-          <input class="form-control" placeholder="Sobrenome" type="text" name="sobrenome" required>
+          <input class="form-control" placeholder="EX: Santos" type="text" name="sobrenome" required>
         </div>
       </article>
       <article class="row">
@@ -36,33 +38,33 @@ if($_POST){
         </div>
         <div class="form-group col-sm-5">
           <label><b>Confirme seu e-mail: </b></label>
-          <input class="form-control" placeholder="EX: seu-email@email.com" type="email" name="email_confirm" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+          <input class="form-control" type="email" name="email_confirm" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
         </div>
       </article>
       <article class="row">
         <div class="form-group offset-1 col-sm-5">
           <label><b>Senha: </b></label>
-          <input class="form-control" placeholder="*********" type="password" name="senha" required>
+          <input class="form-control" placeholder="EX:123" type="password" name="senha" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Confirme sua senha: </b></label>
-          <input class="form-control" placeholder="*********" type="password" name="senha_confirm" required onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+          <input class="form-control" type="password" name="senha_confirm" required onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
         </div>
       </article>
       <article class="row">
         <div class="form-group offset-1 col-sm-5">
           <label><b>CPF: </b></label>
-          <input class="form-control" placeholder="123.456.789-00" type="number" name="cpf" required>
+          <input class="form-control" placeholder="EX: 123.456.789-00" type="number" name="cpf" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Telefone: </b></label>
-          <input class="form-control" placeholder="1234-5678" type="number" name="telefone" required>
+          <input class="form-control" placeholder="EX: 1234-5678" type="number" name="telefone" required>
         </div>
       </article>
       <article class="row">
         <div class="form-group offset-1 col-sm-5">
           <label for=""><b>Celular: </b></label>
-          <input class="form-control" type="text" name="celular" placeholder="91234-5678">
+          <input class="form-control" type="text" name="celular" placeholder="EX: 91234-5678">
         </div>
       </article>
       <article class="form-group row gender">
@@ -81,7 +83,7 @@ if($_POST){
         <div class="col-sm-1">
         </div>
         <label><b>Data de Nascimento: </b></label>
-        <input type="date" name="nascimento" value="">
+        <input type="date" name="nascimento">
       </article>
 
       <h3>Endereçamento</h3>
@@ -89,24 +91,24 @@ if($_POST){
       <article class="row">
         <div class="form-group offset-1 col-sm-5">
           <label><b>CEP:</b></label>
-          <input class="form-control" type="text" name="cep" placeholder="00000-000" required>
+          <input class="form-control" type="text" name="cep" placeholder="EX: 00000-000" required>
           <small><a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank">Não sei meu CEP</a></small>
         </div>
       </article>
       <article class="row">
         <div class="form-group offset-1 col-sm-5">
           <label><b>Número: </b></label>
-          <input class="form-control" type="text" name="numero" placeholder="987" required>
+          <input class="form-control" type="text" name="numero" placeholder="EX: 123" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Complemento: </b> (Opcional)</label>
-          <input class="form-control" type="text" name="complemento" placeholder="12">
+          <input class="form-control" type="text" name="complemento" placeholder="EX: 05">
         </div>
       </article>
       <article class="row">
         <div class="form-group offset-1 col-sm-5">
           <label><b>Bairro: </b></label>
-          <input class="form-control" type="text" name="bairro" placeholder="987" required>
+          <input class="form-control" type="text" name="bairro" placeholder="EX: Vila Lobo" required>
         </div>
         <div class="form-group col-sm-5">
           <label><b>Estado: </b></label>
@@ -142,9 +144,24 @@ if($_POST){
           </select>
         </div>
       </article>
+      <div class="form-group offset-1 col-sm-5">
+        <label><b>Cidade: </b></label>
+        <select class="form-control" name="cidade" required>
+          <option value="null">Selecione a sua cidade</option>
+          <?php
+          foreach ($resultado as $key => $value) {
+            echo "<option value=".$value['id'].">".$value['nome']."</option>";
+          }
+          ?>
+        </select>
+      </div>
+    </article>
       <div class="check-terms">
         <label>
-          <input type="checkbox" name="terms" required>Aceito reservar todos os meus direitos à Hector Queiróz.
+          <input type="checkbox" name="terms" required>Aceito todos os <a href="politicas-e-termos.php"><i>termos e politicas</i></a> dados pelo Digital-Grupo.
+        </label><br>
+        <label>
+          <input type="checkbox" name="terms2" required>Aceito vender a minha alma para este Site.
         </label>
       </div>
       <div class="register-buttons">
@@ -157,4 +174,108 @@ if($_POST){
     </form>
   </section>
 
+<script>
+let input0 = document.forms[0].elements[0]
+let place0 = input0.placeholder
+let input1 = document.forms[0].elements[1]
+let place1 = input1.placeholder
+let input2 = document.forms[0].elements[2]
+let place2 = input2.placeholder
+let input3 = document.forms[0].elements[4]
+let place3 = input3.placeholder
+let input4 = document.forms[0].elements[6]
+let place4 = input4.placeholder
+let input5 = document.forms[0].elements[7]
+let place5 = input5.placeholder
+let input6 = document.forms[0].elements[8]
+let place6 = input6.placeholder
+
+let input7 = document.forms[0].elements[12]
+let place7 = input7.placeholder
+let input8 = document.forms[0].elements[13]
+let place8 = input8.placeholder
+let input9 = document.forms[0].elements[14]
+let place9 = input9.placeholder
+let input10 = document.forms[0].elements[15]
+let place10 = input10.placeholder
+
+
+  input0.addEventListener('focus',function(){
+    this.setAttribute('placeholder',"")
+  })
+  input0.addEventListener('blur',function(){
+    this.setAttribute('placeholder',place0)
+  })
+
+  input1.addEventListener('focus',function(){
+    this.setAttribute('placeholder',"")
+  })
+  input1.addEventListener('blur',function(){
+    this.setAttribute('placeholder',place1)
+  })
+
+  input2.addEventListener('focus',function(){
+    this.setAttribute('placeholder',"")
+  })
+  input2.addEventListener('blur',function(){
+    this.setAttribute('placeholder',place2)
+  })
+
+  input3.addEventListener('focus',function(){
+    this.setAttribute('placeholder',"")
+  })
+  input3.addEventListener('blur',function(){
+    this.setAttribute('placeholder',place3)
+  })
+
+  input4.addEventListener('focus',function(){
+    this.setAttribute('placeholder',"")
+  })
+  input4.addEventListener('blur',function(){
+    this.setAttribute('placeholder',place4)
+  })
+
+  input5.addEventListener('focus',function(){
+    this.setAttribute('placeholder',"")
+  })
+  input5.addEventListener('blur',function(){
+    this.setAttribute('placeholder',place5)
+  })
+
+  input6.addEventListener('focus',function(){
+    this.setAttribute('placeholder',"")
+  })
+  input6.addEventListener('blur',function(){
+    this.setAttribute('placeholder',place6)
+  })
+
+  input7.addEventListener('focus',function(){
+    this.setAttribute('placeholder',"")
+  })
+  input7.addEventListener('blur',function(){
+    this.setAttribute('placeholder',place7)
+  })
+
+  input8.addEventListener('focus',function(){
+    this.setAttribute('placeholder',"")
+  })
+  input8.addEventListener('blur',function(){
+    this.setAttribute('placeholder',place8)
+  })
+
+  input9.addEventListener('focus',function(){
+    this.setAttribute('placeholder',"")
+  })
+  input9.addEventListener('blur',function(){
+    this.setAttribute('placeholder',place9)
+  })
+
+  input10.addEventListener('focus',function(){
+    this.setAttribute('placeholder',"")
+  })
+  input10.addEventListener('blur',function(){
+    this.setAttribute('placeholder',place10)
+  })
+
+</script>
 <?php include ("inc/footer.php") ?>

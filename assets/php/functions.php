@@ -1,7 +1,7 @@
 <?php
 
 	// # VARIÁVEIS (ENQUANTO NÃO INTEGRAMOS AO BANCO DE DADOS)
-		
+
 
 		// ## INFORMAÇÕES SOBRE O DESENVOLVEDOR
 		$autores = "Digital Grupo";
@@ -11,7 +11,7 @@
 		$nomeNegocio = "Digital Grupo";
 		$siteNegocio = "http://digitalgrupo.provisorio.ws";
 		$metaOgSiteName = $nomeNegocio;
-		    
+
 
 		    // ### CONTATO (E DADOS DE CONTATO EM GERAL)
 		    $tituloContato = "Contato";
@@ -28,8 +28,8 @@
 		    $metaOgImageAltContato = "Digital Grupo";
 		    $metaOgImageUrlContato = $metaOgImageContato;
 		    $metaOgImageTypeContato = "image/gif";
-		    
-				
+
+
 				// #### TELEFONES / WHATSAPP
 				$telefoneFixo = "(11) 2345 6789";
 				$telefoneCelular = "(11) 98765 4321";
@@ -97,7 +97,7 @@
 		    $metaOgImageAltCategoria = "Digital Grupo";
 		    $metaOgImageUrlCategoria = $metaOgImageHome;
 		    $metaOgImageTypeCategoria = "image/gif";
-		    
+
 			    // #### ARRAY DE CATEGORIAS DE PRODUTOS (id_cat e categoria)
 		    	$categorias = array(
 		    		'Rodas de Skate'=> array(
@@ -118,7 +118,7 @@
 					    'metaOgImageUrl' => 'http://digitalgrupo.provisorio.ws/assets/images/banner-rodas-de-skate.jpg',
 					    'metaOgImageType' => 'image/jpg'
 		    		),
-		    		
+
 		    		'Óculos de Sol'=> array(
 		    			'idcategoria' => '2',
 		    			'url' => 'http://digitalgrupo.provisorio.ws/oculos-de-sol.php',
@@ -157,7 +157,7 @@
 			    $metaOgImageAltProduto = "Rodinha de Skate";
 			    $metaOgImageUrlProduto = $metaOgImageProduto;
 			    $metaOgImageTypeProduto = "image/gif";
-			    
+
 			    // #### DESCRIÇÃO (DETALHES, ESPECIFICAÇÕES DO PRODUTO)
 			    $pdtMateriais = "Plástico, metal e borracha";
 			    $tamanhos = ['XS - Extrapequeno' => 'XS - Extrapequeno', 'SM - Pequeno'=>'SM - Pequeno','M - Médio'=>'M - Médio','LG - Grande'=>'LG - Grande', 'XL - Extragrande' =>'XL - Extragrande'];
@@ -2662,7 +2662,7 @@
 			    );
 
 
-			// ### SOBRE (QUEM SOMOS)	
+			// ### SOBRE (QUEM SOMOS)
 		    $tituloSobre = "Sobre a ".$nomeNegocio;
 		    $subtituloSobre = "Conheça melhor o nosso negócio, faça parte dessa história";
 		    $metaTitleSobre = $tituloSobre;
@@ -2700,7 +2700,7 @@
 		    $metaOgImageAltFaq = "Digital Grupo";
 		    $metaOgImageUrlFaq = $metaOgImageFaq;
 		    $metaOgImageTypeFaq = "image/gif";
-		    
+
 		    	// #### CATEGORIAS DE FAQ
 		    	$faqCategorias = array(
 		    			'faqcat01' => 'Garantia',
@@ -2804,7 +2804,7 @@
 		    $metaOgImageTypeBusca = "image/gif";
 
 		// ## ADITIVOS (BANNERS, POP UPS, ALERTAS, MODAIS...)
-		    
+
 		    // ### BANNERS
 			$bannerHorizontal = "Confira nossa promoção imperdível! Acesse já!";
 
