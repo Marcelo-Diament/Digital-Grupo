@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <meta name="title" content="Digital Grupo">
     <meta name="author" content="Digital Grupo">
-    <link rel="manifest" href="http://digitalgrupo.provisorio.ws/manifest.json">
     <meta name="decription" content="Template de ecommerce desenvolvido com fins didáticos, parte do projeto integrador do curso de Full Stack da Digital House Brasil">
     <meta name="keywords" content="html, css, php, js, digital house, digital grupo, projeto integrador">
     <link rel="icon" type="image/png" sizes="96x96" href="http://digitalgrupo.provisorio.ws/assets/images/logo.png">
@@ -18,6 +17,8 @@
     <link rel="stylesheet" href="/Digital-Grupo/assets/css/style.css">
     <link rel="stylesheet" href="/Digital-Grupo/assets/css/style-produtos-marcelo.css">
     <title>Digital Grupo</title>
+    <!-- MANIFESTO -->
+    <link rel="manifest" href="http://digitalgrupo.provisorio.ws/manifest.json">
     <!-- META CACHE -->
         <meta http-equiv="Cache-control" content="public">
         <meta http-equiv="cache-control" content="max-age=172800">
