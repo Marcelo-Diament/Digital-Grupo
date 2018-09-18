@@ -49,11 +49,7 @@ CREATE TABLE `usuarios` (
   UNIQUE KEY `email_recup` (`email_recup`),
   KEY `cidades_fk` (`cidades_fk`),
   KEY `uf_fk` (`uf_fk`),
-  KEY `favoritos_fk` (`favoritos_fk`),
-  KEY `historico_fk` (`historico_fk`),
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`cidades_fk`) REFERENCES `cidades` (`id`),
-  CONSTRAINT `usuarios_ibfk_3` FOREIGN KEY (`favoritos_fk`) REFERENCES `favoritos` (`id`),
-  CONSTRAINT `usuarios_ibfk_4` FOREIGN KEY (`historico_fk`) REFERENCES `historico` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
