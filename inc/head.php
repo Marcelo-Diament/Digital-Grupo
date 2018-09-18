@@ -15,6 +15,18 @@
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <link rel="stylesheet" href="/Digital-Grupo/assets/css/style.css">
     <link rel="stylesheet" href="/Digital-Grupo/assets/css/style-produtos-marcelo.css">
-    <title>Nosso site</title>
+    <title>Digital Grupo</title>
+    <!-- META CACHE -->
+        <meta http-equiv="Cache-control" content="public">
+        <meta http-equiv="cache-control" content="max-age=172800">
+        <meta name="revisit-after" content="2 days">
+    <!-- MOBILE SPECS -->
+        <meta name="application-name" content="Digital Grupo">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-title" content="Digital Grupo"> 
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <meta name="theme-color" content="#FFFFFF">
   </head>
 <body>
