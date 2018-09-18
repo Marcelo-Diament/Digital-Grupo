@@ -138,29 +138,31 @@ include_once ("inc/header.php");
 
             echo "
               <article class='pdt-card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2'>
-                <div style='background-image:url(".$produtos[$i]['imagemDestaque'].");'>
+                <a title='Clique e veja os detalhes desse produto!' alt='Clique para ver os detalhes desse produto' name='".$produtos[$i]['nome']."' href='".$produtos[$i]['url']."' hreflang='pt-br' style='text-decoration:none;color:#fff !important;'>
+                  <div style='background-image:url(".$produtos[$i]['imagemDestaque'].");'>
                   <h3 class='pdt-card-title'><strong>".$produtos[$i]['nome']."</strong></h3>
                   <div class='pdt-card-price'>".$valorProdutoCompleto."</div>
                   <button class='pdt-card-btn'><a title='Clique e veja os detalhes desse produto!' alt='Clique para ver os detalhes desse produto' name='".$produtos[$i]['nome']."' href='".$produtos[$i]['url']."' hreflang='pt-br'>Ver Mais</a></button>
+                  </a>
                 </div>
               </article>
             ";
           }
         }
       ?>
-      <span class="col-12" id="paginacao">
+      <!-- <span class="col-12" id="paginacao"> -->
         <!--<div class="col-4">-->
-          <a href="#" hreflang="pt-br" alt="Clique para ver a página 1" title="Início dos Produtos"><i class="fas fa-angle-double-left"></i></a>
-          <a href="#" hreflang="pt-br" alt="Clique para ver a página anterior" title="Página de Produtos Anterior"><i class="fas fa-angle-left"></i></a>
+          <!-- <a href="#" hreflang="pt-br" alt="Clique para ver a página 1" title="Início dos Produtos"><i class="fas fa-angle-double-left"></i></a>
+          <a href="#" hreflang="pt-br" alt="Clique para ver a página anterior" title="Página de Produtos Anterior"><i class="fas fa-angle-left"></i></a> -->
         <!--</div>
         <div class="col-4">-->
-          48 de 96
+          <!-- 48 de 96 -->
           <!--</div>
         <div class="col-4">-->
-          <a href="#" hreflang="pt-br" alt="Clique para ver a próxima página" title="Página de Produtos Seguinte"><i class="fas fa-angle-right"></i></a>
-          <a href="#" hreflang="pt-br" alt="Clique para ver a última página" title="Final dos Produtos"><i class="fas fa-angle-double-right"></i></a>
+          <!-- <a href="#" hreflang="pt-br" alt="Clique para ver a próxima página" title="Página de Produtos Seguinte"><i class="fas fa-angle-right"></i></a>
+          <a href="#" hreflang="pt-br" alt="Clique para ver a última página" title="Final dos Produtos"><i class="fas fa-angle-double-right"></i></a> -->
         <!--</div>-->
-      </span>
+      <!-- </span> -->
     </section>
   </main>
 <?php
