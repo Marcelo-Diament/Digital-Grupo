@@ -267,19 +267,37 @@ let place10 = input10.placeholder
     this.setAttribute('placeholder',place8)
   })
 
-  input9.addEventListener('focus',function(){
-    this.setAttribute('placeholder',"")
-  })
-  input9.addEventListener('blur',function(){
-    this.setAttribute('placeholder',place9)
-  })
+  // input9.addEventListener('focus',function(){
+  //   this.setAttribute('placeholder',"")
+  // })
+  // input9.addEventListener('blur',function(){
+  //   this.setAttribute('placeholder',place9)
+  // })
+  //
+  // input10.addEventListener('focus',function(){
+  //   this.setAttribute('placeholder',"")
+  // })
+  // input10.addEventListener('blur',function(){
+  //   this.setAttribute('placeholder',place10)
+  // })
 
-  input10.addEventListener('focus',function(){
-    this.setAttribute('placeholder',"")
-  })
-  input10.addEventListener('blur',function(){
-    this.setAttribute('placeholder',place10)
-  })
+
+
+document.forms[0].elements[16].addEventListener('change',function(){
+  let estado = document.forms[0].elements[16].value
+let xmlhttp = new XMLHttpRequest()
+
+xmlhttp.onreadystatechange = function(){
+  if (xmlhttp.status == 200 && xmlhttp.readyState == 4) {
+    let resposta = JSON.parse(xmlhttp.textResponse)
+    let array = Object.entries(resposta)
+
+    console.log(array)
+  }
+}
+
+xmlhttp.open('GET','http://localhost:8000/list/'+estado,true)
+xmlhttp.send()
 
 </script>
 <?php include ("inc/footer.php") ?>
